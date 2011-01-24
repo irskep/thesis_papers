@@ -8,9 +8,9 @@ build: $(FIGS)
 ifeq ($(INCLUDE_BIB),yes)
 	pdflatex $(DOC) > /dev/null
 	bibtex $(DOC) > /dev/null
+	pdflatex $(DOC) > /dev/null
 endif
-	pdflatex $(DOC) > /dev/null
-	pdflatex $(DOC) > /dev/null
+	pdflatex $(DOC)
 
 kde: build
 	kpdf $(DOC).pdf

@@ -1,10 +1,14 @@
 \section{Literature Survey}
 
-(No citations because I am still tracking down various corrupted papers.)
+The literature I have found falls into three major categories. The first category is general multitouch interface research. Not much of the general multitouch research seems to apply, since iOS already has a standard interface and guidelines for implementing new interfaces. All custom interactions happen within the graph view. However, some relevant research is presented here for completeness.
 
-The literature I have found falls into three major categories. The first category is general multitouch interface research. There are taxonomies of gestures \cite{multitouch:gestures} and descriptions of other multitouch interfaces. Not much of it seems to apply, since iOS already has a standard interface. All custom interactions happen within the graph view.
+A few papers present taxonomies of gestures. Frisch et al provide one example \cite{multitouch:gestures}. (I am looking for more.)
 
-The second category is graph interface research. So far I have only found one interesting paper in which the researchers use bubbles along the edges of the screen to represent offscreen nodes. There is a lot of talk about UML, but it is not relevant to this application. One paper uses a hybrid graphical and text interface to explore graphs, but text interfaces do not work well on touch-based devices. There may be more relevant papers in this area, but I am still sifting through them.
+Others offer new interfaces to help bridge the divide between multitouch input devices and the pre-iPad desktop interfaces. In this vein, Benko et al describe a new interface to help a user select very small pointing targets \cite{multitouch:tiny-select}. However, modern touch interfaces circumvent this issue by not requiring users to select unreasonably tiny targets in the first place.
+
+The second category is graph interface research. Kobourov et al have a multi-touch interface for making pairs of graphs with similarly placed nodes \cite{graph-interaction:simultaneousgraphdrawing}, which will likely be useful in the SMDA application. I have found one paper in which the researchers use bubbles along the edges of the screen to represent offscreen nodes (but I am so far unable to download it).
+
+There is a lot of talk about UML, but it is not relevant to this application. Another paper uses a hybrid graphical and text interface to explore graphs, but text interfaces do not work well on touch-based devices. There may be more relevant papers in this area, but I am still sifting through them.
 
 The third category is graph theory. In particular, I am interested in graph rewriting, i.e. turning one graph into another based on rules. I found a good starting paper, but the version I have is corrupted. There are also many papers on graph query languages.
 

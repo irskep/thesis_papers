@@ -1,0 +1,47 @@
+\documentclass[twocolumn, 12pt]{report}
+
+% packages
+
+\usepackage[dvipdfm, colorlinks, breaklinks, pdftitle={PathCase for iPad},pdfauthor={Johnson, Stephen}]{hyperref}
+\usepackage[usenames]{color}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{xcolor,graphicx}
+\defaultfontfeatures{Mapping=tex-text}
+
+% global styles
+
+\pagestyle{headings}
+
+\setmainfont[Alternate=1,Ligatures=Common]{Garamond Premier Pro}
+\setsansfont[Ligatures=Common]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+
+% title
+
+\title{PathCase for iPad}
+\author{Steve Johnson}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+% pattern:
+% \chapter{Chapter Title}
+% \label{ch:chapter_title}
+% \input{chapter_title}
+
+\chapter{Introduction}
+\label{ch:introduction}
+\input{introduction}
+
+\chapter{Literature Survey}
+\label{ch:literature_survey}
+\input{literature_survey}
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\end{document}

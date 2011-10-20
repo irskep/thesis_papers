@@ -1,24 +1,19 @@
 DOC = stevejohnson_thesis
-INCLUDE_BIB = no
+INCLUDE_BIB = yes
 
 %.pdf : %.dot
 	dot -Tpdf $*.dot -o $*.pdf
 
 build: $(FIGS)
 ifeq ($(INCLUDE_BIB),yes)
-	xelatex -halt-on-error $(DOC) > /dev/null && \
-	bibtex $(DOC) > /dev/null
-endif
+	xelatex -halt-on-error $(DOC) && \
+	bibtex $(DOC) > /dev/null && \
 	xelatex -halt-on-error $(DOC) > /dev/null && \
 	xelatex -halt-on-error $(DOC) > /dev/null
-
-dbg: $(FIGS)
-ifeq ($(INCLUDE_BIB),yes)
+else
 	xelatex -halt-on-error $(DOC) && \
-	bibtex $(DOC)
+	xelatex -halt-on-error $(DOC) > /dev/null
 endif
-	xelatex -halt-on-error $(DOC) && \
-	xelatex -halt-on-error $(DOC)
 
 kde: build
 	kpdf $(DOC).pdf

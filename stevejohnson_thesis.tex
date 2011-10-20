@@ -13,7 +13,7 @@
 
 \pagestyle{headings}
 
-\setmainfont[Alternate=1,Ligatures=Common]{Garamond Premier Pro}
+\setmainfont[Ligatures=Common]{Garamond Premier Pro}
 \setsansfont[Ligatures=Common]{Gill Sans}
 \setmonofont[Scale=MatchLowercase]{Inconsolata}
 
@@ -28,11 +28,6 @@
 
 \tableofcontents
 
-% pattern:
-% \chapter{Chapter Title}
-% \label{ch:chapter_title}
-% \input{chapter_title}
-
 \chapter{Introduction}
 \label{ch:introduction}
 \input{introduction}
@@ -41,7 +36,16 @@
 \label{ch:literature_survey}
 \input{literature_survey}
 
-\bibliographystyle{plain}
+\chapter{MAW}
+\label{ch:maw_smda}
+\input{maw/main}
+
+\chapter{KEGG}
+\label{ch:kegg}
+\input{kegg}
+
+\nocite{*}
+\bibliographystyle{acm}
 \bibliography{bibliography}
 
 \end{document}

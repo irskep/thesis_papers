@@ -1,0 +1,23 @@
+\section{Implementation}
+\label{sect:kegg_implementation}
+
+The implementations for the MAW and KEGG apps are very similar, but they have
+some important differences.
+
+\begin{enumerate}
+
+    \item The KEGG application was written later and requires iOS 5, using many
+    new features to achieve similar functionality with much less code.
+
+    \item All web service requests are encapsulated in classes that
+    asynchronously make the request, cache the response, interpret the XML,
+    create the required data objects, and notify the rest of the app that the
+    request is complete. This is in contrast to the MAW app strategy of
+    downloading all data in one batch, converting it into Objective-C objects,
+    and serializing those objects for later access.
+
+    \item The ENZYME database is read from a SQLite file bundled with the app.
+    The SQLite file is created by a Python script that converts the text format
+    of the database into SQLite for more efficient access.
+
+\end{enumerate}

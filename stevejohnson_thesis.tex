@@ -1,17 +1,20 @@
-\documentclass[twocolumn, 12pt]{report}
+\documentclass[12pt]{report}
 
 % packages
 
-\usepackage[dvipdfm, colorlinks, breaklinks, pdftitle={PathCase for iPad},pdfauthor={Johnson, Stephen}]{hyperref}
+\usepackage[colorlinks, breaklinks, pdftitle={PathCase for iPad},pdfauthor={Johnson, Stephen}]{hyperref}
 \usepackage[usenames]{color}
-\usepackage{xunicode}
 \usepackage{xltxtra}
+\usepackage{xunicode}
 \usepackage{xcolor,graphicx}
 \defaultfontfeatures{Mapping=tex-text}
 
+\usepackage{setspace}
+\usepackage[top=1in, bottom=1in, left=1.5in, right=1in]{geometry}
+
 % global styles
 
-\pagestyle{headings}
+\pagestyle{plain}
 
 \setmainfont[Ligatures=Common]{Garamond Premier Pro}
 \setsansfont[Ligatures=Common]{Gill Sans}
@@ -24,9 +27,21 @@
 
 \begin{document}
 
-\maketitle
+\input{title}
+
+% Committee Signature sheet (typed version)-originals turned in with Final Materials Copyright page (only if copyrighting)
 
 \tableofcontents
+
+% \listoftables
+
+\listoffigures
+
+% \doublespace
+
+\pagebreak
+\input{abstract}
+\pagebreak
 
 \chapter{Introduction}
 \label{ch:introduction}

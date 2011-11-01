@@ -15,6 +15,9 @@ else
 	xelatex -halt-on-error $(DOC) > /dev/null
 endif
 
+title: $(FIGS)
+	xelatex -halt-on-error title_dummy && open title_dummy.pdf
+
 kde: build
 	kpdf $(DOC).pdf
 

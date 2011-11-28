@@ -1,11 +1,9 @@
-The Metabolomics Analysis Workbench is designed for metabolomics analysis.
-PathCaseMAW database contains a fully hierarchically compartmentalized metabolic
-network for humans and mice \cite{pathcase-basic}. Full compartment hierarchy
-refers to the multi-tissue (e.g.  liver, adipose tissue, muscle, etc)
-environment as well as a complete biological compartment distinction (e.g.,
-liver-cell, liver-cytosol, liver-mitochondrion, etc.).
+The MAW app is split into two major components. The first is a pathway browser
+that adds tissue and compartment information to the individual pathways. The
+second is a touch-based implementation of the SMDA (Steady-State Metabolic
+Network Dynamics Analysis) tool.
 
-\section{Browsing Pathways}
+\section{Pathway Browser}
 
 The iPad application displays metabolic pathway graphs for all pathways for
 which PathCase provides a static layout. These graphs can be navigated by
@@ -16,6 +14,7 @@ panning and zooming.
 \input{maw/implementation}
 
 \section{SMDA}
+\label{sect:smda}
 
 \input{maw/smda_interface}
 

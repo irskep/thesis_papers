@@ -29,6 +29,9 @@
 
 \input{title}
 
+\setcounter{page}{1}
+\pagenumbering{roman}
+
 % Committee Signature sheet (typed version)-originals turned in with Final Materials Copyright page (only if copyrighting)
 
 \tableofcontents
@@ -40,16 +43,16 @@
 % \doublespace
 
 \pagebreak
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
 \input{abstract}
 \pagebreak
 
 \chapter{Introduction}
 \label{ch:introduction}
 \input{introduction}
-
-\chapter{Literature Survey}
-\label{ch:literature_survey}
-\input{literature_survey}
 
 \chapter{MAW}
 \label{ch:maw_smda}
@@ -58,6 +61,14 @@
 \chapter{KEGG}
 \label{ch:kegg}
 \input{kegg/main}
+
+\chapter{Related Work}
+\label{ch:related_work}
+\input{literature_survey}
+
+\chapter{Conclusion}
+\label{ch:conclusion}
+\input{conclusion}
 
 \nocite{*}
 \bibliographystyle{acm}

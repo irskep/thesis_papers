@@ -5,9 +5,9 @@ Network Dynamics Analysis) tool.
 
 \section{Pathway Browser}
 
-The iPad application displays metabolic pathway graphs for all pathways for
-which PathCase provides a static layout. These graphs can be navigated by
-panning and zooming.
+The MAW iPad application displays metabolic pathway graphs for all pathways for
+which the PathCase MAW database provides a static layout. These graphs can be
+navigated by panning and zooming.
 
 \input{maw/interface}
 
@@ -15,6 +15,25 @@ panning and zooming.
 
 \section{SMDA}
 \label{sect:smda}
+
+SMDA (Steady-State Metabolic Network Dynamics Analysis) is a tool to analyze
+metabolomics data in terms of the dynamic behavior of the metabolic network.
+Given a set of metabolite measurements, it identifies the metabolic mechanisms
+that lead to changes in the concentrations of given metabolites, and interprets
+the metabolic consequences of the observed changes in terms of physiological
+problems, nutritional deficiencies, or diseases.
+
+The input data consists of one or more pathways, zero or more transport
+processes, zero or more reactions, and measurements of the amounts of specific
+metabolites within the pathways. This input forms a \textbf{sub-network}.
+
+The output is a set of all possible scenarios of the sub-network based on the
+input measurements. In a scenario, each reaction is labeled as either active or
+inactive.
+
+The iPad version of this tool allows the user to complete both the input and
+the output step. Input is done through a table-based user interface. The results
+are shown as a series of graph views that can be paged through.
 
 \input{maw/smda_interface}
 

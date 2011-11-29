@@ -38,10 +38,10 @@ and zoomable fashion.
 The Pathways button causes a popover list of available pathways to be displayed.
 This popover is populated by \texttt{PCPathwayListTableController}, which
 transforms pathway model objects into a form understood by the built-in table
-view. When one of these pathway names is clicked, an event is sent back to
-the \texttt{PCPathwayNavController}, which loads the new pathway from the
-device's internal storage, builds a new \textt{PCGraphViewController}, and
-inserts it in the content area.
+view. When one of these pathway names is clicked, an event is sent back to the
+\texttt{PCPathwayNavController}, which loads the new pathway from the device's
+internal storage, builds a new \texttt{PCGraphViewController}, and inserts it in
+the content area.
 
 The graph view controller controls a \texttt{PCGraphView} which contains Core
 Animation layers that read the pathway model and render the nodes and edges with
@@ -58,11 +58,15 @@ can be updated whenever the user chooses via the user interface.
 
 Each web service corresponds roughly to one data type in the model, so those
 model objects contain methods to load their data from the corresponding web
-service. For example, the method \texttt{\[PCPathway loadDataFromServer\]}
+service. For example, the method \texttt{[PCPathway loadDataFromServer]}
 updates all pathway objects. However, this method relies on some data for
 tissues and metabolites to have been downloaded already, so the data update
 process uses mutexes and asynchronous network requests to ensure that the data
 is downloaded in the correct order while using parallelism as much as possible.
+
+These web service fetching methods convert the XML response of the web service
+into corresponding model objects (such as \texttt{SMDAPathway}) which are
+serialized to the device's internal storage.
 
 % \onecolumn
 

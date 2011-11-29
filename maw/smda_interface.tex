@@ -1,2 +1,67 @@
 \subsection{Interface}
 \label{sect:smda_interface}
+
+The ``Experimental SMDA Tool'' button on the home screen takes the user to a
+list of measurements. The app comes with two example result sets to help the
+user get accustomed to the interface.
+
+\subsubsection{Input}
+\label{sect:smda_interface_input}
+
+Tapping one of these measurement lists switches to the screen shown in figure
+\ref{fig:screenshot_smda_list}. There is one section on this screen for each
+type of input to the SMDA algorithm: pathway, transport process, reaction,
+pathway as reaction, and measurement.
+
+\begin{figure}[htb]
+    \center{
+        \includegraphics[width=3in]{maw/figures/screenshot_smda_list}}
+    \caption{\label{fig:screenshot_smda_list} List of measurements in SMDA}
+\end{figure}
+
+\begin{figure}[htb]
+    \center{
+        \includegraphics[width=3in]{maw/figures/screenshot_smda_add_reaction}}
+    \caption{\label{fig:smda_add_reaction} Adding a reaction in SMDA}
+\end{figure}
+
+\begin{figure}[htb]
+    \center{
+        \includegraphics[width=3in]{maw/figures/screenshot_smda_edit_measurement}}
+    \caption{\label{fig:smda_edit_measurement} Editing a measurement in SMDA}
+\end{figure}
+
+New input parameters can be added by tapping the ``Add'' row in any of the
+sections. Figure \ref{fig:smda_add_reaction} shows the screen for adding a new
+reaction. Tapping an existing row brings up the same screen, allowing the user
+to change their selection.
+
+Figure \ref{fig:smda_edit_measurement} shows a similar screen for editing
+measurements.
+
+\subsubsection{Output}
+\label{sect:smda_interface_output}
+
+The interface for browsing SMDA results is very similar to the one for looking
+at a normal pathway. There are two main differences. The first, shown in figure
+\ref{fig:smda_results}, is the bottom toolbar that provides buttons to move
+forward and backward in the list of scenarios.
+
+\begin{figure}[htb]
+    \center{
+        \includegraphics[width=3in]{maw/figures/screenshot_smda_results}}
+    \caption{\label{fig:smda_results} One scenario in an SMDA result set}
+\end{figure}
+
+The second difference, shown in figure \ref{fig:smda_results_highlight}, is the
+green highight shown behind edges coming out of a reaction if that reaction is
+in a different active/inactive state from the previously viewed scenario. In
+this example, ``Triose...'' was inactive in scenario 1 but active in scenario 2.
+Flipping between the two scenarios will keep this reaction highlighted.
+
+\begin{figure}[htb]
+    \center{
+        \includegraphics[width=3in]{maw/figures/screenshot_smda_results_highlight}}
+    \caption{\label{fig:smda_results_highlight} Zoomed view of a highlighted
+    reaction in an SMDA scenario}
+\end{figure}

@@ -1,2 +1,13 @@
 \subsection{Implementation}
 \label{sect:smda_implementation}
+
+Since SMDA uses the MAW data model, it shares all model classes, with a couple
+of additions. There is an \texttt{SMDASavedMeasurement} class for storing the
+user's selections. There is also a subclass of \texttt{PCGraphModel} called
+\texttt{SMDAResultGraphModel} which provides methods to build a model out of XML
+from the web service.
+
+The remaining classes manage the user interface. They are basic subclasses of
+Cocoa objects that implement standard design patterns for iOS applications to
+display the interface shown in the screenshots in section
+\ref{sect:smda_interface}.

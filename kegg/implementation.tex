@@ -68,33 +68,11 @@ These differences are summarized in figure
 \ref{fig:kegg_impl_web_service_differences}.
 
 \begin{figure}[hbt]
-    \textbf{KEGG}
-    \begin{itemize}
-        \item Some controller calls \texttt{[PC<WebService>Fetcher startFetch]}
-        \item Check for cached version of request URL
-        \item If not cached, make request and store result in cache
-        \item Parse XML into a simple nested data structure
-        \item Subclass reads XML and produces rows for pathway list, nodes for
-            graph view, etc.
-        \item When finished, subclass posts notification of completion which may
-            cause some controller to start a new web service request
-    \end{itemize}
-    \textbf{MAW}
-    \begin{itemize}
-        \item Application singleton calls \texttt{[PCSomeModel
-            loadDataFromServer]}
-        \item \texttt{PCSomeModel} builds an HTTP request object and puts it in
-            a global HTTP request queue
-        \item If requests succeeds, the attached closure is executed
-        \item The closure builds and serializeds data model objects
-        \item The closure may unlock a mutex
-        \item The application singleton may start a new request if it was
-            waiting for that mutex
-    \end{itemize}
+    \center{
+        \includegraphics[width=4.5in]{kegg/figures/web_services.pdf}}
     \caption{\label{fig:kegg_impl_web_service_differences} Side-by-side
-    comparision of the typical life cycle of a KEGG web service request and an
-    MAW web service request. A graphical diagram will replace this
-    placeholder.}
+    comparison of the typical life cycle of a KEGG web service request and an
+    MAW web service request.}
 \end{figure}
 
 This model of web services would not necessarily work better for the MAW app,

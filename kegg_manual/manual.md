@@ -10,7 +10,7 @@ database.
 
 If you are holding your iPad in landscape mode, the list of pathways is in the
 sidebar on the left side of the screen. If you are holding it in portrait mode,
-you can press the button in the upper left corner to see the sidebar.
+you can **press the button in the upper left corner** to see the sidebar.
 
 Tap a category to see the pathways within it. In this list of pathways, **bold**
 items have *frozen layouts*, with nodes and edges arranged by hand. Non-bold
@@ -49,3 +49,10 @@ neighbors.
 feature if the visualization is cluttered or otherwise difficult to read.
 Unfortunately, the positions you set are *not* saved when you leave the
 visualization for a pathway.
+
+Tap the **Organisms** button in the upper right to see a hierarchical list of
+organisms. The pathway visualization highlights only metabolites and reactions
+that correspond to one or more activated organisms.
+
+![TCA cycle with only "Eukaryotes &#x2192; Animals"
+activated](animals_only_graph.png)

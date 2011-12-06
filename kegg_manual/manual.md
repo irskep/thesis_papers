@@ -1,6 +1,6 @@
 Welcome to PathCase KEGG for iPad. Using this application, you can view
 metabolic pathways from [KEGG] stored in the PathCase database. Additional
-information about reactions is proved by the [ENZYME] enzyme nomenclature
+information about reactions is provided by the [ENZYME] enzyme nomenclature
 database.
 
 [KEGG]: http://www.kegg.com/
@@ -34,7 +34,7 @@ KEGG web site:
 
 ![KEGG web site for the TCA Cycle](kegg_web_site.png)
 
-<!-- sometimes vim's syntax highlighting is not so good -->
+<!-- % Sometimes vim's syntax highlighting is not so good. -->
 
 **Tap any node** to select it. That node and its immediate neighbors will be
 highlighted on the graph, and more information about it will appear in the

@@ -60,5 +60,5 @@ Tap the **Organisms** button in the upper right to see a hierarchical list of
 organisms. The pathway visualization highlights only metabolites and reactions
 that correspond to one or more activated organisms.
 
-![TCA cycle with only "Eukaryotes &#x2192; Animals"
+![TCA cycle with only "Eukaryotes &#x2192;<!--$\rightarrow$--> Animals"
 activated](animals_only_graph.png)

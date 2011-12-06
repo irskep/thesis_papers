@@ -9,3 +9,5 @@
 .DS_Store
 
 stevejohnson_thesis.pdf
+kegg_manual/build/
+*.lof

@@ -24,6 +24,10 @@ one:
 
 ![Visualization of the TCA Cycle](pathway.png)
 
+Here are the meanings of the different nodes and edges:
+
+![Node and edge types](node_legend.png)
+
 You can use standard one- and two-finger gestures to pan and zoom around this
 graph. Press the **Show KEGG Page** button to display the pathway's page on the
 KEGG web site:

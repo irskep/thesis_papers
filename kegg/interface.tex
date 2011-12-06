@@ -1,6 +1,14 @@
 \section{Interface}
 \label{sect:kegg_interface}
 
+
+\begin{figure}
+    \center{
+        \includegraphics[width=4in]{kegg/figures/master_detail}}
+    \caption{\label{fig:kegg_master_detail} Master-detail interface in landscape
+    and portrait orientations}
+\end{figure}
+
 \begin{figure}
     \center{
         \includegraphics[width=3in]{kegg/figures/screenshot_list}}
@@ -18,17 +26,22 @@
 The KEGG app divides the screen into a \textbf{master-detail interface}. The
 sidebar (master view) provides navigation functionality and metadata for the
 currently selected object. The detail view displays content chosen from the
-sidebar, such as documentation or a graph view.
+sidebar, such as documentation or a graph view. When the device is in the
+landscape orientation, the master view is shown to the left of the detail view.
+In portrait orientation, it is accessed via a button in the upper left corner of
+the screen. This interface is described visually in figure
+\ref{fig:kegg_master_detail}.
 
 The home screen of the KEGG app displays a list of pathway categories in the
-sidebar.. Selecting a category takes the user to a list of pathways. These lists
+sidebar. Selecting a category takes the user to a list of pathways. These lists
 are shown in figures \ref{fig:kegg_screenshot_pathway} and
 \ref{fig:kegg_screenshot_sublist}.  (Unlike the MAW app, the KEGG app can
 display pathways that do not have frozen layouts.)
 
 Selecting a pathway from the list opens the graph view of that pathway in the
 detail view. This graph view can be panned and zoomed by touch. The view for
-the TCA cycle is shown in figure \ref{fig:kegg_screenshot_pathway}.
+the TCA cycle is shown in figure \ref{fig:kegg_screenshot_pathway}. A labeled
+diagram of the same view is shown in figure \ref{fig:kegg_pathway_diagram}.
 
 \begin{figure}[hbt]
     \center{
@@ -37,11 +50,28 @@ the TCA cycle is shown in figure \ref{fig:kegg_screenshot_pathway}.
     the TCA cycle}
 \end{figure}
 
+\begin{figure}[hbt]
+    \center{
+        \includegraphics[width=3in]{kegg/figures/pathway_diagram}}
+    \caption{\label{fig:kegg_pathway_diagram} Parts of the KEGG pathway browsing
+    interface}
+\end{figure}
+
+\begin{figure}[hbt]
+    \center{
+        \includegraphics[width=2in]{kegg/figures/node_legend}}
+    \caption{\label{fig:kegg_node_legend} Meanings of KEGG pathway node shapes}
+\end{figure}
+
+As in MAW, rectangular nodes represent reactions and the rest of the nodes
+represent molecules. A key for the different node types is shown in figure
+\ref{fig:kegg_node_legend}.
+
 The graph view differs from the MAW app's graph view in several ways. The first
 is the presence of the sidebar, which displays information about the user's
 current selection. If no node is selected, it displays a button to show the KEGG
 database web page for the pathway. (One example page is shown in figure
-\ref{fig:kegg_screenshot_kegg_web_site}.
+\ref{fig:kegg_screenshot_kegg_web_site}.)
 
 \begin{figure}[hbt]
     \center{
@@ -55,7 +85,7 @@ longer description of the node.  This differs from the MAW app behavior of using
 a popover to display the longer description. When a node is selected, any other
 node that is not connected to it by one hop is made transparent to make the
 node's connections easier to see.  Figure
-\ref{fig:kegg_screnshot_selection_no_info} shows an example of this behavior.
+\ref{fig:kegg_screenshot_selection_no_info} shows an example of this behavior.
 
 \begin{figure}[hbt]
     \center{

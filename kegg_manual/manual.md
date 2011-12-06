@@ -24,6 +24,8 @@ one:
 
 ![Visualization of the TCA Cycle](pathway.png)
 
+<!-- \pagebreak -->
+
 Here are the meanings of the different nodes and edges:
 
 ![Node and edge types](node_legend.png)

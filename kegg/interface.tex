@@ -13,17 +13,17 @@
     \center{
         \includegraphics[width=3in]{kegg/figures/screenshot_list}}
     \caption{\label{fig:kegg_screenshot_list} List of pathway categories on
-    the main screen of the KEGG app}
+    the main screen of \keggapp}
 \end{figure}
 
 \begin{figure}
     \center{
         \includegraphics[width=3in]{kegg/figures/screenshot_sublist}}
     \caption{\label{fig:kegg_screenshot_sublist} List of pathways in the
-    ``Carbohydrate Metabolism'' category of the KEGG app}
+    ``Carbohydrate Metabolism'' category of \keggapp}
 \end{figure}
 
-The KEGG app divides the screen into a \textbf{master-detail interface}. The
+\keggapp divides the screen into a \textbf{master-detail interface}. The
 sidebar (master view) provides navigation functionality and metadata for the
 currently selected object. The detail view displays content chosen from the
 sidebar, such as documentation or a graph view. When the device is in the
@@ -32,10 +32,10 @@ In portrait orientation, it is accessed via a button in the upper left corner of
 the screen. This interface is described visually in figure
 \ref{fig:kegg_master_detail}.
 
-The home screen of the KEGG app displays a list of pathway categories in the
+The home screen of \keggapp displays a list of pathway categories in the
 sidebar. Selecting a category takes the user to a list of pathways. These lists
 are shown in figures \ref{fig:kegg_screenshot_pathway} and
-\ref{fig:kegg_screenshot_sublist}.  (Unlike the MAW app, the KEGG app can
+\ref{fig:kegg_screenshot_sublist}.  (Unlike \mawapp, \keggapp can
 display pathways that do not have frozen layouts.)
 
 Selecting a pathway from the list opens the graph view of that pathway in the
@@ -67,7 +67,7 @@ As in MAW, rectangular nodes represent reactions and the rest of the nodes
 represent molecules. A key for the different node types is shown in figure
 \ref{fig:kegg_node_legend}.
 
-The graph view differs from the MAW app's graph view in several ways. The first
+The graph view differs from \mawapp's graph view in several ways. The first
 is the presence of the sidebar, which displays information about the user's
 current selection. If no node is selected, it displays a button to show the KEGG
 database web page for the pathway. (One example page is shown in figure
@@ -81,7 +81,7 @@ database web page for the pathway. (One example page is shown in figure
 \end{figure}
 
 If the user taps a node, the node is ``selected,'' and the sidebar shows a
-longer description of the node.  This differs from the MAW app behavior of using
+longer description of the node.  This differs from \mawapp's behavior of using
 a popover to display the longer description. When a node is selected, any other
 node that is not connected to it by one hop is made transparent to make the
 node's connections easier to see.  Figure
@@ -91,7 +91,7 @@ node's connections easier to see.  Figure
     \center{
         \includegraphics[width=3in]{kegg/figures/screenshot_selection_no_info}}
     \caption{\label{fig:kegg_screenshot_selection_no_info} Sidebar showing
-    long description of a node in the KEGG app}
+    long description of a node in \keggapp}
 \end{figure}
 
 The second major difference is the addition of the ``Organisms'' button in the
@@ -119,9 +119,9 @@ selection is shown in figure \ref{fig:kegg_screenshot_animals_only_graph}.
 
 \subsection{ENZYME Database Information}
 
-In addition to displaying a node's long description from PathCase KEGG, the KEGG
-iPad app uses data from the ENZYME enzyme nomenclature database to show more
-information for reactions for which EC numbers are available.
+In addition to displaying a node's long description from PathCase KEGG, \keggapp
+uses data from the ENZYME enzyme nomenclature database to show more information
+for reactions for which EC numbers are available.
 
 ENZYME's data comes from the recommendations of the Nomenclature Committee of
 the International Union of Biochemistry and Molecular Biology (IUBMB)

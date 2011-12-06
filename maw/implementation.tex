@@ -1,7 +1,7 @@
 \subsection{Implementation}
 \label{sect:maw_implementation}
 
-The MAW application must track a few different categories of data. The most
+\mawapp must track a few different categories of data. The most
 basic is a representation of the data model of the online PathCase MAW database,
 derived from the web service interface to the database. Examples include
 pathways, metabolites, compartments, and processes. In Model-View-Controller
@@ -10,9 +10,9 @@ These model objects are rendered in \textbf{views}, such as the main pathway
 graph view.  These views are managed by \textbf{controllers} which manipulate
 the models and configure the views.
 
-The relationships between some of the major classes of the PathCase MAW app are
-represented in three figures. Figure \ref{fig:maw_components} shows references
-between instances. Figure \ref{fig:maw_controlflow} shows the flow of control in
+The relationships between some of the major classes of \mawapp are represented
+in three figures. Figure \ref{fig:maw_components} shows references between
+instances. Figure \ref{fig:maw_controlflow} shows the flow of control in
 response to events from the event loop. Figure \ref{fig:maw_dataflow} shows the
 flow of data between the methods involved in loading and displaying a graph.
 
@@ -56,8 +56,9 @@ over by touch.
 \label{sect:maw_web_services}
 
 Although the data is accessed via web services, it is needed so often and is
-small enough that the entire database is contained within the app. The database
-can be updated whenever the user chooses via the user interface.
+small enough that the entire database is distributed with the application
+package in the form of serialized objects. The database can be updated whenever
+the user chooses via the user interface.
 
 Each web service corresponds roughly to one data type in the model, so those
 model objects contain methods to load their data from the corresponding web

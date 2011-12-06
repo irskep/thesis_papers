@@ -11,7 +11,7 @@ the iPad development stack in 2011 with the release of iOS 5. The most important
 change was ``automatic reference counting,'' which moves memory management
 responsibility from the programmer to the compiler. 
 
-\keggapp's architecture consists of a few well-defined components:
+\keggappp architecture consists of a few well-defined components:
 
 \begin{itemize}
 
@@ -52,7 +52,7 @@ service, named \texttt{PC<WebService>Fetcher}.
 
 The third is how dependencies between requests are managed. \mawapp uses
 mutexes to force the data update thread to wait before starting a request that
-depends on a previous request. \keggapp\s web service classes fire events to
+depends on a previous request. \keggappp web service classes fire events to
 a central notification system when they have completed, and controller objects
 check to see if any new web services should be invoked due to dependencies being
 made available.

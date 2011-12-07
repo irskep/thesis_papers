@@ -1,0 +1,72 @@
+\section{Objective-C, iOS, and Cocoa}
+\label{sect:objc}
+
+iPathCase is implemented using the Objective-C programming language and the
+Cocoa application framework runnong on the iOS operating system. This section
+describes each of these components and how they relate to iPathCase.
+
+\subsection{The Objective-C Programming Language}
+\label{sect:objc_objc}
+
+\begin{quote}
+
+    The Objective-C language is a simple computer language designed to enable
+    sophisticated object-oriented programming. Objective-C is defined as a small
+    but powerful set of extensions to the standard ANSI C language. Its
+    additions to C are mostly based on Smalltalk, one of the first
+    object-oriented programming languages. Objective-C is designed to give C
+    full object-oriented programming capabilities, and to do so in a simple and
+    straightforward way.
+
+    \raggedleft \em The Objective-C Programming Language \cite{objc:manual}
+
+\end{quote}
+
+Objective-C is similar in some ways to other object-oriented languages like Java
+and C++ in that it has classes, inheritance, polymorphism, and interfaces
+(called protocols in Objective-C). Most of its differences arise from its
+Smalltalk origins and its intentional compatibility with regular C code.
+
+Objective-C is a dynamic programming language: types and methods are determined
+(and changed) at runtime. Its dynamic behavior is handled by the \emph{runtime
+library}, which is a C library that operates on the language's underlying
+primitives to achive dynamic behavior. These primitives, including classes and
+objects, are represented as C structs, unions, arrays, etc. under the hood,
+allowing programmers to mix performance-sensitive low-level code with readable,
+high-level code.
+
+\subsubsection{Messages}
+\label{sect:objc_messages}
+
+Rather than accessing an object's methods by function
+calls bound at compile time, Objective-C uses \emph{message passing}, in which
+the target of a message is determined at runtime.
+
+Message syntax differs from traditional function syntax in that each parameter
+is both position-dependent (like C) \emph{and named}. These are all valid
+messages:
+
+\begin{verbatim}
+// Definitions in Rectangle class
+- (float)size;
+- (void)setOriginX:(float)x y:(float)y;
+
+// Message without arguments
+float width = [myRectangle width];
+// Message with arguments, one derived from a C function
+[myRectangle setOriginWithX:sinf(10.0f) y:20.0f];
+\end{verbatim}
+
+However, this would not be valid:
+
+\begin{verbatim}
+[myRectangle y:20.0f setOriginWithX:10.0f];
+\end{verbatim}
+
+Other than these important differences, Objective-C may be understood to behave
+like other object-oriented languages such as C++ with respect to its type
+system, albeit with different syntax and terminology.
+
+\subsubsection{Memory Management}
+\label{sect:objc_memory}
+

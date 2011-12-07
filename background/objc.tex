@@ -1,12 +1,5 @@
-\section{Objective-C, iOS, and Cocoa}
+\section{Objective-C}
 \label{sect:objc}
-
-iPathCase is implemented using the Objective-C programming language and the
-Cocoa application framework runnong on the iOS operating system. This section
-describes each of these components and how they relate to iPathCase.
-
-\subsection{The Objective-C Programming Language}
-\label{sect:objc_objc}
 
 \begin{quote}
 
@@ -35,38 +28,127 @@ objects, are represented as C structs, unions, arrays, etc. under the hood,
 allowing programmers to mix performance-sensitive low-level code with readable,
 high-level code.
 
-\subsubsection{Messages}
-\label{sect:objc_messages}
+\subsubsection{Objects, and Messages}
+\label{sect:objc_objects}
 
-Rather than accessing an object's methods by function
-calls bound at compile time, Objective-C uses \emph{message passing}, in which
-the target of a message is determined at runtime.
+An Objective-C class is defined in a \emph{header file} and an
+\emph{implementation file}. Like C, the header file contains constants, class
+attributes, and function and method prototypes. The implementation file contains
+their implementations, as well as any private information. For example,
+\texttt{Rectangle.h} might look like this:
 
-Message syntax differs from traditional function syntax in that each parameter
-is both position-dependent (like C) \emph{and named}. These are all valid
-messages:
+\begin{objc}
+@interface Rectangle : NSObject {
+    @private
+    float width, height;
+    float x, y;
+}
+- (float)width;
+- (float)height;
+- (void)setOriginX:(float)newX y:(float)newY;
+- (void)setSizeWidth:(float)newWidth height:(float)newHeight;
+@end
+\end{objc}
 
-\begin{verbatim}
-// Definitions in Rectangle class
-- (float)size;
-- (void)setOriginX:(float)x y:(float)y;
+\texttt{width}, \texttt{height}, \texttt{x}, and \texttt{y} are instance
+variables. They can be any C data type, or pointers to Objective-C objects. They
+are private by default, accessible via getters and setters. There is syntactical
+sugar to define the instance variable, getter, and setter in a single line:
 
+\begin{objc}
+@interface Rectangle : NSObject {
+    // ...
+}
+@property (nonatomic, assign) float width;
+// ...
+@end
+\end{objc}
+
+The companion file to \texttt{Rectangle.h}, \texttt{Rectangle.m}, would contain
+implementations of the functions in \texttt{Rectangle.h}, as well as any private
+functions and information.
+
+Rather than accessing an object's methods by function calls bound at compile
+time, Objective-C uses \emph{message passing}, in which the target of a message
+is determined at runtime. Message syntax differs from traditional function
+syntax in that each parameter is both position-dependent (like C) and has a name
+that the programmer must use when passing a message. These are all valid
+messages to the \texttt{Rectangle} class defined above:
+
+\begin{objc}
 // Message without arguments
 float width = [myRectangle width];
 // Message with arguments, one derived from a C function
 [myRectangle setOriginWithX:sinf(10.0f) y:20.0f];
-\end{verbatim}
+\end{objc}
 
 However, this would not be valid:
 
-\begin{verbatim}
+\begin{objc}
 [myRectangle y:20.0f setOriginWithX:10.0f];
-\end{verbatim}
+\end{objc}
 
 Other than these important differences, Objective-C may be understood to behave
 like other object-oriented languages such as C++ with respect to its type
 system, albeit with different syntax and terminology.
 
+\subsubsection{Blocks}
+\label{sect:objc_blocks}
+
+Blocks are a kind of anonymous function. They are similar to C functions, but
+they can also contain references to stack and heap memory outside their scope,
+and are managed in memory like Objective-C objects \cite{objc:blocks}. They are often used for
+event callbacks.
+
+Here is a simple usage of blocks:
+
+\begin{objc}
+int x = 123;
+ 
+void (^printXAndY)(int) = ^(int y) {
+    printf("%d %d\n", x, y);
+};
+
+printXAndY(456); // prints: 123 456
+\end{objc}
+
+\subsubsection{Namespaces}
+\label{sect:objc_namespaces}
+
+Objective-C does not have multiple namespaces. All public objects, functions,
+and methods share the global namespace, just like in C. To avoid collisions, the
+Objective-C convention is to use two-letter prefixes on all classes.
+
+The Cocoa base classes and data structures use the \texttt{NS} prefix after
+Cocoa's NextSTEP roots, e.g. \texttt{NSObject} and \texttt{NSString}. iOS user
+interface classes use \texttt{UI}. Each framework chooses a (supposedly) unique
+prefix.
+
 \subsubsection{Memory Management}
 \label{sect:objc_memory}
 
+As a language meant to interact closely with C, early versions of Objective-C
+offered only a primitive form of memory management: manual reference counting.
+Under this system, each object has a \emph{reference count}. An object's
+reference count is incremented (\emph{retained}) when a block of code (or
+another object) takes ownership of it, and decremented (\emph{released}) when
+that block of code or object no longer needs it. Each object releases all of its
+instance variables when its retain count becomes zero.
+
+An object $A$ may be \emph{autoreleased} if the caller $B$ has \emph{created} an
+object but does not wish to \emph{own} it. For example, $B$ may be a getter, and
+$B$'s caller will immediately take ownership of the object. An autoreleased
+object's reference count is incremented, but is put in a global set of
+autoreleased objects to be released control is passed back to the event loop or
+the program clears the set manually.
+
+These rules have confused programmers of all skill levels. To decrease program
+complexity, two new forms of memory management have been added to the language
+since its creation. One is garbage collection, not available on iOS, and the
+other is \emph{automatic reference counting}.
+
+Automatic reference counting (ARC) is similar to garbage collection in that most
+of the burden of tracking object ownership is lifted from the programmer. But
+ARC, unlike most garbage collection schemes, is a compile-time step; the
+compiler analyzes the code and inserts \texttt{retain}, \texttt{release}, and
+\texttt{autorelease} statements automatically.

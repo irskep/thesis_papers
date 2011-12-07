@@ -15,7 +15,7 @@ else
 	xelatex -halt-on-error $(DOC) > /dev/null
 endif
 
-build_simple: $(FIGS)
+once: $(FIGS)
 	xelatex -halt-on-error $(DOC)
 
 title: $(FIGS)

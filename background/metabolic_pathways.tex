@@ -2,82 +2,62 @@
 \label{sect:metabolic_pathways}
 
 \begin{verse}
-    The information in this section comes from ``Artificial Intelligence and
-    Molecular Biology'' by Lawrence E. Hunter \cite{mb-for-cs}.
+    This section is from ``Artificial Intelligence and Molecular Biology'' by
+    Lawrence E. Hunter \cite{mb-for-cs}.
 \end{verse}
 
-\textbf{This section still needs to be paraphrased. I have temporarily pasted
-section 5.4 from the book here.}
-
-The translation of genes into proteins, crucial as it is, is only a small
-portion of the biochemical activity in a cell. Proteins do most of the work of
-managing the flow of energy, synthesizing, degrading and transporting
-materials, sending and receiving signals, exerting forces on the world, and
-providing structural support. Systems of interacting proteins form the basis for
-nearly every process of living things, from moving around and digesting food to
-thinking and reproducing. Somewhat surprisingly, a large proportion of the
-chemical processes that underlie all of these activities are shared across a
-very wide range of organisms. These shared processes are collectively referred
-to as intermediary metabolism. These include the catabolic processes for
+Systems of interacting proteins form the basis for nearly every process of
+living things, from moving around and digesting food to thinking and
+reproducing. Somewhat surprisingly, a large proportion of the chemical processes
+that underlie all of these activities are shared across a very wide range of
+organisms. These shared processes are collectively referred to as
+\emph{intermediary metabolism}. These include the \emph{catabolic} processes for
 breaking down proteins, fats and carbohydrates (such as those found in food) and
-the anabolic processes for building new materials. Similar collections of
-reactions that are more specialized to particular organisms are called secondary
-metabolism. The substances that these reactions produce and consume are called
-metabolites.
+the \emph{anabolic} processes for building new materials. Similar collections of
+reactions that are more specialized to particular organisms are called
+\emph{secondary metabolism}. The substances that these reactions produce and
+consume are called \emph{metabolites}.
 
-The biochemical processes in intermediary metabolism are almost all catalyzed
-reactions. That is, these reactions would barely take place at all at normal
-temperatures and pressures; they require special compounds that facilitate the
-reaction — these compounds are called catalysts or enzymes. (It is only
-partially in jest that many biochemistry courses open with the professor saying
-that the reactions that take place in living systems are ones you were taught
-were impossible in organic chemistry.) Catalysts are usually named after the
-reaction they facilitate, usually with the added suffix -ase. For example,
-alcohol dehydrogenase is the enzyme that turns ethyl alcohol into acetaldehyde
-by removing two hydrogen atoms. Common classes of enzymes include
-dehydrogenases, synthetases, proteases (for breaking down proteins),
-decarboxylases (removing carbon atoms), transferases (moving a chemical group
-from one place to another), kinases, phosphatases (adding or removing phosphate
-groups, respectively) and so on. The materials transformed by catalysts are
-called substrates. Unlike the substrates, catalysts themselves are not changed
-by the reactions they participate in. A final point to note about enzymatic
-reactions is that in many cases the reactions can proceed in either direction.
-That is, and enzyme that transforms substance A into substance B can often also
-facilitate the transformation of B into A. The direction of the transformation
-depends on the concentrations of the substrates and on the energetics of the
-reaction (see Mavrovouniotis’ chapter in this volume for further discussion of
-this topic).
+The biochemical processes in intermediary metabolism are almost all
+\emph{catalyzed reactions}. That is, these reactions would barely take place at
+all at normal temperatures and pressures; they require special compounds that
+facilitate the reaction --- these compounds are called \emph{catalysts} or
+\emph{enzymes}. (It is only partially in jest that many biochemistry courses
+open with the professor saying that the reactions that take place in living
+systems are ones you were taught were impossible in organic chemistry.)
+Catalysts are usually named after the reaction they facilitate, usually with the
+added suffix \emph{-ase}. For example, alcohol dehydrogenase is the enzyme that
+turns ethyl alcohol into acetaldehyde by removing two hydrogen atoms. Common
+classes of enzymes include dehydrogenases, synthetases, proteases (for breaking
+down proteins), decarboxylases (removing carbon atoms), transferases (moving a
+chemical group from one place to another), kinases, phosphatases (adding or
+removing phosphate groups, respectively) and so on. The materials transformed by
+catalysts are called \emph{substrates}. Unlike the substrates, catalysts
+themselves are not changed by the reactions they participate in. A final point
+to note about enzymatic reactions is that in many cases the reactions can
+proceed in either direction. That is, and enzyme that transforms substance A
+into substance B can often also facilitate the transformation of B into A. The
+direction of the transformation depends on the concentrations of the substrates
+and on the energetics of the reaction.
 
 Even the basic transformations of intermediary metabolism can involve dozens or
 hundreds of catalyzed reactions. These combinations of reactions, which
 accomplish tasks like turning foods into useable energy or compounds are called
-metabolic pathways. Because of the many steps in these pathways and the
+metabolic \emph{pathways}. Because of the many steps in these pathways and the
 widespread presence of direct and indirect feedback loops, they can exhibit many
 counterintuitive behaviors. Also, all of these chemical reactions are going on
-in parallel. Mavrovouniotis’s chapter in this volume describes an efficient
-system for making inferences about these complex systems.
+in parallel.
 
 In addition to the feedback loops among the substrates in the pathways, the
 presence or absence of substrates can affect the behavior of the enzymes
-themselves, through what is called allosteric regulation. These interactions
-occur when a substance binds to an enzyme someplace other than its usual active
-site (the atoms in the molecule that have the enzymatic effect). Binding at
-this other site changes the shape of the enzyme, thereby changing its activity.
-Another method of controlling enzymes is called competitive inhibition. In
-this form of regulation, substance other than the usual substrate of the enzyme
-binds to the active site of the enzyme, preventing it from having an effect on
-its substrate.
+themselves, through what is called \emph{allosteric} regulation. These
+interactions occur when a substance binds to an enzyme someplace other than its
+usual active site (the atoms in the molecule that have the enzymatic effect).
+Binding at this other site changes the shape of the enzyme, thereby changing its
+activity. Another method of controlling enzymes is called \emph{competitive
+inhibition}. In this form of regulation, substance other than the usual
+substrate of the enzyme binds to the active site of the enzyme, preventing it
+from having an effect on its substrate.
 
-These are the basic mechanisms underlying eucaryotic cells (and much of this
-applies to bacterial and archaeal ones as well). Of course, each particular
-activity of a living system, from the capture of energy to immune response, has
-its own complex network of biochemical reactions that provides the mechanism
-underlying the function. Some of these mechanisms, such as the secondary
-messenger system involving cyclic adenosine monophosphate (cAMP) are widely
-shared by many different systems. Others are exquisitely specialized for a
-particular task in a single species: my favorite example of this is the evidence
-that perfect pitch in humans (being able to identify musical notes absolutely,
-rather than relative to each other) is mediated by a single protein. The
-functioning of these biochemical networks is being unravelled at an ever
-increasing rate, and the need for sophisticated methods to analyze relevant data
-and build suitable models is growing rapidly.
+These are the basic mechanisms underlying eucaryotic cells, and much of this
+applies to bacterial and archaeal ones as well.

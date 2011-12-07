@@ -2,7 +2,7 @@
 
 % packages
 
-\usepackage[colorlinks, breaklinks, pdftitle={PathCase for iPad},pdfauthor={Johnson, Stephen}]{hyperref}
+\usepackage[colorlinks, breaklinks, pdftitle={iPathCase},pdfauthor={Johnson, Stephen}]{hyperref}
 \usepackage[usenames]{color}
 \usepackage{xltxtra}
 \usepackage{xunicode}
@@ -22,17 +22,17 @@
 
 % title
 
-\title{PathCase for iPad}
+\title{iPathCase}
 \author{Steve Johnson}
 
 \begin{document}
 
 % custom commands
 
-\newcommand{\mawapp}{iPathCase-MAW }
-\newcommand{\mawappp}{iPathCase-MAW's }
-\newcommand{\keggapp}{iPathCase-KEGG }
-\newcommand{\keggappp}{iPathCase-KEGG's }
+\newcommand{\mawapp}{ iPathCase-MAW }
+\newcommand{\mawappp}{ iPathCase-MAW's }
+\newcommand{\keggapp}{ iPathCase-KEGG }
+\newcommand{\keggappp}{ iPathCase-KEGG's }
 
 \input{title}
 
@@ -57,13 +57,13 @@
 \input{abstract}
 \pagebreak
 
-\chapter{Introduction}
-\label{ch:introduction}
-\input{introduction}
-
 \chapter{Background}
 \label{ch:background}
 \input{background/main}
+
+\chapter{Introduction}
+\label{ch:introduction}
+\input{introduction}
 
 \chapter{MAW}
 \label{ch:maw_smda}
@@ -83,7 +83,7 @@
 
 \appendix
 
-\chapter{PathCase KEGG for iPad User Manual}
+\chapter{\keggapp User Manual}
 \label{ch:kegg_manual}
 \input{kegg_manual/manual.tex}
 

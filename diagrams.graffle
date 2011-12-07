@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2011-12-06 20:27:41 +0000</string>
+	<string>2011-12-07 21:27:37 +0000</string>
 	<key>Modifier</key>
 	<string>Stephen Johnson</string>
 	<key>NotesVisible</key>
@@ -120,9 +120,75 @@
 			<key>ColumnSpacing</key>
 			<real>36</real>
 			<key>DisplayScale</key>
-			<string>1 0/72 in = 1 0/72 in</string>
+			<string>1 0/72 in = 1.0000 in</string>
 			<key>GraphicsList</key>
 			<array>
+				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>Head</key>
+					<dict>
+						<key>ID</key>
+						<integer>24</integer>
+					</dict>
+					<key>ID</key>
+					<integer>37</integer>
+					<key>Points</key>
+					<array>
+						<string>{370, 56.5}</string>
+						<string>{370, 90.5}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>LineType</key>
+							<integer>1</integer>
+							<key>TailArrow</key>
+							<string>0</string>
+						</dict>
+					</dict>
+					<key>Tail</key>
+					<dict>
+						<key>ID</key>
+						<integer>36</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{347.75, 25}, {44.5, 31}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>36</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>CornerRadius</key>
+							<real>9</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf230
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Button}</string>
+					</dict>
+				</dict>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
@@ -201,8 +267,8 @@
 					<integer>33</integer>
 					<key>Points</key>
 					<array>
-						<string>{469.06479, 165.28773}</string>
-						<string>{424.40891, 196.71225}</string>
+						<string>{469.06479, 165.28775}</string>
+						<string>{424.40891, 196.71223}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -252,7 +318,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs20 \cf0 Master view (sidebar)}</string>
+\f0\fs20 \cf0 Master view popover}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -292,7 +358,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs20 \cf0 Sidebar\
+\f0\fs20 \cf0 Master view\
 contents}</string>
 							</dict>
 						</dict>
@@ -667,7 +733,7 @@ contents}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs20 \cf0 Sidebar\
+\f0\fs20 \cf0 Master view\
 contents}</string>
 					</dict>
 				</dict>
@@ -729,7 +795,7 @@ contents}</string>
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {934, 743}}</string>
+				<string>{{0, 0}, {576, 733}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -751,7 +817,7 @@ contents}</string>
 			<key>CanvasOrigin</key>
 			<string>{0, 0}</string>
 			<key>CanvasSize</key>
-			<string>{934, 743}</string>
+			<string>{576, 733}</string>
 			<key>ColumnAlign</key>
 			<integer>1</integer>
 			<key>ColumnSpacing</key>
@@ -844,8 +910,8 @@ contents}</string>
 					<integer>0</integer>
 					<key>Points</key>
 					<array>
-						<string>{407.15796, 213.29652}</string>
-						<string>{356.28165, 250.76762}</string>
+						<string>{407.15213, 213.29646}</string>
+						<string>{356.26685, 250.76532}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1095,8 +1161,8 @@ contents}</string>
 					<integer>0</integer>
 					<key>Points</key>
 					<array>
-						<string>{246.05345, 237.15878}</string>
-						<string>{235.47534, 201.47942}</string>
+						<string>{246.05408, 237.15858}</string>
+						<string>{235.47755, 201.47939}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1400,8 +1466,8 @@ contents}</string>
 					<integer>1</integer>
 					<key>Points</key>
 					<array>
-						<string>{396.50089, 192.89206}</string>
-						<string>{257.49911, 184.63806}</string>
+						<string>{396.50089, 192.89117}</string>
+						<string>{257.49911, 184.63376}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1435,8 +1501,8 @@ contents}</string>
 					<integer>1</integer>
 					<key>Points</key>
 					<array>
-						<string>{125.99486, 87.5}</string>
-						<string>{125.99046, 108.50064}</string>
+						<string>{125.51743, 87.499901}</string>
+						<string>{125.10378, 108.50045}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1547,8 +1613,8 @@ contents}</string>
 					<integer>1</integer>
 					<key>Points</key>
 					<array>
-						<string>{264.49686, 81.5}</string>
-						<string>{264.49231, 108.5}</string>
+						<string>{264.49973, 81.5}</string>
+						<string>{264.49927, 108.5}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1735,7 +1801,7 @@ contents}</string>
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -1789,7 +1855,7 @@ contents}</string>
 			<key>UniqueID</key>
 			<integer>2</integer>
 			<key>VPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>ActiveLayerIndex</key>
@@ -3754,7 +3820,7 @@ Name}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>2</integer>
+		<integer>0</integer>
 		<key>ExpandedCanvases</key>
 		<array>
 			<dict>

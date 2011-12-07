@@ -135,12 +135,13 @@ another object) takes ownership of it, and decremented (\emph{released}) when
 that block of code or object no longer needs it. Each object releases all of its
 instance variables when its retain count becomes zero.
 
-An object $A$ may be \emph{autoreleased} if the caller $B$ has \emph{created} an
-object but does not wish to \emph{own} it. For example, $B$ may be a getter, and
-$B$'s caller will immediately take ownership of the object. An autoreleased
-object's reference count is incremented, but is put in a global set of
-autoreleased objects to be released control is passed back to the event loop or
-the program clears the set manually.
+An object $A$ may be \emph{autoreleased} if the function $X$ \emph{created} the
+object but does not wish to \emph{own} it. For example, $X$ may be a getter, and
+$X$'s caller will immediately take ownership of the object by calling
+\texttt{retain} on $A$. To get around this problem of temporary ownership, an
+autoreleased object's reference count is incremented, but the object is put in a
+global set of autoreleased objects to be released (``draining the autorelease
+pool'') at some convenient point in the future.
 
 These rules have confused programmers of all skill levels. To decrease program
 complexity, two new forms of memory management have been added to the language

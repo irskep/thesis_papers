@@ -1,2 +1,60 @@
 \section{Steady-State Metabolic Network Dynamics Analysis}
 \label{sect:smda}
+
+SMDA is a computational metabolomics tool that captures a metabolic network and
+biochemical principles in a metabolic network database. Given a set of metabolic
+observations, it locates all possible activation/inactivation scenarios of the
+reactions, based on the biochemical rules.
+
+\subsection{Terminology}
+\label{sect:smda_terminology}
+
+The metabolic network is a connected graph $G(V,E)$ where the vertex set $V$
+consists of metabolite pools and reactions, and the edge set $E$ consists of
+directed edges from a vertex $u$ to vertex $v$ if (i) $u$ is a metabolite pool
+that plays the role of substrate or regulator of that reaction, or (ii) $u$ is a
+reaction and $v$ is a product of that reaction. The algorithm makes use of many
+biochemistry principles such as \emph{Substrate}, \emph{Availability},
+\emph{Product}, \emph{Inhibition}, \emph{Committed Steps}, etc. See Cakmak et
+al. for details \ref{???}.
+
+There are five discrete states a metabolite “pool” can be in: \emph{Unknown},
+\emph{Unavailable}, \emph{Available}, \emph{Accumulated}, and \emph{Severely
+Accumulated}. If a metabolite pool is not observed (i.e., not measured), it is
+labeled as \emph{Unknown}; otherwise the algorithm compares the user-provided
+observation with predefined metabolite level thresholds (originally either
+obtained from HMDB3 and stored in the SMDA database, or decided manually). Let
+$T_{AVAIL} (m)$, $T_{ACC} (m)$, and $T_{SAC} (m)$, $T_{AVAIL} (m) < T_{ACC} (m)
+< T_{SAC} (m)$, be three metabolite level thresholds for metabolite $m$. Also
+let the observed value for metabolite $m$ be $Obs(m)$. If $Obs(m) < T_{AVAIL}
+(m)$ then we mark the metabolite pool m as \emph{Unavailable}; if $T_{AVAIL} (m)
+\leq Obs(m) < T_{ACC}(m)$ then we mark $m$ as \emph{Available}; if $T_{ACC} (m)
+\leq Obs(m) < T_{SAC} (m)$ then we mark $m$ as \emph{Accumulated}; and, finally,
+if $T_{SAC}(m) \leq Obs(m)$ then we mark $m$ as \emph{Severely Accumulated}.
+
+There are three discrete states for a reaction, namely, \emph{Unknown},
+\emph{Active} and \emph{Inactive}. Initially, all reactions are labeled as
+\emph{Unknown}.  Each reaction has a set of conditions for it to be
+\emph{Active}. For instance, for reaction $r$ to be \emph{Active}, substrate $s$
+has to be labeled as \emph{Available}, and product $p$ has to be labeled as
+\emph{Available} or \emph{Accumulated}.
+
+A basic assumption of the SMDA algorithm is that the metabolic profile
+(observations) are obtained when the organism is in a steady state. That is, for
+a time interval $T$, (i) the production rate of each metabolite pool in the
+network is equal to its consumption rate, and (ii) the metabolite pool labels
+stay constant. This assumption corresponds to the homoeostasis of the organism.
+
+The SMDA algorithm makes use of two main concepts: \emph{Activation/Inactivation
+Graph} ($G_{AI}$) and $G_{AI}$ Group. A $G_{AI}$ is a connected sub-graph of the
+metabolic sub-network, where (i) each metabolite pool is assigned a label other
+than \emph{Unknown} (\emph{Unavailable}, \emph{Available}, \emph{Accumulated},
+or \emph{Severely Accumulated}) and (ii) each reaction is assigned a label other
+than \emph{Unknown} (\emph{Active} or \emph{Inactive}). A $G_{AI}$ group is a set
+of $G_{AI}$s, where (a) all $G_{AI}$s share the same set of reactions and metabolite
+pools, and, (iii) any two $G_{AI}$‘s of the $G_{AI}$ group differ by at least one
+metabolite pool label assignment.  Put another way, a $G_{AI}$ group represents all
+possible activation/inactivation scenarios within a selected sub-graph of the
+query network. An alternative output to $G_{AI}$ graphs is flow-graphs where a
+flow-graph is a $G_{AI}$ graph without metabolite pool labels, and a single
+flow-graph captures multiple $G_{AI}$ graphs.

@@ -101,12 +101,12 @@ rest of the data model.
 \subsection{Reading the ENZYME Database}
 \label{sect:kegg_impl_enzyme}
 
-The ENZYME database is provided in a flat file format \ref{enzyme:enzuser}. This
+The ENZYME database is provided in a flat file format \cite{enzyme:enzuser}. This
 format is not acceptable for random access behavior. To get around this issue, a
 Python script translates the entire file into a SQLite database that is bundled
 with \keggapp and queried by its code. (SQLite is a minimal implementation
 of SQL intended to be used as a storage medium for single-instance applications
-\ref{sqlite:main}.)
+\cite{sqlite:main}.)
 
 Access to the SQLite database is encapsulated in the \texttt{EKEnzyme} class. It
 can be used by calling \texttt{[EKEnzyme enzymeForID:(NSString *)ECNumber]},

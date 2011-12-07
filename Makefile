@@ -7,7 +7,7 @@ INCLUDE_BIB = yes
 build: $(FIGS)
 ifeq ($(INCLUDE_BIB),yes)
 	xelatex -halt-on-error $(DOC) && \
-	bibtex $(DOC) > /dev/null && \
+	bibtex $(DOC) && \
 	xelatex -halt-on-error $(DOC) > /dev/null && \
 	xelatex -halt-on-error $(DOC) > /dev/null
 else

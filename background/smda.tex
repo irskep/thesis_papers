@@ -1,5 +1,5 @@
 \section{Steady-State Metabolic Network Dynamics Analysis}
-\label{sect:smda}
+\label{sect:background_smda}
 
 \begin{verse}
     This section is from ``SMDA for Gene Lethality Testing'' by ??? \cite{???}.
@@ -11,7 +11,7 @@ observations, it locates all possible activation/inactivation scenarios of the
 reactions, based on the biochemical rules.
 
 \subsection{Terminology}
-\label{sect:smda_terminology}
+\label{sect:background_smda_terminology}
 
 The metabolic network is a connected graph $G(V,E)$ where the vertex set $V$
 consists of metabolite pools and reactions, and the edge set $E$ consists of
@@ -20,7 +20,7 @@ that plays the role of substrate or regulator of that reaction, or (ii) $u$ is a
 reaction and $v$ is a product of that reaction. The algorithm makes use of many
 biochemistry principles such as \emph{Substrate}, \emph{Availability},
 \emph{Product}, \emph{Inhibition}, \emph{Committed Steps}, etc. See Cakmak et
-al. for details \cite{???}.
+al. for details \cite{smda-basic}.
 
 There are five discrete states a metabolite “pool” can be in: \emph{Unknown},
 \emph{Unavailable}, \emph{Available}, \emph{Accumulated}, and \emph{Severely

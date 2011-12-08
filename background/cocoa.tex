@@ -5,11 +5,11 @@ The iOS Application Programming Guide identifies three fundamental software
 design patterns that apply across all frameworks: Model-View-Controller,
 Delegation, and Target-Action.
 
-\subsection{Model-View-Controller}
-\label{sect:cocoa_mvc}
-
 \emph{This section is from the iOS Application Programming Guide
 \cite[p.~160--165]{ios:cocoa-fundamentals}.}
+
+\subsection{Model-View-Controller}
+\label{sect:cocoa_mvc}
 
 Model-View-Controller is a high-level pattern in that it concerns itself
 with the global architecture of an application and classifies objects
@@ -25,7 +25,7 @@ groups. Each of the three types of objects is separated from the others by
 abstract boundaries and communicates with objects of the other types across
 those boundaries.
 
-\subsubsection{Model Objects Encapsulate Data and Basic Behaviors}
+\subsection{Model Objects Encapsulate Data and Basic Behaviors}
 
 Model objects represent special knowledge and expertise. They hold an
 application’s data and define the logic that manipulates that data. A
@@ -54,7 +54,7 @@ particular view or any view at all, and they should not be in charge of knowing
 when to draw themselves. They should be asked to draw themselves by the view
 object that wants to present them.
 
-\subsubsection{View Objects Present Information to the User}
+\subsection{View Objects Present Information to the User}
 
 A view object knows how to display, and might allow users to edit, the data from
 the application’s model. The view should not be responsible for storing the data
@@ -77,7 +77,7 @@ usually needs to know about changes to the model. Because model objects should
 not be tied to specific view objects, they need a generic way of indicating that
 they have changed.
 
-\subsubsection{Controller Objects Tie the Model to the View}
+\subsection{Controller Objects Tie the Model to the View}
 
 A controller object acts as the intermediary between the application's view
 objects and its model objects. Controllers are often in charge of making sure
@@ -102,7 +102,7 @@ themselves accordingly.
 Controller objects can be either reusable or nonreusable, depending on their
 general type.
 
-\subsubsection{Combining Roles}
+\subsection{Combining Roles}
 
 One can merge the MVC roles played by an object, making an object, for example,
 fulfill both the controller and view roles—in which case, it would be called a
@@ -121,5 +121,50 @@ with data displayed in a view are typically implemented in a view controller. A
 \texttt{UITableViewController} object (also part of the document architecture)
 is an example of a view controller.
 
-\section{iOS Development Environment}
+View controllers are often associated with \texttt{.xib} files, which define the
+positions and contents of user interface elements. These files make visual
+layout and internationalization possible without modifying an application's
+source code.
+
+\section{iOS Development Environment and Frameworks}
 \label{sect:ios_dev_env}
+
+\subsection{Components of an iOS Application}
+
+An iOS application bundle consists of a single executable, zero or more
+\texttt{.xib} files (user interface definitions), and data files such as images,
+databases, or example documents \cite{ios:application-programming-guide}.
+
+When an application is installed on a user's device, iOS assigns it a
+subdirectory which may contain documents, caches, settings, or anything else the
+application needs to save. The application cannot access any part of the file
+system outside of this subdirectory.
+
+iOS applications are built using the Xcode integrated development environment.
+Xcode provides text editors for code, interface editors for user interface
+definitions, settings editors for the compiler and linker, and other tools to
+organize a project.
+
+\subsection{Running an iOS Application}
+
+iOS applications may be run in three ways. The simplest method for a programmer
+is to run it in the \emph{simulator}. The simulator is a Mac OS X application
+which provides all iOS APIs to iOS applications while allowing the programmer to
+interact with it on their desktop computer, no iOS device required
+\cite{ios:application-programming-guide}. To run the application in this
+environment, Xcode builds the code for x86 architecture and installs it in a
+subdirectory of the local filesystem.
+
+The next most common way for a programmer to run an iOS app is to plug an iOS
+device (such as an iPad) into the desktop machine with a USB cable and
+instructing Xcode to send the application there. To run the application in this
+environment, Xcode builds the code for arm6 or arm7 architecture (depending on
+the device), cryptographically signs it, installs it on the device, and
+instructs the device to run it.
+
+The last way to run an iOS application is to download it from the online store.
+A programmer can list an application in the store by obtaining a set of
+certificates from Apple, archiving the application from Xcode, uploading it to
+Apple's web site, and obtaining approval by Apple's online store editors. Users
+can then download it from their devices and (hopefully) use it for its intended
+purpose.

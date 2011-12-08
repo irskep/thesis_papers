@@ -33,34 +33,3 @@ databases is to help students, instructors, and researchers more effective and
 less tied to their workstations. By allowing them to browse pathways with
 natural gestures such as pinching and zooming, we reduce the amount of cognitive
 load necessary to learn and perform intensive research and learning tasks.
-
-\section{Implementation Notes}
-\label{sect:implementation_notes}
-
-iPad apps are implemented in the Objective-C language and the Cocoa Touch
-application framework.  Cocoa provides many common facilities such as user
-interface elements, network requests, asynchronous blocks of code, and touch
-operations like panning and zooming. Core Animation, a subframework, provides
-rendering capabilities.
-
-Objective-C is a strict superset of C. It adds object-oriented features and
-Smalltalk-style message passing to the language \cite[p.~9]{objc:manual}. It adds
-\textbf{blocks}, which are similar to closures. It does not provide namespace
-features, so most frameworks choose a two-letter prefix for all classes they
-provide.
-
-The PathCase apps use the framework for tasks such as displaying a graphical
-user interface, rendering graphs, panning and zooming views, parsing XML, and
-querying web services.
-
-Cocoa follows a Model-View-Controller architecture and makes heavy use of the
-delegate pattern rather than employing subclasses for custom functionality.
-Interface layouts are specified in ``.xib'' files, each of which is associated
-with a class. \cite{ios:application-programming-guide} Cocoa framework classes
-are prefixed with \texttt{UI} or \texttt{NS}, e.g. \texttt{NSString} or
-\texttt{UINavigationController}.
-
-Core Animation is a component of Cocoa that provides rendering functionality
-based on the concept of nested layers implemented using OpenGL
-\cite{ios:core-animation}. Core Animation classes are prefixed with \texttt{CA},
-e.g. \texttt{CALayer}.

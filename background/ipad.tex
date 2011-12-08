@@ -64,7 +64,7 @@ The most basic component of an iPad interface is the \emph{view}. A view is a
 rectangular region that is capable of displaying content, receiving events such
 as gestures and device orientation changes, and delegating these tasks to
 subviews. Views can contain buttons, toolbars, lists, other views, and arbitrary
-graphical content.
+graphical content. Nested views consist of a \emph{view hierarchy}.
 
 A \emph{button} a view that renders itself in enabled, disabled, and pressed
 states, and invokes some action when a touch is released inside its bounds.
@@ -116,7 +116,7 @@ containing the master view.
 
 Since iPad applications take the entire screen and can make only limited use of
 multiple windows, the means of navigating between the screens of an interface
-are very simple. A \emph{navigation stack} is a common metaphor. Like the web
+are very simple. The \emph{navigation stack} is a common metaphor. Like a web
 browser, there is a ``back button'' in the toolbar to navigate to whatever
 screen was displayed before the current one.
 

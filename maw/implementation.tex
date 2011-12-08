@@ -1,14 +1,14 @@
 \subsection{Implementation}
 \label{sect:maw_implementation}
 
-\mawapp must track a few different categories of data. The most
-basic is a representation of the data model of the online PathCase MAW database,
-derived from the web service interface to the database. Examples include
-pathways, metabolites, compartments, and processes. In Model-View-Controller
-terms (see \ref{sect:implementation_notes}), these are \textbf{model} classes.
-These model objects are rendered in \textbf{views}, such as the main pathway
-graph view.  These views are managed by \textbf{controllers} which manipulate
-the models and configure the views.
+\mawapp must track a few different categories of data. The most basic is a
+representation of the data model of the online PathCase MAW database, derived
+from the web service interface to the database. Examples include pathways,
+metabolites, compartments, and processes. In Model-View-Controller terms (see
+\ref{sect:cocoa_mvc}), these are \textbf{model} classes.  These model
+objects are rendered in \textbf{views}, such as the main pathway graph view.
+The models and views are managed by \textbf{controllers} which manipulate the
+models and configure the views.
 
 The relationships between some of the major classes of \mawapp are represented
 in three figures. Figure \ref{fig:maw_components} shows references between
@@ -45,7 +45,7 @@ the content area.
 
 The graph view controller controls a \texttt{PCGraphView} which contains Core
 Animation layers that read the pathway model and render the nodes and edges with
-OpenGL. (See \ref{sect:implementation_notes}.) These layers are put inside the
+OpenGL. (See \ref{sect:core_animation}.) These layers are put inside the
 Cocoa object \texttt{UIScrollView}, which allows them to be panned and zoomed
 over by touch.
 
@@ -79,13 +79,13 @@ serialized to the device's internal storage.
 
 \begin{figure}[htbp]
     \center{
-        \includegraphics[height=\textwidth]{maw/figures/controlflow.pdf}}
+        \includegraphics[width=\textwidth]{maw/figures/controlflow.pdf}}
     \caption{\label{fig:maw_controlflow} Control flow for displaying graphs}
 \end{figure}
 
 \begin{figure}[thbp]
     \center{
-        \includegraphics[height=\textwidth]{maw/figures/dataflow.pdf}}
+        \includegraphics[width=4in]{maw/figures/dataflow.pdf}}
     \caption{\label{fig:maw_dataflow} Data flow for graph data}
 \end{figure}
 

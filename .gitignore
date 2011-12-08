@@ -11,3 +11,6 @@
 stevejohnson_thesis.pdf
 kegg_manual/build/
 *.lof
+3p
+background_only.pdf
+*.lot

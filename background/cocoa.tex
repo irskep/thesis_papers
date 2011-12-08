@@ -174,3 +174,53 @@ can then download it from their devices and (hopefully) use it for its intended
 purpose.
 
 \subsection{Frameworks}
+
+\emph{The information in this section comes from ``iOS Technology Overview''
+\cite{ios:overview}.}
+
+\emph{Cocoa Touch} defines the basic application infrastructure and support for
+key technologies such as multitasking, touch-based input, and many high-level
+system services. Other functionality is broken up into separate frameworks.
+iPathCase makes significant use of two of these frameworks: Core Data and Core
+Animation.
+
+\subsubsection{Core Data}
+
+\emph{Core Data} is a technology for managing the data model of a
+Model-View-Controller application. Core Data is intended for use in applications
+in which the data model is already highly structured. Instead of defining data
+structures programmatically, you use the graphical tools in Xcode to build a
+schema representing your data model. At runtime, instances of your data-model
+entities are created, managed, and made available through the Core Data
+framework.
+
+Core Data provides the following features:
+
+\begin{itemize}
+    \item Storage of object data in a SQLite database for optimal performance
+    \item An \texttt{NSFetchedResultsController} class to manage results for table views
+    \item Management of undo/redo beyond basic text editing
+    \item Support for the validation of instance variables
+    \item Support for propagating changes and ensuring that the relationships between objects remain consistent
+    \item Support for grouping, filtering, and organizing data in memory
+\end{itemize}
+
+\subsubsection{Core Animation}
+
+\emph{Core Animation} is an animation and compositing technology that uses an
+optimized rendering path to implement complex animations and visual effects. It
+provides a high-level Objective-C interface for configuring animations and
+effects that are then rendered on the GPU. Core Animation is integrated into
+many parts of iOS, including Cocoa Touch classes such as \texttt{UIView},
+providing animations for many standard system behaviors.
+
+iPathCase makes use of Core Animation's \emph{layers}. A CALayer instance has a
+single parent layer (the superlayer) and a collection of sublayers, creating a
+hierarchy of layers that is referred to as the layer tree. Layers are drawn from
+back to front and specify their geometry relative to their superlayer, creating
+a local coordinate system. However, layers allow a more complex visual display
+by incorporating transform matrices that allow you to rotate, skew, scale, and
+project the layer content.
+
+\mawapp and \keggapp use these layers to efficiently render graphs and display
+them in scroll views (see \ref{sect:ipad_views}).

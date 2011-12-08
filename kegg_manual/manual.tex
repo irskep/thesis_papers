@@ -1,0 +1,97 @@
+Welcome to PathCase KEGG for iPad. Using this application, you can view
+metabolic pathways from \href{http://www.kegg.com/}{KEGG}\footnote{\href{http://www.kegg.com/}{http:/\slash www.kegg.com\slash }} stored in the PathCase database. Additional
+information about reactions is provided by the \href{http://enzyme.expasy.org/}{ENZYME}\footnote{\href{http://enzyme.expasy.org/}{http:/\slash enzyme.expasy.org\slash }} enzyme nomenclature
+database.
+
+\section{Browsing Pathways}
+\label{browsingpathways}
+
+If you are holding your iPad in landscape mode, the list of pathways is in the
+sidebar on the left side of the screen. If you are holding it in portrait mode,
+you can \textbf{press the button in the upper left corner} to see the sidebar.
+
+Tap a category to see the pathways within it. In this list of pathways, \textbf{bold}
+items have \emph{frozen layouts}, with nodes and edges arranged by hand. Non-bold
+items have automatically generated layouts which may be more difficult to work
+with.
+
+\section{Interacting with Pathway Visualizations}
+\label{interactingwithpathwayvisualizations}
+
+Once you select a pathway from the list, you will see a graph much like this
+one:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=3in]{kegg_manual/pathway.png}
+\caption{Visualization of the TCA Cycle}
+\label{}
+\end{figure}
+
+
+
+ \pagebreak 
+
+Here are the meanings of the different nodes and edges:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=3in]{kegg_manual/node_legend.png}
+\caption{Node and edge types}
+\label{}
+\end{figure}
+
+
+
+You can use standard one- and two-finger gestures to pan and zoom around this
+graph. Press the \textbf{Show KEGG Page} button to display the pathway's page on the
+KEGG web site:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=3in]{kegg_manual/kegg_web_site.png}
+\caption{KEGG web site for the TCA Cycle}
+\label{}
+\end{figure}
+
+
+
+ % Sometimes vim's syntax highlighting is not so good. 
+
+\textbf{Tap any node} to select it. That node and its immediate neighbors will be
+highlighted on the graph, and more information about it will appear in the
+sidebar. (Remember that if you are holding your iPad in portrait mode, you can
+use the button in the upper left to access the sidebar.)
+
+If the node is a reaction and PathCase has an EC number stored for it, extra
+information from the \href{http://enzyme.expasy.org/}{ENZYME}\footnote{\href{http://enzyme.expasy.org/}{http:/\slash enzyme.expasy.org\slash }} database is shown.
+
+\textbf{Double-tap a node} to zoom the view to contain that node and its immediate
+neighbors.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=3in]{kegg_manual/selection_info.png}
+\caption{Selecting a node}
+\label{}
+\end{figure}
+
+
+
+\textbf{Press and hold} on a node to drag it around the screen. You can use this
+feature if the visualization is cluttered or otherwise difficult to read.
+Unfortunately, the positions you set are \emph{not} saved when you leave the
+visualization for a pathway.
+
+Tap the \textbf{Organisms} button in the upper right to see a hierarchical list of
+organisms. The pathway visualization highlights only metabolites and reactions
+that correspond to one or more activated organisms.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=3in]{kegg_manual/animals_only_graph.png}
+\caption{TCA cycle with only ``Eukaryotes $\rightarrow$ Animals''
+activated}
+\label{}
+\end{figure}
+

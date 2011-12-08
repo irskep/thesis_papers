@@ -34,6 +34,7 @@ manual.tex: manual.md
 	multimarkdown manual.md --to=latex | sed 's/chapter/section/g' \
 		| sed 's/htbp/ht!/g' \
 		| sed 's/keepaspectratio,width=\\textwidth,height=0.75\\textheight]{/width=3in]{kegg_manual\//g' \
+		| sed 's/\\label{}//g' \
 		> manual.tex
 
 pathway.png: screenshot_pathway.png

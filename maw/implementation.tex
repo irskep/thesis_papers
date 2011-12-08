@@ -49,7 +49,9 @@ OpenGL. (See \ref{sect:core_animation}.) These layers are put inside the
 Cocoa object \texttt{UIScrollView}, which allows them to be panned and zoomed
 over by touch.
 
-\subsubsection{Web Services}
+\subsubsection{Web Services: Server Side}
+
+\subsubsection{Web Services: Client Side}
 \label{sect:maw_web_services}
 
 Although the data is accessed via web services, it is needed so often and is
@@ -69,8 +71,6 @@ These web service fetching methods convert the XML response of the web service
 into corresponding model objects (such as \texttt{SMDAPathway}) which are
 serialized to the device's internal storage.
 
-% \onecolumn
-
 \begin{figure}[p]
     \center{
         \includegraphics[width=\textwidth]{maw/figures/components.pdf}}
@@ -88,5 +88,3 @@ serialized to the device's internal storage.
         \includegraphics[width=4in]{maw/figures/dataflow.pdf}}
     \caption{\label{fig:maw_dataflow} Data flow for graph data}
 \end{figure}
-
-% \twocolumn

@@ -1,1 +1,105 @@
-The end.
+iPathCase has been a successful exercise in extending the PathCase architecture
+and philosophy to new devices and new users. It is one thing to design a web
+interface and server backend in tandem, and another to apply the server's web
+service interface to an entirely new set of applications. \mawapp and \keggapp
+show that PathCase's architecture serves the purpose for which it was built: to
+provide a platform for analysis and reference tools on top of multiple data
+sources for pathways.
+
+\mawapp allows browsing of a limited set of pathways in a compartment-aware
+interface. It also provides the SMDA tool in an iPad environment, allowing
+researchers to analyze hypotheses about their data sets with as little interface
+clutter as possible.
+
+\keggapp allows browsing of all KEGG pathways and improves on the \mawapp style
+of pathway visualization. It links reactions with the external ENZYME database
+and allows access to the KEGG web page corresponding to any pathway.
+
+Both of these applications adapt the basic PathCase pathway visualization
+interface concepts for a touch screen, specifically making heavy use of iOS
+idioms. These adaptations provide insight into how pathway visualizations can be
+improved across all forms of input and display.
+
+Although the iPathCase applications fulfill their purpose, their design and
+implementation was a challenge, and there are many possibilities for future
+improvement.
+
+\section{Technical Challenges and Possible Improvements}
+
+The biggest challenge presented by both applications was controlling the passage
+of information from the PathCase servers to the iPad application, both in how
+the HTTP requests were made and how the data was translated into a form usable
+by the rest of the application.
+
+In the case of \mawapp, all parts of the \pathcasemaw database that are relevant
+to \mawapp are downloaded in a single operation on a series of threads. Then,
+based on the format of the data (XML, yFiles graph definition), they are parsed
+and converted to Objective-C objects that are part of the \mawapp code base.
+Finally, these objects are saved as Objective-C objects that can be loaded
+almost instantly at any time.
+
+This strategy is successful from a performance perspective, but code simplicity
+is sacrificed to achieve it. In the future, the code that downloads the data,
+parses it, and builds model objects should be refactored to separate those tasks
+more explicitly. Additionally, there should be a more formal data dependency
+tracking system to control the bulk download of the web service data. It is
+common to have HTTP requests for web services $A$, $B$, and $C$ rely on data
+from request $X$, so there should be a formalized dependency graph that tracks
+this information.
+
+In the case of \keggapp, data is requested from the \pathcasekegg server in a
+much more piecemeal way. The data for each pathway is encapsulated entirely in a
+single request, so there is no need for complex dependency management or even
+data storage above and beyond simple HTTP request caching. The data models, HTTP
+requests, and parsing are cleanly separated. \keggappp's biggest technical
+issue, unlike \mawapp, is a noticeable hang when selecting a large pathway to
+view. More effort should be spent moving processing to a separate thread to
+allow the main user interface to remain responsive.
+
+Another technical challenge was rendering large graphs efficiently on a device
+with limited memory and processing power. Fortunately, the iOS application
+frameworks made pathway rendering possible, though optimizations were required
+at various stages of development.
+
+Although the graph renderers for \mawapp and \keggapp are very similar and based
+on the same code, the \keggapp version of the renderer was modified and not
+reintegrated into the \mawapp code. It includes features such as the ability to
+move nodes, and more aesthetically pleasing node appearances. These two
+renderers should be unified, and perhaps packaged into an entirely separate
+library that is not necessarily limited to pathway rendering.
+
+Similar to graph rendering, dynamic graph layouts accounted for a considerable
+amount of development time, despite the theoretical convenience of the graphviz
+library. \mawapp is not able to do dynamic layouts at all, so its SMDA
+hypothesis rendering capabilities are limited to single-pathway result graphs.
+Now that dynamic graph layout code exists in \keggapp, it should be copied to
+\mawapp and used to lay out SMDA result graphs where necessary.
+
+\section{User Interface Challenges and Possible Improvements}
+
+\mawappp interface is at least as effective as the Java applet version for
+viewing pathways. Its most visible user interface flaw is the unusual layout of
+the main screen, which would work better as a master-detail interface like
+\keggappp.
+
+The hypothesis browsing interface, while on par with the Java applet version, is
+missing a way for the user to identify ``interesting'' hypotheses and export
+these outside the application. One simple option is a ``star'' button on each
+hypothesis and a way to email a PDF rendering of all hypotheses.
+
+\section{Other Future Work}
+
+iPathCase opens up many exciting possibilities for the use of tablets in
+educational and research environments. The best thing we can do to make these
+possibilities become realities is to perform studies and have discussions with
+practicing life scientists and students. Formal and informal feedback should be
+gathered from possible users to determine the most effective future
+improvements. Even their simple presence in the iOS online store should provide
+helpful feedback (positive or negative) that will affect the development of both
+applications.
+
+Interactive visualizations of complex biological data are no longer limited to
+immobile desktop workstations or cumbersome laptops; the iPad is even less
+intrusive than a physical textbook and can display information in new and
+interesting ways. iPathCase brings interactive pathway visualizations, reference
+materials, and even research tools to desks, meetings, and couches.

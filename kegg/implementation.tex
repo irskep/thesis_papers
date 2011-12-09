@@ -1,10 +1,10 @@
 \section{Implementation}
 \label{sect:kegg_implementation}
 
-The implementations for the MAW and KEGG apps are very similar, but they have
-some important differences. The KEGG app was begun a year after the MAW app and
-provided opportunities to improve on the interface, design, and implementation
-of the pathway viewing app concept.
+The implementations for \mawapp and \keggapp similar in many ways, but they have
+some important differences. Development on \keggapp was begun a year after
+\mawapp and provided opportunities to improve on the interface, design, and
+implementation of the pathway viewing app concept.
 
 The improved design was made possible partially by new features introduced into
 the iPad development stack in 2011 with the release of iOS 5. The most important
@@ -73,8 +73,8 @@ These differences are summarized in figure
     \center{
         \includegraphics[width=\textwidth]{kegg/figures/web_services.pdf}}
     \caption{\label{fig:kegg_impl_web_service_differences} Side-by-side
-    comparison of the typical life cycle of a KEGG web service request and an
-    MAW web service request.}
+    comparison of the typical life cycle of a \keggapp service request and a
+    \mawapp web service request.}
 \end{figure}
 
 This model of web services would not necessarily work better for \mawapp,
@@ -97,8 +97,8 @@ service events).
 \label{sect:kegg_impl_graph_view}
 
 This will be an explanation of the \keggapp graph view and how it differs from
-the MAW version. In short, it is more encapsulated and less dependent on the
-rest of the data model.
+the \mawapp graph view. In short, it is more encapsulated and less dependent on
+the rest of the data model.
 
 \subsection{Reading the ENZYME Database}
 \label{sect:kegg_impl_enzyme}

@@ -1,5 +1,5 @@
 \section{PathCase}
-\label{sect:pathcase_kegg}
+\label{sect:pathcase}
 
 \emph{The majority of this section is from ``PathCase: Pathways Database System''
 by B. Elliot et al \cite{pathcase-paper}.}
@@ -113,19 +113,19 @@ out on the client side with no server side requests.
 \subsection{Data Model}
 \label{sect:pathcase_data_model}
 
-In the PathCase data model, we represent a metabolic pathway \cite{Michal-1999} in
-the form of a graph where nodes represent molecules, and edges represent
+In the PathCase data model, we represent a metabolic pathway \cite{Michal-1999}
+in the form of a graph where nodes represent molecules, and edges represent
 reactions (or processes) connecting the molecules that take part in the
 reaction. As reactions may involve more than one substrate and more than one
 product, the reaction is actually a hyper-edge, and a pathway is a hyper-graph
-\cite{Berge-1973}. We use the term process to denote reactions, which can include a
-catalyzing protein (which also identifies the reaction and may have an enzyme
-classification number), co-factors, inhibitors and activators. Reactions may be
-one-way or reversible. We refer to molecular objects as molecular entities which
-include basic molecules, proteins, enzymes, genes, and amino acids. A pathway
-can be viewed as a set of interconnected processes, while a process can be
-viewed as being made up of molecular entities. More generally, an entire
-pathways database can be viewed as a single large graph of interconnected
+\cite{Berge-1973}. We use the term process to denote reactions, which can
+include a catalyzing protein (which also identifies the reaction and may have an
+enzyme classification number), co-factors, inhibitors and activators. Reactions
+may be one-way or reversible. We refer to molecular objects as molecular
+entities which include basic molecules, proteins, enzymes, genes, and amino
+acids. A pathway can be viewed as a set of interconnected processes, while a
+process can be viewed as being made up of molecular entities. More generally, an
+entire pathways database can be viewed as a single large graph of interconnected
 reactions, in which certain sub-graphs are identified as specific pathways. This
 way, the system can dynamically visualize, query, and analyze any subsection of
 the larger pathways network, or even show how pathways themselves are
@@ -136,8 +136,36 @@ groups, representing a set of pathways with related functionality.
 The PathCase model also maintains the organism in which a process occurs.  This
 allows the user to switch from viewing a general pathway graph to viewing its
 organism-specific version, in which the components that do not apply are
-dynamically grayed out.  Organisms can be organized into a hierarchy of organism
+dynamically grayed out. Organisms can be organized into a hierarchy of organism
 groups, allowing for easy visualization of the pathway for an entire kingdom,
 phylum, etc.  Organisms can also be associated with chromosomes, and store the
 location of genes that encode proteins. This enables the user to quickly find
 gene and chromosome location for a process’ catalyzing protein and vice versa.
+
+\subsection{Flavors of PathCase}
+\label{sect:pathcase_flavors}
+
+The PathCase system supports multiple databases, and multiple databases are
+currently deployed on the web.
+
+\begin{itemize}
+
+    \item \pathcasesb integrates metabolic pathways with systems biology models
+        \cite{pathcase-basic}. The aim of the PathCaseSB project is to build a
+        framework and tools towards effective and efficient systems biology
+        model development for multiscale mechanistic models of biological
+        systems. \pathcasesb uses data from BioModels and KEGG
+        \cite{pathcase-basic}.
+
+    \item \pathcasemaw features mammalian metabolic pathways and computational
+        tools designed for metabolomics analysis \cite{pathcase-basic}. Towards
+        this end, PathCaseMAW database contains a fully hierarchically
+        compartmentalized metabolic network for mammalians (humans and mice).
+        \pathcasemaw uses data entered by hand from literature.
+
+    \item \pathcasekegg features KEGG metabolic pathways \cite{pathcase-basic}.
+        That is, it contains KEGG metabolic pathways in its database. The
+        \pathcasekegg database is refreshed annually every year via a license
+        from KEGG.
+        
+\end{itemize}

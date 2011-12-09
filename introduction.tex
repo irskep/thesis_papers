@@ -1,35 +1,85 @@
 \section{Overview}
 \label{sect:overview}
 
-The \textbf{PathCase} System is an integrated software system for storing,
-managing, analyzing, and querying biological pathways at different levels of
-genetic, molecular, biochemical and organismal detail \cite{pathcase-basic}. At
-the computational level, PathCase allows users to visualize pathways in multiple
-abstraction levels, and to pose predetermined as well as ad hoc queries using a
-graphical user interface. Pathways are represented as graphs, and implemented as
-a relational database. PathCase has multiple levels, with multiple tools at each
-level. Currently, users can access three different PathCase system applications,
-each employing a different metabolic pathways database.
+The \textbf{PathCase} System \cite{pathcase-basic} is an integrated software
+system for storing, managing, analyzing, and querying biological pathways at
+different levels of genetic, molecular, biochemical and organismal detail
+(\ref{sect:pathcase_overview}). At the computational level, PathCase allows
+users to visualize pathways in multiple abstraction levels, and to pose
+predetermined as well as ad hoc queries using a graphical user interface.
+Pathways are represented as graphs, and implemented as a relational database.
+PathCase has multiple levels, with multiple tools at each level. Currently,
+users can access three different PathCase system applications, each employing a
+different database of metabolic pathways.
 
-This thesis includes iPad-based interfaces to two of these databases. The first
-is the Metabolomics Analysis Workbench, designed for metabolomics analysis. The
-PathCaseMAW database contains a fully hierarchically compartmentalized metabolic
-network for humans and mice. Full compartment hierarchy refers to the
-multi-tissue (e.g. liver, adipose tissue, muscle, etc) environment as well as a
-complete biological compartment distinction (e.g., liver-cell, liver-cytosol,
-liver-mitochondrion, etc.).
+This thesis presents iPad applications corresponding to two of these databases,
+each with a slightly different focus. The first application is \keggapp, which
+uses the web services of \pathcasekegg to present interactive pathway
+visualizations of pathways from KEGG (Kyoto Encyclopedia of Genes and Genomes).
+For more information about KEGG, see section \ref{sect:background_kegg}.
+\keggapp makes use of multiple data sources, including \pathcasekegg, to enrich
+pathway visualizations as much as possible.
 
-The second is a database of KEGG pathways, intended for students and
-instructors. The KEGG interface contains more reference-oriented features.
+The second application is \mawapp, designed for metabolomics analysis and
+browsing of the compartment-aware \pathcasemaw pathways database. The
+\pathcasemaw database contains a fully hierarchically compartmentalized
+metabolic network for humans and mice. Full compartment hierarchy refers to the
+multi-tissue (liver, adipose tissue, muscle, etc) environment as well as a
+complete biological compartment distinction (liver-cell, liver-cytosol,
+liver-mitochondrion, etc.). \mawapp provides fewer reference features than
+\keggapp, but it includes a fully functional version of the SMDA (Steady-State
+Metabolic Network Dynamics Analysis) tool.
 
-The existing database web sites include graphical interfaces for the graphs
-implemented as Java applets. While this approach works for desktop users, mobile
-devices and tablets such as the iPad are unable to make use of them not only due
-to technological constraints, but also due to the lack of touch-based interface
-paradigms.
+Many of the features of these iPad applications are present in the web-based
+\pathcasemaw and \pathcasekegg tools. For example, users can already browse
+pathways and interact with visualizations of biological pathway graphs. But
+there are several motivations for designing new tablet-based applications.
 
-The motivation for designing and implementing tablet-based interfaces for these
-databases is to help students, instructors, and researchers more effective and
-less tied to their workstations. By allowing them to browse pathways with
-natural gestures such as pinching and zooming, we reduce the amount of cognitive
-load necessary to learn and perform intensive research and learning tasks.
+From the perspective of a PathCase user, the arrival of PathCase applications on
+mobile devices lifts many restrictions on the settings in which the system may
+be used. An iPad takes up less space than a textbook or laptop while offering
+more effective reference and research materials due to its simple but
+highly interactive interface. Even the simple act of scrolling content in two
+dimensions makes tasks such as scanning over a pathway visualization much
+simpler.
+
+Perhaps equally important is the opportunity to test the modular nature of the
+PathCase architecture. As section \ref{sect:pathcase_architecture} will explain,
+the PathCase system is designed to support multiple clients to the data store,
+only one of which is the web-based interface. \keggapp and \mawapp rely on the
+public web services of \pathcasekegg and \pathcasemaw for all of the data they
+display. By implementing entirely new applications, we identify important gaps
+in the information these web services provide.
+
+\subsection{Document Structure}
+
+Chapter \ref{ch:background} contains background information on all topics
+necessary to understand the design and implementation of \keggapp and \mawapp.
+The first half, sections \ref{sect:metabolic_pathways} through
+\ref{sect:pathcase}, describe the relevant biology and the systems that \keggapp
+and \mawapp rely on. This information is necessary to understand the design. The
+second half, sections \ref{sect:ipad} through \ref{sect:cocoa}, describe the
+technology used to develope iPad applications. This information is necessary to
+understand the implementation.
+
+Chapter \ref{ch:maw_smda} describes \mawapp in depth. It includes the design and
+implementation of \mawapp itself, modifications that were made to \pathcasemaw
+to support it, its differences from similar functionality in the \pathcasemaw
+web interface, and possible future work. \mawapp is covered before \keggapp
+in this paper because it was developed first chronologically.
+
+Chapter \ref{ch:kegg} describes \keggapp in similar detail to \mawapp.
+
+Chapter \ref{ch:related_work} is an overview of similar work in the areas of
+graph visualization, touch-based gestures, and biological pathway visualization.
+
+Chapter \ref{ch:conclusion} concludes the paper and discusses the challenges,
+successes, failures, and possible future directions for the project as a whole.
+
+Appendix \ref{ch:kegg_manual} is the user manual for \keggapp.
+
+Appendix \ref{ch:kegg_code_docs} is the documentation for all classes in
+\mawapp.
+
+Appendix \ref{ch:smda_code_docs} is the documentation for all classes in
+\keggapp.

@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2011-12-01 22:14:20 +0000</string>
+	<string>2011-12-10 21:03:10 +0000</string>
 	<key>Modifier</key>
 	<string>Stephen Johnson</string>
 	<key>NotesVisible</key>
@@ -85,7 +85,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {728, 846}}</string>
+				<string>{{0, 0}, {708, 846}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -107,7 +107,7 @@
 			<key>CanvasOrigin</key>
 			<string>{0, 0}</string>
 			<key>CanvasSize</key>
-			<string>{728, 846}</string>
+			<string>{708, 846}</string>
 			<key>ColumnAlign</key>
 			<integer>1</integer>
 			<key>ColumnSpacing</key>
@@ -118,7 +118,7 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{149.07712, 329.24164}, {86, 23}}</string>
+					<string>{{149.07719, 329.24158}, {86, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -420,10 +420,10 @@ present}</string>
 					<integer>40</integer>
 					<key>Points</key>
 					<array>
-						<string>{447.54849, 529.26941}</string>
-						<string>{487, 554.5}</string>
-						<string>{486, 620}</string>
-						<string>{454.78864, 637.25806}</string>
+						<string>{477.57025, 529.3894}</string>
+						<string>{499, 556}</string>
+						<string>{499, 613}</string>
+						<string>{454.97498, 637.25873}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -455,8 +455,8 @@ present}</string>
 					<integer>49</integer>
 					<key>Points</key>
 					<array>
-						<string>{174.26042, 529.26556}</string>
-						<string>{134, 554.5}</string>
+						<string>{139.13554, 530.46014}</string>
+						<string>{127, 559}</string>
 						<string>{131, 613.5}</string>
 						<string>{171.44733, 637.24683}</string>
 					</array>
@@ -490,8 +490,8 @@ present}</string>
 					<integer>48</integer>
 					<key>Points</key>
 					<array>
-						<string>{221.74998, 529.5}</string>
-						<string>{221.74998, 554}</string>
+						<string>{176.92113, 530.38318}</string>
+						<string>{196.81245, 554.11609}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -523,7 +523,7 @@ present}</string>
 					<integer>37</integer>
 					<key>Points</key>
 					<array>
-						<string>{415.02301, 469.54718}</string>
+						<string>{459.18799, 469.50876}</string>
 						<string>{489.25, 311}</string>
 						<string>{388.73386, 235.08028}</string>
 					</array>
@@ -557,8 +557,8 @@ present}</string>
 					<integer>35</integer>
 					<key>Points</key>
 					<array>
-						<string>{170.97021, 419.92145}</string>
-						<string>{202.66025, 469.57849}</string>
+						<string>{151.90686, 420}</string>
+						<string>{151.96048, 470.5}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -592,7 +592,7 @@ present}</string>
 					<array>
 						<string>{223.21199, 327.87375}</string>
 						<string>{392.625, 398}</string>
-						<string>{398.52478, 469.50168}</string>
+						<string>{435.55008, 469.5712}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -657,8 +657,8 @@ present}</string>
 					<integer>28</integer>
 					<key>Points</key>
 					<array>
-						<string>{152.12698, 328.5}</string>
-						<string>{151.9978, 360}</string>
+						<string>{152.12703, 328.5}</string>
+						<string>{151.99791, 360}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -754,8 +754,8 @@ Organize rendering views and respond to events}</string>
 					<integer>24</integer>
 					<key>Points</key>
 					<array>
-						<string>{404.73621, 200.51479}</string>
-						<string>{437.53165, 191.46323}</string>
+						<string>{404.73621, 200.5148}</string>
+						<string>{437.53168, 191.46324}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -807,7 +807,7 @@ Organize rendering views and respond to events}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{237.73392, 147.58324}, {48, 23}}</string>
+					<string>{{237.73993, 147.59268}, {48, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -876,7 +876,7 @@ Organize rendering views and respond to events}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{245.91428, 194.97493}, {31, 23}}</string>
+					<string>{{245.91318, 194.97343}, {31, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1085,8 +1085,8 @@ Pathway list popover}</string>
 					<integer>16</integer>
 					<key>Points</key>
 					<array>
-						<string>{223.25, 213.65854}</string>
-						<string>{314.44482, 213.21999}</string>
+						<string>{223.25, 213.65758}</string>
+						<string>{314.44244, 213.21777}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1212,8 +1212,8 @@ UI surrounding graph view}</string>
 					<integer>10</integer>
 					<key>Points</key>
 					<array>
-						<string>{223.21219, 184.71616}</string>
-						<string>{314.90622, 146.87694}</string>
+						<string>{223.2122, 184.72363}</string>
+						<string>{314.91769, 146.88936}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1349,8 +1349,8 @@ Root application singleton}</string>
 							<integer>52</integer>
 							<key>Points</key>
 							<array>
-								<string>{292.75, 584.00092}</string>
-								<string>{330, 584.0014}</string>
+								<string>{292.75, 584.00018}</string>
+								<string>{330, 584.00031}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -1398,7 +1398,7 @@ Root application singleton}</string>
 \f0\b\fs20 \cf0 PCEdgeLayerController
 \b0 \
 \
-Render all edges into a single layer}</string>
+Render edges}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -1413,8 +1413,8 @@ Render all edges into a single layer}</string>
 							<integer>54</integer>
 							<key>Points</key>
 							<array>
-								<string>{293.125, 667.00098}</string>
-								<string>{330, 667.00153}</string>
+								<string>{293.125, 667.00018}</string>
+								<string>{330, 667.00031}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -1462,7 +1462,7 @@ Render all edges into a single layer}</string>
 \f0\b\fs20 \cf0 PCNodeLayerController
 \b0 \
 \
-Render all nodes into a single layer}</string>
+Render nodes}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -1477,8 +1477,8 @@ Render all nodes into a single layer}</string>
 							<integer>56</integer>
 							<key>Points</key>
 							<array>
-								<string>{400.99509, 529.5}</string>
-								<string>{400.99112, 554}</string>
+								<string>{435.07379, 529.42578}</string>
+								<string>{419.89511, 554.07721}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -1526,7 +1526,7 @@ Render all nodes into a single layer}</string>
 \f0\b\fs20 \cf0 PCGraphEdge
 \b0 \
 \
-Graphical objects for drawing a single edge}</string>
+Graphical edge data}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -1557,7 +1557,7 @@ Graphical objects for drawing a single edge}</string>
 \f0\b\fs20 \cf0 PCGraphNode
 \b0 \
 \
-Graphical objects for drawing a single node}</string>
+Graphical node data}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -1572,8 +1572,8 @@ Graphical objects for drawing a single node}</string>
 							<integer>59</integer>
 							<key>Points</key>
 							<array>
-								<string>{292.75, 499.50098}</string>
-								<string>{330, 499.5015}</string>
+								<string>{222.875, 500.26477}</string>
+								<string>{380.5, 499.74249}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -1595,7 +1595,7 @@ Graphical objects for drawing a single node}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{151.25, 470}, {141, 59}}</string>
+							<string>{{81.375, 471}, {141, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -1626,7 +1626,7 @@ Container view for all graph view components}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{330.5, 470}, {141, 59}}</string>
+							<string>{{381, 470}, {145, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -1652,12 +1652,12 @@ Container view for all graph view components}</string>
 \f0\b\fs20 \cf0 PCGraphModel
 \b0 \
 \
-Load graph data from internal storage}</string>
+Container model for all attributes of a visual graph}</string>
 							</dict>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{122, 445}, {378.75, 260.5}}</string>
+							<string>{{52.125, 445}, {503.125, 260.5}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -1763,7 +1763,7 @@ Load graph data from internal storage}</string>
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {728, 846}}</string>
+				<string>{{0, 0}, {576, 733}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -1785,7 +1785,7 @@ Load graph data from internal storage}</string>
 			<key>CanvasOrigin</key>
 			<string>{0, 0}</string>
 			<key>CanvasSize</key>
-			<string>{728, 846}</string>
+			<string>{576, 733}</string>
 			<key>ColumnAlign</key>
 			<integer>1</integer>
 			<key>ColumnSpacing</key>
@@ -1796,7 +1796,7 @@ Load graph data from internal storage}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{145.21892, 187.24858}, {62, 34}}</string>
+					<string>{{145.21915, 187.24669}, {62, 34}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1874,8 +1874,8 @@ selected}</string>
 					<integer>25</integer>
 					<key>Points</key>
 					<array>
-						<string>{405.53549, 235.29155}</string>
-						<string>{310.81009, 197.56618}</string>
+						<string>{405.53549, 235.28928}</string>
+						<string>{310.81421, 197.56067}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1907,8 +1907,8 @@ selected}</string>
 					<integer>24</integer>
 					<key>Points</key>
 					<array>
-						<string>{240.17325, 198.27948}</string>
-						<string>{146.46487, 235.39316}</string>
+						<string>{240.17307, 198.27887}</string>
+						<string>{146.46487, 235.39066}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2141,7 +2141,7 @@ selected}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{129.19121, 132.74646}, {91, 34}}</string>
+					<string>{{129.18265, 132.7477}, {91, 34}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -2219,8 +2219,8 @@ pressed}</string>
 					<integer>15</integer>
 					<key>Points</key>
 					<array>
-						<string>{364.439, 120.293}</string>
-						<string>{304.92093, 163.33493}</string>
+						<string>{364.44012, 120.29301}</string>
+						<string>{304.92291, 163.33612}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2313,8 +2313,8 @@ pressed}</string>
 					<integer>12</integer>
 					<key>Points</key>
 					<array>
-						<string>{248.39812, 163.5658}</string>
-						<string>{188.57175, 120.29292}</string>
+						<string>{248.39586, 163.56667}</string>
+						<string>{188.56094, 120.293}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2457,7 +2457,7 @@ pressed}</string>
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -2501,7 +2501,7 @@ pressed}</string>
 			<key>UniqueID</key>
 			<integer>2</integer>
 			<key>VPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>ActiveLayerIndex</key>
@@ -2511,7 +2511,7 @@ pressed}</string>
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {728, 846}}</string>
+				<string>{{0, 0}, {576, 733}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -2533,7 +2533,7 @@ pressed}</string>
 			<key>CanvasOrigin</key>
 			<string>{0, 0}</string>
 			<key>CanvasSize</key>
-			<string>{728, 846}</string>
+			<string>{576, 733}</string>
 			<key>ColumnAlign</key>
 			<integer>1</integer>
 			<key>ColumnSpacing</key>
@@ -2620,8 +2620,8 @@ pressed}</string>
 					<integer>44</integer>
 					<key>Points</key>
 					<array>
-						<string>{213.31741, 516.31989}</string>
-						<string>{240.18333, 538.68011}</string>
+						<string>{213.31723, 516.31989}</string>
+						<string>{240.18295, 538.68011}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2976,7 +2976,7 @@ pressed}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{285.91092, 187.00392}, {90, 34}}</string>
+					<string>{{285.90948, 187.00468}, {90, 34}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3054,8 +3054,8 @@ begun}</string>
 					<integer>11</integer>
 					<key>Points</key>
 					<array>
-						<string>{277.01602, 176.45663}</string>
-						<string>{302.03162, 232.54335}</string>
+						<string>{277.01541, 176.45665}</string>
+						<string>{302.02951, 232.54335}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3077,7 +3077,7 @@ begun}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{158.58618, 186.11169}, {92, 34}}</string>
+					<string>{{158.58482, 186.11092}, {92, 34}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3155,8 +3155,8 @@ begun}</string>
 					<integer>8</integer>
 					<key>Points</key>
 					<array>
-						<string>{256.98544, 176.45665}</string>
-						<string>{231.97353, 232.54337}</string>
+						<string>{256.98486, 176.45665}</string>
+						<string>{231.97144, 232.54335}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3188,8 +3188,8 @@ begun}</string>
 					<integer>6</integer>
 					<key>Points</key>
 					<array>
-						<string>{266.98874, 102.50001}</string>
-						<string>{266.97418, 131.5}</string>
+						<string>{266.99783, 102.50001}</string>
+						<string>{266.99506, 131.5}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3491,7 +3491,7 @@ begun}</string>
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -3535,7 +3535,7 @@ begun}</string>
 			<key>UniqueID</key>
 			<integer>3</integer>
 			<key>VPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>ActiveLayerIndex</key>
@@ -3585,7 +3585,7 @@ begun}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{361.77502, 432.125}, {26, 23}}</string>
+					<string>{{361.76971, 432.125}, {26, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3655,8 +3655,8 @@ begun}</string>
 					<integer>149</integer>
 					<key>Points</key>
 					<array>
-						<string>{374.77225, 423.125}</string>
-						<string>{374.77887, 472.125}</string>
+						<string>{374.76941, 423.125}</string>
+						<string>{374.77011, 472.125}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3725,8 +3725,8 @@ begun}</string>
 							<integer>132</integer>
 							<key>Points</key>
 							<array>
-								<string>{434.2323, 399.68228}</string>
-								<string>{413.43463, 399.70422}</string>
+								<string>{434.2323, 399.63766}</string>
+								<string>{413.43463, 399.64252}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -3788,8 +3788,8 @@ begun}</string>
 							<integer>134</integer>
 							<key>Points</key>
 							<array>
-								<string>{488.53632, 358.625}</string>
-								<string>{488.54721, 376.12497}</string>
+								<string>{488.52325, 358.625}</string>
+								<string>{488.52441, 376.12497}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -3851,8 +3851,8 @@ begun}</string>
 							<integer>136</integer>
 							<key>Points</key>
 							<array>
-								<string>{488.53635, 294.125}</string>
-								<string>{488.54724, 311.62497}</string>
+								<string>{488.52325, 294.125}</string>
+								<string>{488.52444, 311.62497}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -3904,7 +3904,7 @@ begun}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{464.52209, 206.125}, {48, 23}}</string>
+							<string>{{464.5217, 206.125}, {48, 23}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -3974,8 +3974,8 @@ begun}</string>
 							<integer>139</integer>
 							<key>Points</key>
 							<array>
-								<string>{488.52188, 192.12502}</string>
-								<string>{488.52234, 247.125}</string>
+								<string>{488.5217, 192.12502}</string>
+								<string>{488.5217, 247.125}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4037,8 +4037,8 @@ begun}</string>
 							<integer>141</integer>
 							<key>Points</key>
 							<array>
-								<string>{374.7753, 118.125}</string>
-								<string>{374.78079, 145.125}</string>
+								<string>{374.76947, 118.125}</string>
+								<string>{374.76978, 145.125}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4070,8 +4070,8 @@ begun}</string>
 							<integer>142</integer>
 							<key>Points</key>
 							<array>
-								<string>{413.4346, 168.63438}</string>
-								<string>{449.85614, 168.64323}</string>
+								<string>{413.4346, 168.62567}</string>
+								<string>{449.85614, 168.62628}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4254,8 +4254,8 @@ begun}</string>
 							<integer>105</integer>
 							<key>Points</key>
 							<array>
-								<string>{227.29659, 433.9375}</string>
-								<string>{227.22882, 461.62714}</string>
+								<string>{227.29237, 433.93747}</string>
+								<string>{227.21964, 461.62619}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4317,8 +4317,8 @@ begun}</string>
 							<integer>107</integer>
 							<key>Points</key>
 							<array>
-								<string>{123.81085, 410.45096}</string>
-								<string>{182.12695, 410.47125}</string>
+								<string>{123.81085, 410.43985}</string>
+								<string>{182.12695, 410.44336}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4384,8 +4384,8 @@ begun}</string>
 							<integer>109</integer>
 							<key>Points</key>
 							<array>
-								<string>{195.21455, 292.18872}</string>
-								<string>{124.04565, 291.96161}</string>
+								<string>{195.21454, 292.18292}</string>
+								<string>{124.04566, 291.94522}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4407,7 +4407,7 @@ begun}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{72.257736, 225.93916}, {26, 23}}</string>
+							<string>{{72.253082, 225.93916}, {26, 23}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -4477,8 +4477,8 @@ begun}</string>
 							<integer>111</integer>
 							<key>Points</key>
 							<array>
-								<string>{85.255348, 217.3125}</string>
-								<string>{85.261391, 268.3125}</string>
+								<string>{85.252846, 217.3125}</string>
+								<string>{85.253441, 268.3125}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4510,8 +4510,8 @@ begun}</string>
 							<integer>112</integer>
 							<key>Points</key>
 							<array>
-								<string>{234.01033, 217.31252}</string>
-								<string>{234.01624, 268.8125}</string>
+								<string>{234.00789, 217.3125}</string>
+								<string>{234.00847, 268.81247}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4543,8 +4543,8 @@ begun}</string>
 							<integer>113</integer>
 							<key>Points</key>
 							<array>
-								<string>{85.253082, 118.31251}</string>
-								<string>{85.253914, 170.3125}</string>
+								<string>{85.252594, 118.31251}</string>
+								<string>{85.252586, 170.3125}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -4669,7 +4669,7 @@ PCSoapFetcher subclass}</string>
 								</dict>
 								<dict>
 									<key>Bounds</key>
-									<string>{{145.71173, 182.314}, {23, 23}}</string>
+									<string>{{145.71173, 182.31252}, {23, 23}}</string>
 									<key>Class</key>
 									<string>ShapedGraphic</string>
 									<key>FitText</key>
@@ -4739,8 +4739,8 @@ PCSoapFetcher subclass}</string>
 									<integer>119</integer>
 									<key>Points</key>
 									<array>
-										<string>{124.04565, 193.81331}</string>
-										<string>{195.21454, 193.81479}</string>
+										<string>{124.04565, 193.81252}</string>
+										<string>{195.21454, 193.81253}</string>
 									</array>
 									<key>Style</key>
 									<dict>
@@ -5095,7 +5095,7 @@ PCSoapFetcher subclass}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>3</integer>
+		<integer>0</integer>
 		<key>ExpandedCanvases</key>
 		<array>
 			<dict>

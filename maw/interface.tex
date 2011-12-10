@@ -1,6 +1,9 @@
 \section{Pathway Browser Interface}
 \label{sect:maw_interface}
 
+\mawapp displays metabolic pathway graphs for all pathways for which the
+\pathcasemaw database provides a static layout.
+
 The home screen of \mawapp displays a list of pathways that the user can choose
 from to view a graph. This screen is shown in figure
 \ref{fig:maw_screenshot_list}. It also contains a brief explanation of the
@@ -49,3 +52,15 @@ are shown using nested rectangles with text labels in the upper right corner.
 When a node is tapped, a popover appears with the full name of the object
 represented by the nodes, as well as any relevant relationships or other
 information. Figure \ref{fig:maw_screenshot_popover} demonstrates this behavior.
+
+\begin{figure}[hbtp]
+    \center{
+        \includegraphics[width=2in]{maw/figures/screenshot_pathway_list_popover}}
+    \caption{\label{fig:maw_screenshot_pathway_list_popover} Tapping the
+    toolbar button displays a list of pathways to visualize}
+\end{figure}
+
+Tapping the toolbar at the top of the pathway visualization displays the same
+list of pathways from the home screen of the application, allowing navigation to
+different pathways. This behavior is shown in figure
+\ref{fig:maw_screenshot_pathway_list_popover}.

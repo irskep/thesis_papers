@@ -5,10 +5,23 @@
 representation of the data model of the online PathCase MAW database, derived
 from the web service interface to the database. Examples include pathways,
 metabolites, compartments, and processes. In Model-View-Controller terms (see
-\ref{sect:cocoa_mvc}), these are \textbf{model} classes.  These model
-objects are rendered in \textbf{views}, such as the main pathway graph view.
-The models and views are managed by \textbf{controllers} which manipulate the
+\ref{sect:cocoa_mvc}), these are \emph{model} classes.  These model
+objects are rendered in \emph{views}, such as the main pathway graph view.
+The models and views are managed by \emph{controllers} which manipulate the
 models and configure the views.
+
+Section \ref{sect:smda_arch_overview} describes the general architecture of
+\mawapp. Section \ref{sect:smda_data_model} describes the subset of the
+\pathcasemaw data model that is used by \mawapp. Section
+\ref{sect:smda_web_services_server} enumerates the web services that
+\pathcasemaw provides to download these model objects into \mawapp. Section
+\ref{sect:smda_web_services_client} explains how \mawapp accesses these web
+services and converts their results into model objects to be used by the
+application. Finally, section \ref{sect:smda_rendering} describes how the model
+objects are rendered to the screen.
+
+\subsection{Architecture Overview}
+\label{sect:smda_arch_overview}
 
 The relationships between some of the major classes of \mawapp are represented
 in three figures. Figure \ref{fig:maw_components} shows references between
@@ -16,43 +29,65 @@ instances. Figure \ref{fig:maw_controlflow} shows the flow of control in
 response to events from the event loop. Figure \ref{fig:maw_dataflow} shows the
 flow of data between the methods involved in loading and displaying a graph.
 
-\subsubsection{User Interface}
-\label{sect:maw_ui}
+Figure \ref{fig:maw_components} shows a high-level representation of the
+relationships between the most important objects in \mawapp.
+
+\begin{figure}[p]
+    \center{
+        \includegraphics[width=\textwidth]{maw/figures/components.pdf}}
+    \caption{\label{fig:maw_components} Components of the architecture. See
+    \ref{sect:smda_arch_overview} for more information about this diagram.}
+\end{figure}
 
 An application-level singleton, \texttt{PCAppDelegate}, handles
 application-level delegate methods and notifications from the system. Another
-singleton, \texttt{PCMainMenuViewController}, sits on top of
-\texttt{PCAppDelegate} and displays the home screen, including the list of
-pathways and button to enter SMDA.
+singleton, \texttt{PCMainMenuViewController}, displays the home screen,
+including the list of pathways and button to enter SMDA. It also initiates the
+download of the model objects if they require an update. This relationship is
+represented by the \emph{activates} and \emph{loads} arrows in figure
+\ref{fig:maw_components}.
 
 When an item in the list of pathways is tapped, a new view is shown, controlled
 by \texttt{PCPathwayNavController}. This view controller object controls the
-toolbar (currently just the ``Pathways'' button) and a content area that can
-contain any view and corresponding view controller.
+toolbar and a content area that can contain any view and corresponding view
+controller. See the screenshot in figure \ref{fig:maw_screenshot_pathway} to see
+how this toolbar is displayed to the user.
 
-When displaying a pathway, as is the normal case, the content area is controlled
-by \texttt{PCGraphViewController}. This view controller object controls a
-\texttt{PCGraphView} which, in turn, renders all nodes and edges in a scrollable
-and zoomable fashion.
+The content area is controlled by \texttt{PCGraphViewController}. This view
+controller object controls a \texttt{PCGraphView} which renders the pathway
+visualization based on a \texttt{PCGraphModel} and sends notifications back to
+the \texttt{PCGraphViewController} if an event occurs (e.g. a node being tapped).
 
-The Pathways button causes a popover list of available pathways to be displayed.
-This popover is populated by \texttt{PCPathwayListTableController}, which
-transforms pathway model objects into a form understood by the built-in table
-view. When one of these pathway names is clicked, an event is sent back to the
-\texttt{PCPathwayNavController}, which loads the new pathway from the device's
-internal storage, builds a new \texttt{PCGraphViewController}, and inserts it in
-the content area.
+As shown in figure \ref{fig:maw_screenshot_pathway_list_popover}, the
+``Pathways'' button in the toolbar controlled by \texttt{PCPathwayNavController}
+displays a list of pathways that may be visualized. The loading and display of
+this list is handled by \texttt{PCPathwayListTableController}, which loads
+pathway model objects (\ref{sect:smda_data_model}) and converts them
+to a list to be displayed by a table view (\ref{sect:ipad_views}). When a table
+view row is selected, the \texttt{PCPathwayListTableController} sends a
+notification back to the \texttt{PCPathwayNavController}, which replaces its
+content area with a \texttt{PCGraphViewController} representing the new pathway
+to be displayed.
 
-The graph view controller controls a \texttt{PCGraphView} which contains Core
-Animation layers that read the pathway model and render the nodes and edges with
-OpenGL. (See \ref{sect:core_animation}.) These layers are put inside the
-Cocoa object \texttt{UIScrollView}, which allows them to be panned and zoomed
-over by touch.
+\texttt{PCGraphViewController} and \texttt{PCGraphModel} are the high level
+interface to the pathway visualization subsystem. \texttt{PCGraphModel} holds
+collections (hash tables) of \texttt{PCGraphNode} and \texttt{PCGraphEdge}
+objects. These objects represent the visual properties of each node and edge in
+the graph, including location, color, shape, label text, and label position. The
+\texttt{PCGraphViewController} and its helper objects render the graph
+represented by the \texttt{PCGraphModel} to a scroll view
+that the user can navigate by touch (\ref{sect:ipad_views}). 
 
-\subsubsection{Web Services: Server Side}
+\subsection{Data Model}
+\label{sect:smda_data_model}
 
-\subsubsection{Web Services: Client Side}
-\label{sect:maw_web_services}
+
+
+\subsection{Web Services: Server Side}
+\label{sect:smda_web_services_server}
+
+\subsection{Web Services: Client Side}
+\label{sect:smda_web_services_client}
 
 Although the data is accessed via web services, it is needed so often and is
 small enough that the entire database is distributed with the application
@@ -71,12 +106,6 @@ These web service fetching methods convert the XML response of the web service
 into corresponding model objects (such as \texttt{SMDAPathway}) which are
 serialized to the device's internal storage.
 
-\begin{figure}[p]
-    \center{
-        \includegraphics[width=\textwidth]{maw/figures/components.pdf}}
-    \caption{\label{fig:maw_components} Components of the architecture}
-\end{figure}
-
 \begin{figure}[htbp]
     \center{
         \includegraphics[width=\textwidth]{maw/figures/controlflow.pdf}}
@@ -88,3 +117,6 @@ serialized to the device's internal storage.
         \includegraphics[width=4in]{maw/figures/dataflow.pdf}}
     \caption{\label{fig:maw_dataflow} Data flow for graph data}
 \end{figure}
+
+\subsection{Rendering}
+\label{sect:smda_rendering}

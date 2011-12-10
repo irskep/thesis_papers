@@ -23,21 +23,15 @@ objects are rendered to the screen.
 \subsection{Architecture Overview}
 \label{sect:smda_arch_overview}
 
-The relationships between some of the major classes of \mawapp are represented
-in three figures. Figure \ref{fig:maw_components} shows references between
-instances. Figure \ref{fig:maw_controlflow} shows the flow of control in
-response to events from the event loop. Figure \ref{fig:maw_dataflow} shows the
-flow of data between the methods involved in loading and displaying a graph.
-
-Figure \ref{fig:maw_components} shows a high-level representation of the
-relationships between the most important objects in \mawapp.
-
 \begin{figure}[p]
     \center{
         \includegraphics[width=\textwidth]{maw/figures/components.pdf}}
     \caption{\label{fig:maw_components} Components of the architecture. See
     \ref{sect:smda_arch_overview} for more information about this diagram.}
 \end{figure}
+
+Figure \ref{fig:maw_components} shows a high-level representation of the
+relationships between the most important objects in \mawapp.
 
 An application-level singleton, \texttt{PCAppDelegate}, handles
 application-level delegate methods and notifications from the system. Another
@@ -68,6 +62,24 @@ view row is selected, the \texttt{PCPathwayListTableController} sends a
 notification back to the \texttt{PCPathwayNavController}, which replaces its
 content area with a \texttt{PCGraphViewController} representing the new pathway
 to be displayed.
+
+The control flow of \texttt{PCPathwayNavController} at runtime is shown in
+figure \ref{fig:maw_controlflow}. This object has no event loop of its own; its
+functionality is invoked by the application event loop provided by the Cocoa
+framework. When the ``Pathways'' button is pressed, it creates a
+\texttt{PCPathwayListTableController} which presents a popover containing a
+table view, loads the list of pathways, populates the table view, and sends
+control back to the event loop. When a row is tapped in this table view, the
+\texttt{PCPathwayListTableController} sends a notification back to the
+\texttt{PCPathwayNavController}, which hides the popover, loads the new pathway
+visualization, and displays it.
+
+\begin{figure}[thbp]
+    \center{
+        \includegraphics[width=5in]{maw/figures/controlflow.pdf}}
+    \caption{\label{fig:maw_controlflow} Control flow of
+    \texttt{PCPathwayNavController}}
+\end{figure}
 
 \texttt{PCGraphViewController} and \texttt{PCGraphModel} are the high level
 interface to the pathway visualization subsystem. \texttt{PCGraphModel} holds
@@ -105,12 +117,6 @@ is downloaded in the correct order while using parallelism as much as possible.
 These web service fetching methods convert the XML response of the web service
 into corresponding model objects (such as \texttt{SMDAPathway}) which are
 serialized to the device's internal storage.
-
-\begin{figure}[htbp]
-    \center{
-        \includegraphics[width=\textwidth]{maw/figures/controlflow.pdf}}
-    \caption{\label{fig:maw_controlflow} Control flow for displaying graphs}
-\end{figure}
 
 \begin{figure}[thbp]
     \center{

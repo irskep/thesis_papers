@@ -1,6 +1,19 @@
 \section{SMDA Implementation}
 \label{sect:smda_implementation}
 
+SMDA makes full use of the \pathcasemaw data model, so \mawapp must store that
+data model internally. It must store information about pathways, metabolites,
+tissues, reactions, and more.
+
+Section \ref{sect:smda_data_model} describes the subset of the \pathcasemaw data
+model that is used by \mawapp to provide the SMDA tool. Section
+\ref{sect:smda_web_services_server} enumerates the web services that
+\pathcasemaw provides to download these model objects into \mawapp. Section
+\ref{sect:smda_web_services_client} explains how \mawapp accesses these web
+services and converts their results into model objects to be used by the
+application.
+% MORE MORE MORE
+
 Since SMDA uses the MAW data model, it shares all model classes, with a couple
 of additions. There is an \texttt{SMDASavedMeasurement} class for storing the
 user's selections. There is also a subclass of \texttt{PCGraphModel} called
@@ -11,3 +24,39 @@ The remaining classes manage the user interface. They are basic subclasses of
 Cocoa objects that implement standard design patterns for iOS applications to
 display the interface shown in the screenshots in section
 \ref{sect:smda_interface}.
+
+\subsection{Data Model}
+\label{sect:smda_data_model}
+
+The Objective-C classes representing the model objects use the \texttt{SMDA}
+prefix, but the prefix is omitted in this section for clarity.
+
+\begin{itemize}
+
+    \item \textbf{Pathway}: Top level object containing all information about a
+        pathway including name, identifier, 
+
+\end{itemize}
+
+\subsection{Web Services: Server Side}
+\label{sect:smda_web_services_server}
+
+\subsection{Web Services: Client Side}
+\label{sect:smda_web_services_client}
+
+Although the data is accessed via web services, it is needed so often and is
+small enough that the entire database is distributed with the application
+package in the form of serialized objects. The database can be updated whenever
+the user chooses via the user interface.
+
+Each web service corresponds roughly to one data type in the model, so those
+model objects contain methods to load their data from the corresponding web
+service. For example, the method \texttt{[PCPathway loadDataFromServer]}
+updates all pathway objects. However, this method relies on some data for
+tissues and metabolites to have been downloaded already, so the data update
+process uses mutexes and asynchronous network requests to ensure that the data
+is downloaded in the correct order while using parallelism as much as possible.
+
+These web service fetching methods convert the XML response of the web service
+into corresponding model objects (such as \texttt{SMDAPathway}) which are
+serialized to the device's internal storage.

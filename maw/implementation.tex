@@ -1,24 +1,24 @@
 \section{Pathway Browser Implementation}
 \label{sect:maw_implementation}
 
-\mawapp must track a few different categories of data. The most basic is a
-representation of the data model of the online PathCase MAW database, derived
-from the web service interface to the database. Examples include pathways,
-metabolites, compartments, and processes. In Model-View-Controller terms (see
-\ref{sect:cocoa_mvc}), these are \emph{model} classes.  These model
-objects are rendered in \emph{views}, such as the main pathway graph view.
-The models and views are managed by \emph{controllers} which manipulate the
-models and configure the views.
+\mawappp pathway visualization is relatively simple in terms of its data model;
+the \pathcasemaw web service provides all information in terms of graphical
+objects such as nodes and edges. \mawapp doesn't need to make any rendering
+decisions about an attribute like a node's color based on, for example, a
+metabolite's role in a reaction. It simply renders exactly what \pathcasemaw
+instructs.
+
+The pathway visualization system was the first part of the project to be
+implemented. Its limited scope made it easy to design a graph renderer that is
+decoupled from the specific kind of data it displays. Although the design did
+have to be modified to be used in \keggapp, the changes were not significant,
+and eventually the two applications may share the same code for this component.
 
 Section \ref{sect:smda_arch_overview} describes the general architecture of
-\mawapp. Section \ref{sect:smda_data_model} describes the subset of the
-\pathcasemaw data model that is used by \mawapp. Section
-\ref{sect:smda_web_services_server} enumerates the web services that
-\pathcasemaw provides to download these model objects into \mawapp. Section
-\ref{sect:smda_web_services_client} explains how \mawapp accesses these web
-services and converts their results into model objects to be used by the
-application. Finally, section \ref{sect:smda_rendering} describes how the model
-objects are rendered to the screen.
+\mawappp pathway visualizer. Section \ref{sect:smda_viz_data} describes in
+detail the process of loading a graph into memory from its \pathcasemaw
+representation. Finally, section \ref{sect:smda_rendering} describes how the
+model objects are rendered to the screen.
 
 \subsection{Architecture Overview}
 \label{sect:smda_arch_overview}
@@ -31,7 +31,10 @@ objects are rendered to the screen.
 \end{figure}
 
 Figure \ref{fig:maw_components} shows a high-level representation of the
-relationships between the most important objects in \mawapp.
+relationships between the most important objects in \mawapp. Most of the classes
+discussed here and shown in the figure fall into the category of model, view, or
+controller. For more information about Model-View-Controller design, see section
+\ref{sect:cocoa_mvc}.
 
 An application-level singleton, \texttt{PCAppDelegate}, handles
 application-level delegate methods and notifications from the system. Another
@@ -90,38 +93,15 @@ the graph, including location, color, shape, label text, and label position. The
 represented by the \texttt{PCGraphModel} to a scroll view
 that the user can navigate by touch (\ref{sect:ipad_views}). 
 
-\subsection{Data Model}
-\label{sect:smda_data_model}
-
-
-
-\subsection{Web Services: Server Side}
-\label{sect:smda_web_services_server}
-
-\subsection{Web Services: Client Side}
-\label{sect:smda_web_services_client}
-
-Although the data is accessed via web services, it is needed so often and is
-small enough that the entire database is distributed with the application
-package in the form of serialized objects. The database can be updated whenever
-the user chooses via the user interface.
-
-Each web service corresponds roughly to one data type in the model, so those
-model objects contain methods to load their data from the corresponding web
-service. For example, the method \texttt{[PCPathway loadDataFromServer]}
-updates all pathway objects. However, this method relies on some data for
-tissues and metabolites to have been downloaded already, so the data update
-process uses mutexes and asynchronous network requests to ensure that the data
-is downloaded in the correct order while using parallelism as much as possible.
-
-These web service fetching methods convert the XML response of the web service
-into corresponding model objects (such as \texttt{SMDAPathway}) which are
-serialized to the device's internal storage.
+\subsection{Loading Graph Data}
+\label{sect:smda_viz_data}
 
 \begin{figure}[thbp]
     \center{
-        \includegraphics[width=4in]{maw/figures/dataflow.pdf}}
-    \caption{\label{fig:maw_dataflow} Data flow for graph data}
+        \includegraphics[width=3.5in]{maw/figures/dataflow.pdf}}
+    \caption{\label{fig:maw_viz_data} Data flow from \pathcasemaw representation
+    to final display format. See \ref{sect:smda_viz_data} for more information
+    about this diagram.}
 \end{figure}
 
 \subsection{Rendering}

@@ -36,8 +36,6 @@ management responsibility from the programmer to the compiler. (See section
 \emph{To be written. This will be very similar in style to section
 \ref{sect:maw_interface}.}
 
-\subsubsection{Web Services: Server Side}
-
 \subsection{Web Services}
 \label{sect:kegg_impl_web_services}
 
@@ -131,7 +129,8 @@ edges must be added to it. This is accomplished by calling its methods
 \texttt{addNodeWithID:label:} and \texttt{addEdgeWithHeadID:tailID:}. These
 methods create internal \texttt{GVGraphNode} and \texttt{GVGraphEdge} objects
 that represent the nodes and edges. These objects have no information about
-color, shape, or other style attributes.
+color, shape, or other style attributes because those attributes are not
+relevant to generating a layout.
 
 Nodes and edges are added by calling methods on this class, which create
 \texttt{GVGraphNode} and \texttt{GVGraphEdge} objects that contain only the

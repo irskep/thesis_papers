@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2011-12-11 22:11:24 +0000</string>
+	<string>2011-12-11 22:52:20 +0000</string>
 	<key>Modifier</key>
 	<string>Stephen Johnson</string>
 	<key>NotesVisible</key>
@@ -5587,7 +5587,7 @@ PCSoapFetcher subclass}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{289.93292, 394.61508}, {92, 23}}</string>
+					<string>{{296.97418, 395.63724}, {92, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5620,7 +5620,7 @@ PCSoapFetcher subclass}</string>
 						<integer>4</integer>
 					</dict>
 					<key>Rotation</key>
-					<real>332</real>
+					<real>333</real>
 					<key>Shape</key>
 					<string>Rectangle</string>
 					<key>Style</key>
@@ -5656,7 +5656,7 @@ PCSoapFetcher subclass}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{296.52563, 305.2168}, {79, 23}}</string>
+					<string>{{308.87711, 296.20889}, {79, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5682,14 +5682,14 @@ PCSoapFetcher subclass}</string>
 						<key>ID</key>
 						<integer>31</integer>
 						<key>Offset</key>
-						<real>8</real>
+						<real>11</real>
 						<key>Position</key>
-						<real>0.51731681823730469</real>
+						<real>0.54555046558380127</real>
 						<key>RotationType</key>
 						<integer>4</integer>
 					</dict>
 					<key>Rotation</key>
-					<real>330</real>
+					<real>345</real>
 					<key>Shape</key>
 					<string>Rectangle</string>
 					<key>Style</key>
@@ -5804,8 +5804,10 @@ PCSoapFetcher subclass}</string>
 					<integer>31</integer>
 					<key>Points</key>
 					<array>
-						<string>{256.93021, 372.24756}</string>
-						<string>{417.63339, 278.25244}</string>
+						<string>{250.48013, 372.22156}</string>
+						<string>{306, 335}</string>
+						<string>{414, 296.90161}</string>
+						<string>{434.9093, 278.33203}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -5839,8 +5841,8 @@ PCSoapFetcher subclass}</string>
 					<integer>30</integer>
 					<key>Points</key>
 					<array>
-						<string>{400.45435, 381.48764}</string>
-						<string>{261.11768, 456.76239}</string>
+						<string>{409.6496, 383.4758}</string>
+						<string>{264.83752, 456.77435}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -5907,8 +5909,8 @@ PCSoapFetcher subclass}</string>
 					<integer>27</integer>
 					<key>Points</key>
 					<array>
-						<string>{464.78177, 278.49622}</string>
-						<string>{459.41965, 321.75421}</string>
+						<string>{468.4697, 278.5}</string>
+						<string>{468.42401, 323.74997}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -5940,10 +5942,10 @@ PCSoapFetcher subclass}</string>
 					<integer>24</integer>
 					<key>Points</key>
 					<array>
-						<string>{507.63254, 278.30295}</string>
-						<string>{544, 306}</string>
+						<string>{509.55426, 278.29367}</string>
+						<string>{556, 312}</string>
 						<string>{553, 385}</string>
-						<string>{526.46588, 395.34149}</string>
+						<string>{531.23859, 395.28632}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -5975,10 +5977,10 @@ PCSoapFetcher subclass}</string>
 					<integer>22</integer>
 					<key>Points</key>
 					<array>
-						<string>{516.16852, 278.26483}</string>
-						<string>{575, 315}</string>
+						<string>{519.80261, 278.25082}</string>
+						<string>{578, 312}</string>
 						<string>{574, 438}</string>
-						<string>{519.17316, 463.7872}</string>
+						<string>{523.24854, 465.76004}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -6493,7 +6495,7 @@ Root application singleton}</string>
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{385, 322.25}, {141, 59}}</string>
+							<string>{{397.87735, 324.25}, {141, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -6522,7 +6524,7 @@ Root application singleton}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{385, 393.5}, {141, 59}}</string>
+							<string>{{397.87735, 395.5}, {141, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -6553,7 +6555,7 @@ Display "Loading\'85"}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{385.5, 464}, {141, 59}}</string>
+							<string>{{398.37735, 466}, {141, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -6584,7 +6586,7 @@ Display HTML pages}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{376, 310}, {159.5, 236}}</string>
+							<string>{{388.87735, 311}, {159.49997, 237}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -6623,7 +6625,7 @@ Display HTML pages}</string>
 					<key>Margins</key>
 					<array>
 						<real>9</real>
-						<real>12.25</real>
+						<real>13.25</real>
 						<real>9</real>
 						<real>23</real>
 					</array>
@@ -7675,6 +7677,72 @@ Display list of categories}</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>Head</key>
+					<dict>
+						<key>ID</key>
+						<integer>37</integer>
+					</dict>
+					<key>ID</key>
+					<integer>72</integer>
+					<key>Points</key>
+					<array>
+						<string>{460.48608, 435.2674}</string>
+						<string>{460.48608, 460.5}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>LineType</key>
+							<integer>1</integer>
+							<key>TailArrow</key>
+							<string>0</string>
+						</dict>
+					</dict>
+					<key>Tail</key>
+					<dict>
+						<key>ID</key>
+						<integer>71</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{389.98608, 400.7674}, {141, 34}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>71</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>CornerRadius</key>
+							<real>9</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf230
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Show graph view}</string>
+					</dict>
+				</dict>
+				<dict>
 					<key>Bounds</key>
 					<string>{{550.81989, 267.19534}, {51, 34}}</string>
 					<key>Class</key>
@@ -8011,7 +8079,7 @@ Loads graph layout from PathCase KEGG or generates dynamic layout if none exists
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{296, 414.67944}, {92, 23}}</string>
+					<string>{{297.88641, 444.70987}, {92, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8031,18 +8099,20 @@ Loads graph layout from PathCase KEGG or generates dynamic layout if none exists
 						<real>10</real>
 					</dict>
 					<key>ID</key>
-					<integer>63</integer>
+					<integer>150</integer>
 					<key>Line</key>
 					<dict>
 						<key>ID</key>
-						<integer>62</integer>
+						<integer>149</integer>
 						<key>Offset</key>
 						<real>9</real>
 						<key>Position</key>
 						<real>0.44340720772743225</real>
 						<key>RotationType</key>
-						<integer>0</integer>
+						<integer>4</integer>
 					</dict>
+					<key>Rotation</key>
+					<real>12</real>
 					<key>Shape</key>
 					<string>Rectangle</string>
 					<key>Style</key>
@@ -8082,14 +8152,14 @@ Loads graph layout from PathCase KEGG or generates dynamic layout if none exists
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
-						<integer>48</integer>
+						<integer>165</integer>
 					</dict>
 					<key>ID</key>
-					<integer>62</integer>
+					<integer>149</integer>
 					<key>Points</key>
 					<array>
-						<string>{389.5, 435.17944}</string>
-						<string>{282.375, 435.17944}</string>
+						<string>{389.49725, 475.22809}</string>
+						<string>{282.36383, 452.18039}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -8117,14 +8187,14 @@ Loads graph layout from PathCase KEGG or generates dynamic layout if none exists
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
-						<integer>48</integer>
+						<integer>165</integer>
 					</dict>
 					<key>ID</key>
-					<integer>61</integer>
+					<integer>151</integer>
 					<key>Points</key>
 					<array>
-						<string>{413.38205, 381.87103}</string>
-						<string>{282.36014, 415.46323}</string>
+						<string>{413.49268, 379.99402}</string>
+						<string>{282.35861, 414.42505}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -8146,7 +8216,7 @@ Loads graph layout from PathCase KEGG or generates dynamic layout if none exists
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{413.38208, 352.82089}, {94, 34}}</string>
+					<string>{{413.49268, 350.65353}, {94, 34}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8272,14 +8342,14 @@ Loads graph layout from PathCase KEGG or generates dynamic layout if none exists
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
-						<integer>37</integer>
+						<integer>71</integer>
 					</dict>
 					<key>ID</key>
 					<integer>57</integer>
 					<key>Points</key>
 					<array>
-						<string>{460.43893, 341.89954}</string>
-						<string>{460.31009, 405.17944}</string>
+						<string>{460.49606, 341.89954}</string>
+						<string>{460.4884, 400.2674}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -8328,7 +8398,7 @@ Loads graph layout from PathCase KEGG or generates dynamic layout if none exists
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \b0 \cf0  \
-Loads graph information from PathCase KEGG}</string>
+Loads node information from PathCase KEGG}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -8399,7 +8469,7 @@ Loads graph information from PathCase KEGG}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{390, 405.67944}, {141, 59}}</string>
+					<string>{{389.98608, 461}, {141, 59}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -8428,7 +8498,7 @@ Loads graph information from PathCase KEGG}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{298.61899, 258.4921}, {79, 23}}</string>
+					<string>{{299.89001, 299.24277}, {79, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8448,20 +8518,20 @@ Loads graph information from PathCase KEGG}</string>
 						<real>10</real>
 					</dict>
 					<key>ID</key>
-					<integer>33</integer>
+					<integer>147</integer>
 					<key>Line</key>
 					<dict>
 						<key>ID</key>
-						<integer>31</integer>
+						<integer>146</integer>
 						<key>Offset</key>
 						<real>9</real>
 						<key>Position</key>
-						<real>0.48222523927688599</real>
+						<real>0.52083903551101685</real>
 						<key>RotationType</key>
 						<integer>4</integer>
 					</dict>
 					<key>Rotation</key>
-					<real>14</real>
+					<real>357</real>
 					<key>Shape</key>
 					<string>Rectangle</string>
 					<key>Style</key>
@@ -8504,11 +8574,11 @@ Loads graph information from PathCase KEGG}</string>
 						<integer>8</integer>
 					</dict>
 					<key>ID</key>
-					<integer>31</integer>
+					<integer>146</integer>
 					<key>Points</key>
 					<array>
-						<string>{286.11063, 266.51224}</string>
-						<string>{389.51883, 291.85547}</string>
+						<string>{286.12396, 323.18198}</string>
+						<string>{389.50107, 316.54327}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -8527,7 +8597,7 @@ Loads graph information from PathCase KEGG}</string>
 					<key>Tail</key>
 					<dict>
 						<key>ID</key>
-						<integer>51</integer>
+						<integer>167</integer>
 					</dict>
 				</dict>
 				<dict>
@@ -8563,18 +8633,115 @@ Multiplex detail view controllers}</string>
 				</dict>
 				<dict>
 					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>Head</key>
+					<dict>
+						<key>ID</key>
+						<integer>167</integer>
+					</dict>
+					<key>ID</key>
+					<integer>155</integer>
+					<key>Points</key>
+					<array>
+						<string>{203.3125, 270.77988}</string>
+						<string>{203.3125, 298.5}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>LineType</key>
+							<integer>1</integer>
+							<key>TailArrow</key>
+							<string>0</string>
+						</dict>
+					</dict>
+					<key>Tail</key>
+					<dict>
+						<key>ID</key>
+						<integer>166</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
 					<string>Group</string>
 					<key>CollapsedSize</key>
 					<string>{100, 50}</string>
 					<key>Graphics</key>
 					<array>
 						<dict>
+							<key>Class</key>
+							<string>LineGraphic</string>
+							<key>Head</key>
+							<dict>
+								<key>ID</key>
+								<integer>166</integer>
+							</dict>
+							<key>ID</key>
+							<integer>163</integer>
+							<key>Points</key>
+							<array>
+								<string>{203.3125, 183.05978}</string>
+								<string>{203.3125, 210.77988}</string>
+							</array>
+							<key>Style</key>
+							<dict>
+								<key>stroke</key>
+								<dict>
+									<key>HeadArrow</key>
+									<string>FilledArrow</string>
+									<key>LineType</key>
+									<integer>1</integer>
+									<key>TailArrow</key>
+									<string>0</string>
+								</dict>
+							</dict>
+							<key>Tail</key>
+							<dict>
+								<key>ID</key>
+								<integer>164</integer>
+							</dict>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{132.8125, 123.55978}, {141, 59}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>ID</key>
+							<integer>164</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf230
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\b\fs20 \cf0 UINavigationController
+\b0 \
+\
+Navigation stack controller}</string>
+							</dict>
+						</dict>
+						<dict>
 							<key>Bounds</key>
 							<string>{{124.75, 405.67944}, {157.125, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
-							<integer>48</integer>
+							<integer>165</integer>
 							<key>Shape</key>
 							<string>Rectangle</string>
 							<key>Style</key>
@@ -8600,45 +8767,12 @@ Information about current selection in graph view}</string>
 							</dict>
 						</dict>
 						<dict>
-							<key>Class</key>
-							<string>LineGraphic</string>
-							<key>Head</key>
-							<dict>
-								<key>ID</key>
-								<integer>51</integer>
-							</dict>
-							<key>ID</key>
-							<integer>49</integer>
-							<key>Points</key>
-							<array>
-								<string>{203.3125, 188.5}</string>
-								<string>{203.3125, 216.22011}</string>
-							</array>
-							<key>Style</key>
-							<dict>
-								<key>stroke</key>
-								<dict>
-									<key>HeadArrow</key>
-									<string>FilledArrow</string>
-									<key>LineType</key>
-									<integer>1</integer>
-									<key>TailArrow</key>
-									<string>0</string>
-								</dict>
-							</dict>
-							<key>Tail</key>
-							<dict>
-								<key>ID</key>
-								<integer>50</integer>
-							</dict>
-						</dict>
-						<dict>
 							<key>Bounds</key>
-							<string>{{132.8125, 129}, {141, 59}}</string>
+							<string>{{132.8125, 211.27988}, {141, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
-							<integer>50</integer>
+							<integer>166</integer>
 							<key>Shape</key>
 							<string>Rectangle</string>
 							<key>Style</key>
@@ -8665,11 +8799,11 @@ List of pathway categories and documentation links}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{121, 216.72011}, {164.625, 59}}</string>
+							<string>{{121, 299}, {164.625, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
-							<integer>51</integer>
+							<integer>167</integer>
 							<key>Shape</key>
 							<string>Rectangle</string>
 							<key>Style</key>
@@ -8697,11 +8831,11 @@ List of pathways in master view}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{112, 104}, {182.625, 369.67944}}</string>
+							<string>{{112, 98.559784}, {182.625, 375.11966}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
-							<integer>52</integer>
+							<integer>168</integer>
 							<key>Shape</key>
 							<string>Rectangle</string>
 							<key>Style</key>
@@ -8732,7 +8866,7 @@ List of pathways in master view}</string>
 						</dict>
 					</array>
 					<key>ID</key>
-					<integer>47</integer>
+					<integer>162</integer>
 					<key>Margins</key>
 					<array>
 						<real>9</real>
@@ -8803,7 +8937,7 @@ List of pathways in master view}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>5</integer>
+		<integer>7</integer>
 		<key>ExpandedCanvases</key>
 		<array>
 			<dict>

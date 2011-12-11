@@ -249,6 +249,10 @@ The end result of this process is shown in figures
 
 \subsubsection{Life Cycle of a Pathway Visualization}
 
+The loading and display of a pathway visualization requires interactions between
+several components of \keggapp. These interactions are illustrated in figure
+\ref{fig:kegg_viz_life_cycle}.
+
 \begin{figure}[htbp]
     \center{
         \includegraphics[width=\textwidth]{kegg/figures/viz_life_cycle.pdf}}
@@ -256,6 +260,38 @@ The end result of this process is shown in figures
     visualization. See section \ref{sect:kegg_impl_graph_view} for more
     information.}
 \end{figure}
+
+Loading is invoked by selecting a pathway from
+\texttt{PCPathwayTableViewController}. In response to the notification posted by
+this action, \texttt{PCDetailViewController} sets its content area to the
+``Loading\ldots'' screen and invokes the \texttt{PCGraphDataFetcher} web service
+class to load the pathway's information from the \pathcasekegg web service
+\textbf{GetGraphData}. This class produces a set of \texttt{PCNodeInfo} object
+that represent all aspects of the graph except node and edge positions.
+
+This set is given to a \texttt{PCLayoutFetcher} web service class which attempts
+to download a layout for the graph from the \pathcasekegg web service
+\textbf{RetrieveLayout}. If successful, it builds a \texttt{PCGraphModel}
+including layout information using the information in the response. If not, it
+builds a \texttt{PCGraphModel} from the \texttt{PCNodeInfo} objects and
+generates a dynamic layout. (See section \ref{sect:kegg_impl_graphviz} for how
+this is done.)
+
+There are two advantages to using frozen layouts provided by
+\textbf{RetrieveLayout}. The first is that they are curated by hand and tend to
+look nicer as a result. The second is that when a metabolite is used in multiple
+reactions, it is repeated for each reaction. \keggapp does not yet do the same
+thing when it generates dynamic layouts; a metabolite that is used in multiple
+reactions will appear only once, often resulting in ugly layouts with one
+metabolite node having many incoming edges from many reactions.
+
+When the layout step is complete, \texttt{PCLayoutFetcher} posts a notification
+containing the generated \texttt{PCGraphModel} object. This notification is
+received by \texttt{PCDetailViewController}, which creates a
+\texttt{PCGraphViewController} and puts it in the detail view content area. It
+also pushes a \texttt{PCNodeInfoController} onto the master view navigation
+stack, which receives events from the \texttt{PCGraphViewController} about what
+it should display.
 
 \subsection{Reading the ENZYME Database}
 \label{sect:kegg_impl_enzyme}

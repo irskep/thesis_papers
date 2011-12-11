@@ -5,14 +5,14 @@ The input interface for SMDA requires full knowledge of the SMDA database, so
 \mawapp must store that database internally in some form.  It must store
 information about pathways, metabolites, tissues, reactions, and more.
 
-Section \ref{sect:smda_data_model} describes the subset of the \pathcasemaw data
+Section \ref{sect:smda_data_model} describes the subset of the SMDA data
 model that is used by \mawapp to provide the SMDA tool. Section
 \ref{sect:smda_web_services_server} enumerates the web services that
-\pathcasemaw provides to download these model objects into \mawapp. Section
+SMDA provides to download these model objects into \mawapp. Section
 \ref{sect:smda_web_services_client} explains how \mawapp accesses these web
 services and converts their results into model objects to be used by the
-application.
-% MORE MORE MORE
+application. Finally, section \ref{sect:smda_results_ui} describes the user
+interface classes.
 
 \subsection{Data Model}
 \label{sect:smda_data_model}
@@ -67,44 +67,55 @@ measurements.
 
 \end{itemize}
 
-\subsection{Web Services: Server Side}
-\label{sect:smda_web_services_server}
+\subsection{Loading the Data}
+\label{sect:smda_all_data}
+
+\subsubsection{Web Services}
+\label{sect:smda_web_services}
 
 This section describes the web services that provide the data used to populate
 the models described in section \ref{sect:smda_data_model}.
 
-\begin{itemize}
+Some web services simply list all items of a certain type from the database. The
+services of this type that \mawapp uses are \textbf{GetAllPathways},
+\textbf{GetAllUnits}, \textbf{GetAllTransportProcesses},
+\textbf{GetAllReactions}, \textbf{GetAllCompartments},
+\textbf{GetAllMetabolites}, and \textbf{GetAllMetabolitePools}. These web
+services take no arguments and always return the same result until the database
+is changed.
 
-    \item \textbf{GetAllPathways}
-    \item \textbf{GetTissueOfPathway}
-    \item \textbf{GetAllMetabolitePoolsForPathway}
-    \item \textbf{GetPathwayMetabolite}
-    \item \textbf{GetAllUnits}
-    \item \textbf{GetAllTransportProcesses}
-    \item \textbf{GetAllReactions}
-    \item \textbf{GetReactionMetabolite}
-    \item \textbf{GetAllCompartments}
-    \item \textbf{GetAllMetabolites}
-    \item \textbf{GetAllMetabolitePools}
+Other web services take a pathway as an argument in order to return results that
+are relevant only to that pathway. The services of this type that \mawapp uses
+are \textbf{GetTissueOfPathway}, which lists tissues/compartments, and
+\textbf{GetPathwayMetabolite}, which lists metabolites.
 
-\end{itemize}
+The web service \textbf{GetAllMetabolitePoolsForPathway} takes both a pathway
+and as a tissue and returns metabolite pools for that pathway-tissue pair.
 
-\subsection{Web Services: Client Side}
-\label{sect:smda_web_services_client}
+By calling these web services with all possible values, the entire database can
+be mirrored on the iPad.
 
-Although the data is accessed via web services, it is needed so often and is
-small enough that the entire database is distributed with the application
-package in the form of serialized objects. The database can be updated whenever
-the user chooses via the user interface.
+\emph{I did not have time to enumerate all of the web services' responses. It
+will take about three pages.}
 
-Each web service corresponds roughly to one data type in the model, so those
-model objects contain methods to load their data from the corresponding web
-service. For example, the method \texttt{[PCPathway loadDataFromServer]}
-updates all pathway objects. However, this method relies on some data for
-tissues and metabolites to have been downloaded already, so the data update
-process uses mutexes and asynchronous network requests to ensure that the data
-is downloaded in the correct order while using parallelism as much as possible.
+\subsubsection{Storage}
 
-These web service fetching methods convert the XML response of the web service
-into corresponding model objects (such as \texttt{SMDAPathway}) which are
-serialized to the device's internal storage.
+Due to the hierarchical and interconnected nature of the data model, it is not
+practical to dynamically invoke the web services at the time their data is
+needed. Instead, an internal representation is updated in bulk at the user's
+request. When they tap an ``Update Local Data'' button in the SMDA input view, a
+series of asynchronously executed Objective-C blocks (\ref{sect:objc_bocks}) are
+invoked. These blocks make the web requests, convert their results to the model
+objects described in section \ref{sect:smda_data_model}, and serialized to the
+iPad's internal storage.
+
+To avoid a costly first run, the application binary contains a snapshot of these
+objects taken from the web services at the time the application was released.
+This way, the application does not require internet access until the actual SMDA
+algorithm is run.
+
+\subsection{User Interface}
+\label{sect:smda_results_ui}
+
+\emph{I also did not have time to go over the SMDA input and output interface
+implementations.}

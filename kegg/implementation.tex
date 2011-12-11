@@ -7,9 +7,10 @@ some important differences. Development on \keggapp was begun a year after
 implementation of the pathway viewing app concept.
 
 The improved design was made possible partially by new features introduced into
-the iPad development stack in 2011 with the release of iOS 5. The most important
-change was ``automatic reference counting,'' which moves memory management
-responsibility from the programmer to the compiler. 
+the iPad development environmeng in 2011 with the release of iOS 5. The most
+important change was ``automatic reference counting,'' (ARC) which moves memory
+management responsibility from the programmer to the compiler. (See section
+\ref{sect:objc_memory} for more information on ARC).
 
 \keggappp architecture consists of a few well-defined components:
 
@@ -32,7 +33,8 @@ responsibility from the programmer to the compiler.
 \subsection{Top-Level User Interface}
 \label{sect:kegg_impl_top_level_ui}
 
-To be written.
+\emph{To be written. This will be very similar in style to section
+\ref{sect:maw_interface}.}
 
 \subsubsection{Web Services: Server Side}
 
@@ -84,36 +86,32 @@ data handled by \keggapp, on the other hand, is not very interdependent, so
 it is simpler to make the web service requests on demand and turn the XML into
 objects in memory on the fly.
 
-\subsection{Data Views}
-\label{sect:kegg_impl_data_views}
-
-These are also mostly boring to talk about. Each data view has a model (an
-object which is being displayed such as a node, a pathway, or a list of
-organisms), a view (a table, row of colored labels, a graph view, etc.), and a
-controller (translating the model to the view and responding to UI and web
-service events).
-
 \subsubsection{Pathway Graph View}
 \label{sect:kegg_impl_graph_view}
 
-This will be an explanation of the \keggapp graph view and how it differs from
-the \mawapp graph view. In short, it is more encapsulated and less dependent on
-the rest of the data model.
+\emph{This will be an explanation of the \keggapp graph view and how it differs
+from the \mawapp graph view. It will explain the node and edge objects that are
+used to construct and render the graph view, which are referred to later in this
+chapter.}
 
 \subsection{Reading the ENZYME Database}
 \label{sect:kegg_impl_enzyme}
 
-The ENZYME database is provided in a flat file format \cite{enzyme:enzuser}. This
-format is not acceptable for random access behavior. To get around this issue, a
-Python script translates the entire file into a SQLite database that is bundled
-with \keggapp and queried by its code. (SQLite is a minimal implementation
-of SQL intended to be used as a storage medium for single-instance applications
-\cite{sqlite:main}.)
+The ENZYME database is provided in a flat file format \cite{enzyme:enzuser}.
+This format is not acceptable for random seeking behavior, so it has been
+converted to a SQLite database \cite{sqlite:main} for more efficient access.
+SQLite is a minimal implementation of SQL intended to be used as a storage
+medium for single-instance applications \cite{sqlite:main}.
+
+\emph{TODO: Explain ENZYME database file format and how it is converted to
+SQLite via a simple Python script}
 
 Access to the SQLite database is encapsulated in the \texttt{EKEnzyme} class. It
 can be used by calling \texttt{[EKEnzyme enzymeForID:(NSString *)ECNumber]},
 which returns an \texttt{EKEnzyme} object that has an instance variable for each
 type of data in the ENZYME database entry.
+
+\emph{(Again, ``each type of data'' will be enumerated here in the future.)}
 
 \subsection{Dynamic Layouts with graphviz}
 \label{sect:kegg_impl_graphviz}
@@ -122,23 +120,56 @@ PathCase KEGG contains human-curated frozen layouts for some pathways, but not
 all. In order to display the pathways without frozen layouts, \keggapp
 uses the graphviz library.
 
-(Blurb about the graphviz project, what it does, etc.)
+\emph{TODO: Blurb about the graphviz library, what it does, etc.}
 
-The layout functionality of graphviz is encapsulated in the \texttt{GVGraph}
-class. An instance of this class represents a single graph. Nodes and edges are
-added by calling methods on this class, which create \texttt{GVGraphNode} and
-\texttt{GVGraphEdge} objects that contain only the information that is important
-for generating a layout. They are completely separate from the graph view node
-and edge objects that have additional information about color and edge arrow
-shapes.
+The layout functionality of the graphviz library is encapsulated in a class
+called \texttt{GVGraph}. An instance of this class represents a graph with
+nodes, a label for each node, and one-directional edges that connect nodes.
 
-The call to graphviz is made when the \texttt{computeLayoutWithEngine:} method
-is called on the \texttt{GVGraph} instance. (The single argument is a constant
-representing the spring-based or hierarchical layout engine.) This method call
-turns the \texttt{GVGraph}'s node and edge objects into graphviz objects, asks
-graphviz to generate a layout, and reads the node positions from graphviz back
-into the \texttt{GVGraphNode} and \texttt{GraphEdge} objects.
+To generate a layout, a \texttt{GVGraph} object must be created, and nodes and
+edges must be added to it. This is accomplished by calling its methods
+\texttt{addNodeWithID:label:} and \texttt{addEdgeWithHeadID:tailID:}. These
+methods create internal \texttt{GVGraphNode} and \texttt{GVGraphEdge} objects
+that represent the nodes and edges. These objects have no information about
+color, shape, or other style attributes.
 
-At this point, it is the caller's responsibility to read the position data from
-\texttt{GVGraphNode} and \texttt{GraphEdge} into whatever objects it likes. In
-the case of \keggapp, this is the graph view node and edge objects.
+Nodes and edges are added by calling methods on this class, which create
+\texttt{GVGraphNode} and \texttt{GVGraphEdge} objects that contain only the
+information that is important for generating a layout. They are completely
+separate from the graph view node and edge objects that have additional
+information about color and edge arrow shapes.
+
+The dynamic layout is performed by calling the \texttt{computeLayoutWithEngine:}
+method on the \texttt{GVGraph} instance. The argument to this function is a
+constant representing either a spring-based or hierarchical layout engine. This
+method converts the \texttt{GVGraphNode} and \texttt{GVGraphEdge} objects into
+graphviz's internal graph representation, asks graphviz to generate a layout,
+and reads the results back into the \texttt{GVGraphNode} and
+\texttt{GVGraphEdge} objects. The caller may then read back the position data
+from the \texttt{GVGraph} instance to use however it pleases.
+
+To clarify these steps, here is the actual implementation of the dynamic layout
+function in \keggapp, which applies a dynamic layout to the graph model
+described in section \ref{sect:kegg_impl_graph_view}.
+
+\begin{objc}
+- (void)computeDynamicLayout
+{
+    GVGraph *g = [[GVGraph alloc] init];
+    
+    for (PCGraphNode *node in [self.nodes objectEnumerator]) {
+        [g addNodeWithID:node.identifier label:node.label];
+    }
+    
+    for (PCGraphEdge *edge in [self.edges objectEnumerator]) {
+        [g addEdgeWithHeadID:edge.target.identifier tailID:edge.source.identifier];
+    }
+    
+    [g computeLayoutWithEngine:GVLayoutEngineNeato];
+    
+    for (PCGraphNode *node in [self.nodes objectEnumerator]) {
+        CGPoint position = [g positionForNodeID:node.identifier];
+        node.position = position;
+    }
+}
+\end{objc}

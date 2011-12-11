@@ -1,16 +1,23 @@
 \section{Future Work}
 \label{sect:kegg_future_work}
 
-\begin{itemize}
+% Make dragging nodes more efficient by using separate layers to render
+% the dragged objects during the operation
 
-    \item Allow refreshing cache (or refresh on every request in the background
-        regardless of cache hit)
+There are a few opportunities for improvement in \keggapp. The most immediate is
+in rendering efficiency. The multitude of graphical objects consumes more memory
+than necessary and causes slowness when moving the graph around in the scroll
+view. This could be improved by optimizing the rendering code.
 
-    \item Query KEGG for more data (?)
+A more visible improvement would be the inclusion of more data from KEGG in the
+visualization and sidebar. The button to show the KEGG web page is helpful, but
+much of that information is available through KEGG web services. There are also
+other sources for information such as graphical depictions of molecules which
+would be very helpful to have in the sidebar to show when a metabolite is
+selected.
 
-    \item Implement and write about PathCase KEGG queries on the iPad
-
-    \item Make dragging nodes more efficient by using separate layers to render
-        the dragged objects during the operation
-
-\end{itemize}
+The implementation of built-in \pathcasekegg database queries is in progress.
+For example, the query ``Pathways that are significantly enriched with a
+user-provided set of genes'' now has a web service to return results, but the
+iPad interface has not yet been implemented. In the future, as many of these
+queries as possible will be implemented.

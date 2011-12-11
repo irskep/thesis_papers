@@ -1,14 +1,36 @@
 \section{Future Work}
 \label{sect:maw_future_work}
 
-\begin{itemize}
+The biggest problem with the current architecture of \mawapp is its complex
+system for downloading and saving the SMDA database via the web services. The
+acts of making HTTP requests, parsing them, building model objects, and
+serializing those objects are entangled in a handful of functions with poor
+encapsulation. These concerns should be separated and a more discrete pipeline
+should be constructed.
 
-    \item Store data in SQLite instead of archives
+It may be beneficial to store all data model objects in a SQLite database
+instead of as serialized Objective-C objects so that they can be interacted with
+in a way that more closely parallels the rest of the \pathcasemaw system.
 
-    \item Dynamic layouts for SMDA
+The SMDA input interface, while functional, is somewhat cumbersome to work with.
+Any given input operation requires at least three taps and lots of dragging to
+complete. One possibility is that \mawapp could download a spreadsheet
+containing the data from Dropbox or the user's email inbox.
 
-    \item Provide interface for trimming down SMDA results
+As explained in section \ref{sect:smda_results_request}, the SMDA results
+browser is currently unable to deal with measurements that include more than one
+pathway because it cannot generate dynamic layouts. Now that Graphviz has been
+added to \keggapp, it should be possible to include that functionality in
+\mawapp and provide support for measurements with more than one pathway.
 
-    \item PDF export
+The original SMDA paper by Cakmak et al \cite{smda-basic} mentions that the
+number of results is exponential based on the number of measurements. It might
+be helpful to add a ``star'' button to the results browsing toolbar to allow a
+user to mark a hypothesis that looks particularly promising, and display all
+starred hypotheses in a menu.
 
-\end{itemize}
+Another improvement would be to allow the user to export his results to some
+externally readable format such as PDF. The iOS application frameworks make PDF
+rendering relatively simple. Combined with the ability to ``star'' hypotheses,
+this could be a good way for researchers to communicate interesting SMDA
+findings.

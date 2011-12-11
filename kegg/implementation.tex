@@ -30,11 +30,16 @@ management responsibility from the programmer to the compiler. (See section
 
 \end{itemize}
 
-\subsection{Top-Level User Interface}
-\label{sect:kegg_impl_top_level_ui}
-
-\emph{To be written. This will be very similar in style to section
-\ref{sect:maw_interface}.}
+This section describes each of these components and how they differ from similar
+components in \mawapp. Section \ref{sect:kegg_impl_web_services} describes how
+\keggapp interacts with the \pathcasekegg web services. Section
+\ref{sect:kegg_impl_graph_view} covers the pathway visualizer. Section
+\ref{sect:kegg_impl_ui} describes the user interface. Section
+\ref{sect:kegg_impl_enzyme} explains how the ENZYME database
+\cite{enzyme-database} is used to look up and display extra information about
+processes. Finally, Section \ref{sect:kegg_impl_graphviz} explains how the
+Graphviz system \cite{graphviz} is used to generate dynamic layouts for graphs
+that do not have curated frozen layouts.
 
 \subsection{Web Services}
 \label{sect:kegg_impl_web_services}
@@ -84,21 +89,76 @@ data handled by \keggapp, on the other hand, is not very interdependent, so
 it is simpler to make the web service requests on demand and turn the XML into
 objects in memory on the fly.
 
-\subsubsection{Pathway Graph View}
+\subsection{Pathway Visualizer}
 \label{sect:kegg_impl_graph_view}
 
-\emph{This will be an explanation of the \keggapp graph view and how it differs
-from the \mawapp graph view. It will explain the node and edge objects that are
-used to construct and render the graph view, which are referred to later in this
-chapter.}
+The \keggapp pathway visualizer is based on the \mawapp pathway visualizer, but
+the \keggapp version is somewhat more general.
+
+Like \mawapp, the \keggapp pathway visualizer has a \texttt{PCGraphNode} class
+to represent a graphical node and a \texttt{PCGraphEdge} clas to represent a
+graphical edge. A \texttt{PCGraphModel} contains sets of these node and edge
+objects to represent a single pathway visualization. The rendering method is
+identical.
+
+The main difference between the two visualization systems is in how the graphs
+are constructed. In \mawapp, the node and edge objects have methods that set
+graphical attributes such as shape, color, and label text based on a GML
+expression (\ref{sect:smda_viz_data}). In that system, it is not possible to set
+those attributes any other way. In \keggapp, the node and edge objects contain
+no parsing code, but instead expose all graphical attributes as writeable
+properties. The responsibility for parsing a graph definition and building a
+graph model with the correct graphical attributes is moved to an external object
+that is not part of the graph rendering system.
+
+Node information that is relevant to the pathway visualization but is not
+directly used for rendering has been moved to a \texttt{PCNodeInfo} class. Each
+\texttt{PCGraphNode} instance references a \texttt{PCNodeInfo} instance which
+contains the fields shown in table \ref{fig:kegg_node_info_fields}.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{ r | p{4in}}
+    identifier  & Unique key to identify this node in the graph \\
+    isProcess   & True if this node represents a process/reaction \\
+    isMolecule  & True if this node represents a molecule \\
+    reversible  & True if this node is a reaction and can be reversed \\
+    label       & Text of this node's label \\
+    ECNumbers   & All EC numbers associated with this node if it is a process
+    \\
+    moleculeRoles   & Dictionary mapping a process ID representing a
+                        neighboring process node to this node's role in that
+                        process (only used for molecules) \\
+    processRoles    & Dictionary mapping a molecule ID representing a
+                        neighboring molecule node to that node's role in this
+                        process (only used for processes) \\
+    neighborProcesses   & List of processes adjacent to this node if node is a
+                            molecule \\
+    neighboringProcessID    & Some molecules occur more than once in the same
+                                visualization for cleaner layouts. This
+                                identifier differentiates them. \\
+    parentOrganisms & List of identifiers of organisms that contain this process
+    \\
+    allIdentifiers  & All identifiers associated with this node. Used as a
+                        fallback if a node lookup fails. \\
+\end{tabular}
+    \caption{Fields of \texttt{PCNodeInfo}}
+    \label{fig:kegg_node_info_fields}
+\end{table}
+
+\subsection{Top-Level User Interface}
+\label{sect:kegg_impl_ui}
+
+\emph{To be written. This will be very similar in style to section
+\ref{sect:maw_interface}.}
 
 \subsection{Reading the ENZYME Database}
 \label{sect:kegg_impl_enzyme}
 
 The ENZYME database is provided in a flat text file format
-\cite{enzyme:enzuser}.  This format is not acceptable for random seeking
+\cite{enzyme:enzuser}. This format is not acceptable for random seeking
 behavior, so it has been converted to a SQLite database \cite{sqlite:main} for
-more efficient access.  SQLite is a minimal implementation of SQL intended to be
+more efficient access. SQLite is a minimal implementation of SQL intended to be
 used as a storage medium for single-instance applications \cite{sqlite:main}.
 
 Each line in the ENZYME database begins with a two-letter code identifying the

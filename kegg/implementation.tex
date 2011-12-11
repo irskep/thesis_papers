@@ -26,7 +26,7 @@ management responsibility from the programmer to the compiler. (See section
         view), pathway lists, organism hierarchies, web pages, and pathway nodes
 
     \item Encapsulated components for specific functionality such as reading the
-        ENZYME database and generating dynamic layouts with graphviz
+        ENZYME database and generating dynamic layouts with Graphviz
 
 \end{itemize}
 
@@ -73,8 +73,8 @@ These differences are summarized in figure
     \center{
         \includegraphics[width=\textwidth]{kegg/figures/web_services.pdf}}
     \caption{\label{fig:kegg_impl_web_service_differences} Side-by-side
-    comparison of the typical life cycle of a \keggapp service request and a
-    \mawapp web service request.}
+    comparison of the typical life cycle of a \keggapp web service request and
+    a \mawapp web service request.}
 \end{figure}
 
 This model of web services would not necessarily work better for \mawapp,
@@ -95,33 +95,95 @@ chapter.}
 \subsection{Reading the ENZYME Database}
 \label{sect:kegg_impl_enzyme}
 
-The ENZYME database is provided in a flat file format \cite{enzyme:enzuser}.
-This format is not acceptable for random seeking behavior, so it has been
-converted to a SQLite database \cite{sqlite:main} for more efficient access.
-SQLite is a minimal implementation of SQL intended to be used as a storage
-medium for single-instance applications \cite{sqlite:main}.
+The ENZYME database is provided in a flat text file format
+\cite{enzyme:enzuser}.  This format is not acceptable for random seeking
+behavior, so it has been converted to a SQLite database \cite{sqlite:main} for
+more efficient access.  SQLite is a minimal implementation of SQL intended to be
+used as a storage medium for single-instance applications \cite{sqlite:main}.
 
-\emph{TODO: Explain ENZYME database file format and how it is converted to
-SQLite via a simple Python script}
+Each line in the ENZYME database begins with a two-letter code identifying the
+type of data on the line \cite{enzyme:enzuser}. The rest of the line contains
+the data. These are the different line codes according to the user manual:
 
-Access to the SQLite database is encapsulated in the \texttt{EKEnzyme} class. It
-can be used by calling \texttt{[EKEnzyme enzymeForID:(NSString *)ECNumber]},
-which returns an \texttt{EKEnzyme} object that has an instance variable for each
-type of data in the ENZYME database entry.
+\begin{objc}
+ID  Identification                         (Begins each entry;
+                                            1 per entry)
+DE  Description (official name)            (>=1 per entry)
+AN  Alternate name(s)                      (>=0 per entry)
+CA  Catalytic activity                     (>=1 per entry)
+CF  Cofactor(s)                            (>=0 per entry)
+CC  Comments                               (>=0 per entry)
+PR  Cross-references to PROSITE            (>=0 per entry)
+DR  Cross-references to Swiss-Prot         (>=0 per entry)
+//  Termination line                       (Ends each entry;
+                                            1 per entry)
+\end{objc}
 
-\emph{(Again, ``each type of data'' will be enumerated here in the future.)}
+\keggapp uses the description, alternate name, catalytic activity, cofactor, and
+comments, ignoring the remaining fields.
 
-\subsection{Dynamic Layouts with graphviz}
+The user manual uses this example to demonstrate the file format:
+
+\begin{objc}
+ID   1.14.17.3
+DE   Peptidylglycine monooxygenase.
+AN   PAM.
+AN   Peptidyl alpha-amidating enzyme.
+AN   Peptidylglycine 2-hydroxylase.
+AN   Peptidylglycine alpha-amidating monooxygenase.
+CA   Peptidylglycine + ascorbate + O(2) = peptidyl(2-hydroxyglycine) +
+CA   dehydroascorbate + H(2)O.
+CF   Copper.
+CC   -!- Peptidylglycines with a neutral amino acid residue in the penultimate
+CC       position are the best substrates for the enzyme.
+CC   -!- The product is unstable and dismutates to glyoxylate and the
+CC       corresponding desglycine peptide amide, a reaction catalyzed by
+CC       EC 4.3.2.5.
+CC   -!- Involved in the final step of biosynthesis of alpha-melanotropin and
+CC       related biologically active peptides.
+PR   PROSITE; PDOC00080;
+DR   P08478, AMD1_XENLA ;  P12890, AMD2_XENLA ;  P83388, AMDL_CAEEL ;
+DR   P10731, AMD_BOVIN  ;  P19021, AMD_HUMAN  ;  P97467, AMD_MOUSE  ;
+DR   P14925, AMD_RAT    ;  Q95XM2, PHM_CAEEL  ;  O01404, PHM_DROME  ;
+//
+\end{objc}
+
+A separate program was written to convert this file format into a SQLite
+database. The program is called
+\href{https://github.com/irskep/enzyme2sqlite}{enzyme2sqlite}
+\footnote{\href{https://github.com/irskep/enzyme2sqlite}{https:/\slash
+github.com\slash irskep\slash enzyme2sqlite}} and is implemented in the Python
+programming language.
+
+The program runs in two steps. The first step parses the text file format with a
+simple state machine. The second step inserts the parsed data row by row
+into a SQLite database. This database has fields that correspond directly to the
+fields in the text file.
+
+Access to the SQLite database in \keggapp is encapsulated in the
+\texttt{EKEnzyme} class, which can open connections to the SQLite database and
+query it for individual enzyme information. It can be used by calling
+\texttt{[EKEnzyme enzymeForID:(NSString *)ECNumber]}, which returns an
+\texttt{EKEnzyme} object with attributes for each field in its corresponding
+ENZYME database entry.
+
+For example, to get the list of alternate names for peptidylglycine
+monooxygenase, one would call \texttt{[[EKEnzyme enzymeForID:@``1.14.17.3'']
+altNames]}.
+
+\subsection{Dynamic Layouts with Graphviz}
 \label{sect:kegg_impl_graphviz}
 
 PathCase KEGG contains human-curated frozen layouts for some pathways, but not
 all. In order to display the pathways without frozen layouts, \keggapp
-uses the graphviz library.
+uses the Graphviz library.
 
-\emph{TODO: Blurb about the graphviz library, what it does, etc.}
+Graphviz is a system which, among other things, provides graph layout and
+visualization functions \cite{graphviz}. It provides both command line and
+programmatic interfaces for entering, laying out, and rendering graphs.
 
-The layout functionality of the graphviz library is encapsulated in a class
-called \texttt{GVGraph}. An instance of this class represents a graph with
+\keggapp encapsulates the layout functionality of the Graphviz library in a
+class called \texttt{GVGraph}. An instance of this class represents a graph with
 nodes, a label for each node, and one-directional edges that connect nodes.
 
 To generate a layout, a \texttt{GVGraph} object must be created, and nodes and
@@ -142,7 +204,7 @@ The dynamic layout is performed by calling the \texttt{computeLayoutWithEngine:}
 method on the \texttt{GVGraph} instance. The argument to this function is a
 constant representing either a spring-based or hierarchical layout engine. This
 method converts the \texttt{GVGraphNode} and \texttt{GVGraphEdge} objects into
-graphviz's internal graph representation, asks graphviz to generate a layout,
+Graphviz's internal graph representation, asks Graphviz to generate a layout,
 and reads the results back into the \texttt{GVGraphNode} and
 \texttt{GVGraphEdge} objects. The caller may then read back the position data
 from the \texttt{GVGraph} instance to use however it pleases.

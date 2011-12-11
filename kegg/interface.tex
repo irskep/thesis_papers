@@ -3,14 +3,14 @@
 
 \begin{figure}
     \center{
-        \includegraphics[width=4.5in]{kegg/figures/screenshot_list}}
+        \includegraphics[width=5in]{kegg/figures/screenshot_list}}
     \caption{\label{fig:kegg_screenshot_list} List of pathway categories on
     the main screen of \keggapp}
 \end{figure}
 
 \begin{figure}
     \center{
-        \includegraphics[width=4.5in]{kegg/figures/screenshot_sublist}}
+        \includegraphics[width=5in]{kegg/figures/screenshot_sublist}}
     \caption{\label{fig:kegg_screenshot_sublist} List of pathways in the
     ``Carbohydrate Metabolism'' category of \keggapp}
 \end{figure}
@@ -35,21 +35,21 @@ detail view. This graph view can be panned and zoomed by touch. The view for
 the TCA cycle is shown in figure \ref{fig:kegg_screenshot_pathway}. A labeled
 diagram of the same view is shown in figure \ref{fig:kegg_pathway_diagram}.
 
-\begin{figure}[hbt]
+\begin{figure}[hbtp]
     \center{
-        \includegraphics[width=\textwidth]{kegg/figures/screenshot_pathway}}
+        \includegraphics[width=5in]{kegg/figures/screenshot_pathway}}
     \caption{\label{fig:kegg_screenshot_pathway} Scrolling, zooming view of
     the TCA cycle}
 \end{figure}
 
-\begin{figure}[hbt]
+\begin{figure}[hbtp]
     \center{
         \includegraphics[width=4in]{kegg/figures/pathway_diagram}}
     \caption{\label{fig:kegg_pathway_diagram} Parts of the KEGG pathway browsing
     interface}
 \end{figure}
 
-\begin{figure}[hbt]
+\begin{figure}[hbtp]
     \center{
         \includegraphics[width=3in]{kegg/figures/node_legend}}
     \caption{\label{fig:kegg_node_legend} Meanings of KEGG pathway node shapes}
@@ -65,9 +65,9 @@ current selection. If no node is selected, it displays a button to show the KEGG
 database web page for the pathway. (One example page is shown in figure
 \ref{fig:kegg_screenshot_kegg_web_site}.)
 
-\begin{figure}[hbt]
+\begin{figure}[hbtp]
     \center{
-        \includegraphics[width=\textwidth]{kegg/figures/screenshot_kegg_web_site}}
+        \includegraphics[width=5in]{kegg/figures/screenshot_kegg_web_site}}
     \caption{\label{fig:kegg_screenshot_kegg_web_site} KEGG web page for the TCA
     cycle, displayed by tapping the sidebar button}
 \end{figure}
@@ -79,9 +79,9 @@ node that is not connected to it by one hop is made transparent to make the
 node's connections easier to see.  Figure
 \ref{fig:kegg_screenshot_selection_no_info} shows an example of this behavior.
 
-\begin{figure}[hbt]
+\begin{figure}[hbtp]
     \center{
-        \includegraphics[width=\textwidth]{kegg/figures/screenshot_selection_no_info}}
+        \includegraphics[width=5in]{kegg/figures/screenshot_selection_no_info}}
     \caption{\label{fig:kegg_screenshot_selection_no_info} Sidebar showing
     long description of a node in \keggapp}
 \end{figure}
@@ -95,16 +95,16 @@ The organism hierarchy menu is shown in figure
 \ref{fig:kegg_screenshot_animals_only_list}. The graph view corresponding to the
 selection is shown in figure \ref{fig:kegg_screenshot_animals_only_graph}.
 
-\begin{figure}[hbt]
+\begin{figure}[hbtp]
     \center{
-        \includegraphics[width=\textwidth]{kegg/figures/screenshot_animals_only_list}}
+        \includegraphics[width=5in]{kegg/figures/screenshot_animals_only_list}}
     \caption{\label{fig:kegg_screenshot_animals_only_list} Organism hierarchy
     menu with only Eukaryotes $\rightarrow$ Animals activated}
 \end{figure}
 
-\begin{figure}[hbt]
+\begin{figure}[hbtp]
     \center{
-        \includegraphics[width=\textwidth]{kegg/figures/screenshot_animals_only_graph}}
+        \includegraphics[width=5in]{kegg/figures/screenshot_animals_only_graph}}
     \caption{\label{fig:kegg_screenshot_animals_only_graph} Graph view with only
     reactions for Eukaryotes $\rightarrow$ Animals activated}
 \end{figure}
@@ -113,17 +113,33 @@ selection is shown in figure \ref{fig:kegg_screenshot_animals_only_graph}.
 
 In addition to displaying a node's long description from PathCase KEGG, \keggapp
 uses data from the ENZYME enzyme nomenclature database \cite{enzyme-database} to
-show more information for reactions for which EC numbers are available.
+show more information for reactions for which EC numbers are available. The user
+manual lists the fields contained in the database \cite{enzyme:enzuser}:
+
+\begin{quote}
+
+    The `ENZYME' database contains the following data for each type of
+    characterized enzyme for which an EC number has been provided:
+
+    \begin{itemize}
+        \item EC number
+        \item Recommended name
+        \item Alternative names (if any)
+        \item Catalytic activity
+        \item Cofactors (if any)
+        \item Pointers to the Swiss-Prot entrie(s) that correspond to the enzyme (if any)
+    \end{itemize}
+
+\end{quote}
 
 ENZYME's data comes from the recommendations of the Nomenclature Committee of
 the International Union of Biochemistry and Molecular Biology (IUBMB)
 \cite{enzyme-database}. An example of ENZYME information in the sidebar is shown
-in figure \ref{fig:kegg_screenshot_selection_info}, including alternate names,
-catalytic activity, cofactors, and more.
+in figure \ref{fig:kegg_screenshot_selection_info}.
 
-\begin{figure}[hbt]
+\begin{figure}[hbtp]
     \center{
-        \includegraphics[width=\textwidth]{kegg/figures/screenshot_selection_info}}
+        \includegraphics[width=5in]{kegg/figures/screenshot_selection_info}}
     \caption{\label{fig:kegg_screenshot_selection_info} Sidebar showing
     information from the ENZYME database for the reaction ``2-oxoglutarate
     synthase''}

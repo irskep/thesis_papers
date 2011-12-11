@@ -106,8 +106,11 @@ needed. Instead, an internal representation is updated in bulk at the user's
 request. When they tap an ``Update Local Data'' button in the SMDA input view, a
 series of asynchronously executed Objective-C blocks (\ref{sect:objc_bocks}) are
 invoked. These blocks make the web requests, convert their results to the model
-objects described in section \ref{sect:smda_data_model}, and serialized to the
-iPad's internal storage.
+objects described in section \ref{sect:smda_data_model}, and serialize them to
+the iPad's internal storage.
+
+Each block represents one or more web requests, and a block may rely on the
+completion of another block for the existence of data.
 
 To avoid a costly first run, the application binary contains a snapshot of these
 objects taken from the web services at the time the application was released.

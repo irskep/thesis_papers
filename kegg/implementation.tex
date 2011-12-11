@@ -108,6 +108,14 @@ selection, so it responds to notifications sent by
 \subsection{Web Services}
 \label{sect:kegg_impl_web_services}
 
+\begin{figure}[hbt]
+    \center{
+        \includegraphics[width=\textwidth]{kegg/figures/web_services.pdf}}
+    \caption{\label{fig:kegg_impl_web_service_differences} Side-by-side
+    comparison of the typical life cycle of a \keggapp web service request and
+    a \mawapp web service request.}
+\end{figure}
+
 There are four differences between the strategies of \mawapp and \keggapp
 with respect to how web services are integrated into the application
 architecture.
@@ -138,14 +146,6 @@ representation of the object.
 These differences are summarized in figure
 \ref{fig:kegg_impl_web_service_differences}.
 
-\begin{figure}[hbt]
-    \center{
-        \includegraphics[width=\textwidth]{kegg/figures/web_services.pdf}}
-    \caption{\label{fig:kegg_impl_web_service_differences} Side-by-side
-    comparison of the typical life cycle of a \keggapp web service request and
-    a \mawapp web service request.}
-\end{figure}
-
 This model of web services would not necessarily work better for \mawapp,
 which needs quicker access to much more interdependent data. When the data model
 is serialized, it is simple to load it and traverse complex relationships. The
@@ -156,11 +156,14 @@ objects in memory on the fly.
 \subsection{Pathway Visualizer}
 \label{sect:kegg_impl_graph_view}
 
-The \keggapp pathway visualizer is based on the \mawapp pathway visualizer, but
-the \keggapp version is somewhat more general.
+\subsubsection{Graph Renderer}
 
-Like \mawapp, the \keggapp pathway visualizer has a \texttt{PCGraphNode} class
-to represent a graphical node and a \texttt{PCGraphEdge} clas to represent a
+The \keggapp graph renderer is based on the \mawapp graph renderer, but the
+\keggapp version is less dependent on the input data format and allows more
+visual attributes to be changed after the graph is initially constructed.
+
+Like \mawapp, the \keggapp graph representation has a \texttt{PCGraphNode} class
+to represent a graphical node and a \texttt{PCGraphEdge} class to represent a
 graphical edge. A \texttt{PCGraphModel} contains sets of these node and edge
 objects to represent a single pathway visualization. The rendering method is
 identical.
@@ -209,6 +212,50 @@ contains the fields shown in table \ref{fig:kegg_node_info_fields}.
     \caption{Fields of \texttt{PCNodeInfo}}
     \label{fig:kegg_node_info_fields}
 \end{table}
+
+\subsubsection{Organism Hierarchy}
+
+The \keggapp pathway visualization includes the ability to select only a subset
+of organisms to display information from. If reaction $R$ is present in
+organisms $A$ and $B$ but not $C$, and organisms $A$ and $B$ are disabled, then
+reaction $R$ will be dimmed in the visualization (\ref{sect:kegg_interface}).
+
+\begin{figure}[hbtp]
+    \center{
+        \includegraphics[width=5in]{kegg/figures/org_hierarchy_ui.pdf}}
+    \caption{\label{fig:kegg_org_hierarchy_ui} Componentents of the organism
+    hierarchy update process. See section \ref{sect:kegg_impl_graph_view} for
+    more information.}
+\end{figure}
+
+The process of displaying the organism hierarchy is shown in figure
+\ref{fig:kegg_org_hierarchy_ui} and described here. Selecting the toolbar
+button in the upper right corner of the visualization view causes
+\texttt{PCGraphViewController} to display a popover with a navigation stack. The
+first item on this stack is a \texttt{PCOrganismHierarchyTableViewController},
+which presents a table view containing hierarchical categories of organisms.
+Tapping a row in the table view either pushes the subcategories of that category
+onto the navigation stack if the row represents a subcategory, or it toggles the
+enabled/disabled state of an organism if the row represents an organism. The set
+of enabled organisms is then posted as a notification that is received by the
+\texttt{PCGraphViewController}, which updates the \texttt{PCGraphModel} with the
+enabled/disabled state of each individual node based on the enabled/disabled
+state of the organisms.
+
+The end result of this process is shown in figures
+\ref{fig:kegg_screenshot_animals_only_list} and
+\ref{fig:kegg_screenshot_animals_only_graph} in section
+\ref{sect:kegg_interface}.
+
+\subsubsection{Life Cycle of a Pathway Visualization}
+
+\begin{figure}[htbp]
+    \center{
+        \includegraphics[width=\textwidth]{kegg/figures/viz_life_cycle.pdf}}
+    \caption{\label{fig:kegg_viz_life_cycle} Life cycle of a pathway
+    visualization. See section \ref{sect:kegg_impl_graph_view} for more
+    information.}
+\end{figure}
 
 \subsection{Reading the ENZYME Database}
 \label{sect:kegg_impl_enzyme}

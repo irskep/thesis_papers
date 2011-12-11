@@ -168,8 +168,16 @@ query it for individual enzyme information. It can be used by calling
 ENZYME database entry.
 
 For example, to get the list of alternate names for peptidylglycine
-monooxygenase, one would call \texttt{[[EKEnzyme enzymeForID:@``1.14.17.3'']
-altNames]}.
+monooxygenase, one would do this:
+
+\begin{objc}
+    // This class method will form the SQLite query
+    // select * from enzymes where id = "1.14.17.3";
+    EKEnzyme *myEnzyme = [EKEnzyme enzymeForID:@"1.14.17.3"];
+
+    // The results have been read into myEnzyme
+    NSLog(@"Alternate names: %@", [myEnzyme altNames]);
+\end{objc}
 
 \subsection{Dynamic Layouts with Graphviz}
 \label{sect:kegg_impl_graphviz}

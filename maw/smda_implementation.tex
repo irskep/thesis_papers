@@ -1,9 +1,9 @@
 \section{SMDA Implementation}
 \label{sect:smda_implementation}
 
-SMDA makes full use of the \pathcasemaw data model, so \mawapp must store that
-data model internally. It must store information about pathways, metabolites,
-tissues, reactions, and more.
+The input interface for SMDA requires full knowledge of the SMDA database, so
+\mawapp must store that database internally in some form.  It must store
+information about pathways, metabolites, tissues, reactions, and more.
 
 Section \ref{sect:smda_data_model} describes the subset of the \pathcasemaw data
 model that is used by \mawapp to provide the SMDA tool. Section
@@ -14,32 +14,80 @@ services and converts their results into model objects to be used by the
 application.
 % MORE MORE MORE
 
-Since SMDA uses the MAW data model, it shares all model classes, with a couple
-of additions. There is an \texttt{SMDASavedMeasurement} class for storing the
-user's selections. There is also a subclass of \texttt{PCGraphModel} called
-\texttt{SMDAResultGraphModel} which provides methods to build a model out of XML
-from the web service.
-
-The remaining classes manage the user interface. They are basic subclasses of
-Cocoa objects that implement standard design patterns for iOS applications to
-display the interface shown in the screenshots in section
-\ref{sect:smda_interface}.
-
 \subsection{Data Model}
 \label{sect:smda_data_model}
+
+As was mentioned at the beginning of this section, \mawapp must store a
+considerable subset of the SMDA database internally. These are the objects that
+are stored from that database.
 
 The Objective-C classes representing the model objects use the \texttt{SMDA}
 prefix, but the prefix is omitted in this section for clarity.
 
 \begin{itemize}
 
-    \item \textbf{Pathway}: Top level object containing all information about a
-        pathway including name, identifier, 
+    \item \textbf{Pathway}: Information about a pathway including name,
+    identifier, and the tissue it is contained in.
+
+    \item \textbf{Transport Process}: Information about a transport process
+    including the name and identifier.
+
+    \item \textbf{Reaction}: Information about a reaction including name,
+    identifier, tissue/compartment, whether the reaction is reversible, and
+    metabolite pools the reaction is associated with.
+
+    \item \textbf{Pathway as Reaction}: An entire pathway treated as if it were
+    a reaction, in order to simplify the input and output for the user. Includes
+    references to a pathway and metabolite pools that are inputs and outputs.
+
+    \item \textbf{Tissue}: Information about a tissue/compartment including
+    name, identifier, parent, and compartment type.
+
+    \item \textbf{Metabolite}: Information about a metabolite including name,
+    identifier, and metabolite pools it is associated with.
+
+    \item \textbf{Metabolite Pool}: Information about a metabolite pool
+    including name, identifier, tissue/compartment, role in its associated
+    reaction, and the name and identifier of its associated metabolite.
+
+\end{itemize}
+
+In addition to objects directly from the SMDA database, the input includes
+user-defined measurements. These are the objects used to model those
+measurements.
+
+\begin{itemize}
+
+    \item \textbf{Metabolite Measurement}: The numeric value and units of
+    measurement of a single metabolite pool.
+
+    \item \textbf{Saved Measurement}: One full set of inputs for SMDA including
+    pathways, transport processes, reactions, pathways as reactions,
+    tissues/compartments, metabolites, and metabolite measurements.
 
 \end{itemize}
 
 \subsection{Web Services: Server Side}
 \label{sect:smda_web_services_server}
+
+This section describes the web services that provide the data used to populate
+the models described in section \ref{sect:smda_data_model}.
+
+\begin{itemize}
+
+    \item \textbf{GetAllPathways}
+    \item \textbf{GetTissueOfPathway}
+    \item \textbf{GetAllMetabolitePoolsForPathway}
+    \item \textbf{GetPathwayMetabolite}
+    \item \textbf{GetAllUnits}
+    \item \textbf{GetAllTransportProcesses}
+    \item \textbf{GetAllReactions}
+    \item \textbf{GetReactionMetabolite}
+    \item \textbf{GetAllCompartments}
+    \item \textbf{GetAllMetabolites}
+    \item \textbf{GetAllMetabolitePools}
+
+\end{itemize}
 
 \subsection{Web Services: Client Side}
 \label{sect:smda_web_services_client}

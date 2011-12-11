@@ -12,34 +12,98 @@ important change was ``automatic reference counting,'' (ARC) which moves memory
 management responsibility from the programmer to the compiler. (See section
 \ref{sect:objc_memory} for more information on ARC).
 
-\keggappp architecture consists of a few well-defined components:
-
-\begin{itemize}
-
-    \item Top-level user interface such as the master-detail view
-    
-    \item Web service request classes that make HTTP requests to the PathCase
-        KEGG server, process the response, and notify other objects of the
-        results
-
-    \item Views of specific kinds of data such as pathways (the main graph
-        view), pathway lists, organism hierarchies, web pages, and pathway nodes
-
-    \item Encapsulated components for specific functionality such as reading the
-        ENZYME database and generating dynamic layouts with Graphviz
-
-\end{itemize}
+\keggappp architecture consists of a few well-defined components. There are user
+interface objects that present things like the master-detail interface, lists of
+pathways, organism selection, etc. There are web service request classes that
+make HTTP requests to the PathCase KEGG server, process the response, and notify
+other objects of the results. There are graph rendering and interaction classes
+similar to those found in \mawapp. Finally, there are encapsulated components
+for specific functionality such as reading the ENZYME database and generating
+dynamic layouts with Graphviz.
 
 This section describes each of these components and how they differ from similar
-components in \mawapp. Section \ref{sect:kegg_impl_web_services} describes how
-\keggapp interacts with the \pathcasekegg web services. Section
-\ref{sect:kegg_impl_graph_view} covers the pathway visualizer. Section
-\ref{sect:kegg_impl_ui} describes the user interface. Section
-\ref{sect:kegg_impl_enzyme} explains how the ENZYME database
-\cite{enzyme-database} is used to look up and display extra information about
-processes. Finally, Section \ref{sect:kegg_impl_graphviz} explains how the
+components in \mawapp. Section \ref{sect:kegg_impl_ui} describes the user
+interface for navigation the application. Section
+\ref{sect:kegg_impl_web_services} describes how \keggapp interacts with the
+\pathcasekegg web services. Section \ref{sect:kegg_impl_graph_view} covers the
+pathway visualizer. Section \ref{sect:kegg_impl_enzyme} explains how the ENZYME
+database \cite{enzyme-database} is used to look up and display extra information
+about processes. Finally, Section \ref{sect:kegg_impl_graphviz} explains how the
 Graphviz system \cite{graphviz} is used to generate dynamic layouts for graphs
 that do not have curated frozen layouts.
+
+\subsection{Navigation User Interface}
+\label{sect:kegg_impl_ui}
+
+Figure \ref{sect:kegg_impl_ui} shows a high-level representation of the user
+interface components of \keggapp. Every class in the diagram except for the
+\texttt{PCAppDelegate} application singletin is a view controller
+(\ref{sect:cocoa_mvc}).
+
+There are two kinds of edges in the diagram. \textbf{Present} edges are drawn
+where one view controller causes another to be displayed in its content area.
+For example, \texttt{UIViewController} shows the \texttt{PCMasterViewController}
+in its sidebar area or popover (\ref{sect:ipad_container_views}), and the
+\texttt{PCDetailViewController} in the rest of its content area. \textbf{Notify}
+edges represent \emph{notifications} that are sent between objects.
+
+A notification is an abstraction of message passing (\ref{sect:objc_objects}).
+An object may \emph{register} for a notification of a certain name. When a
+notification with that name is \emph{posted} by any object, the object that
+registered for the notification is passed a message that was specified at
+registration time. This message includes a \emph{notification object}, which may
+contain additional data depending on the specific notification that was sent.
+This system allows objects to send and receive events without storing
+unnecessary references to other objects.
+
+\begin{figure}[tbhp]
+    \center{
+        \includegraphics[width=\textwidth]{kegg/figures/architecture.pdf}}
+    \caption{\label{fig:kegg_ui_arch} Components of the user interface. See
+    \ref{sect:kegg_impl_ui} for more information about this diagram.}
+\end{figure}
+
+A good example of notifications can be found in \keggapp.
+\texttt{PCMasterViewController}, a view controller included in in figure
+\ref{fig:kegg_ui_arch}, shows a list of pathway categories and documentation
+links (\ref{sect:kegg_interface}). Selecting a documentation link such as ``KEGG
+Web Site'' posts a notification called \texttt{PCPageViewRequested} that
+contains the URL of the corresponding web page, in this case
+\href{http://www.kegg.com}{http:/\slash www.kegg.com\slash}.
+\texttt{PCDetailViewController} has registered to receive this notification with
+its method \texttt{pageViewRequested:}, which is implemented approximately like
+this:
+
+\begin{objc}
+// Switch to a web view and show an HTML page in response
+// to a notification
+- (void)pageViewRequested:(NSNotification *)notification
+{
+    NSDictionary *info = [notification userInfo];
+    [self.webViewController goToPage:[info objectForKey:@"url"]];
+    [self switchToViewController:self.webViewController];
+}
+\end{objc}
+
+This example is represented in figure \ref{fig:kegg_ui_arch} by the dashed arrow
+``show documentation.''
+
+\texttt{PCDetailViewController} responds to five different notifications, but
+only two are shown in figure \ref{fig:kegg_ui_arch}. The rest have to do with
+web services and pathway visualization interactions, which will be discussed
+later in this section.
+
+The remaining nodes in figure \ref{fig:kegg_ui_arch},
+\texttt{PCPathwayTableViewController} and \texttt{PCNodeInfoViewController}, are
+displayed in the master content area. The master view makes use of a
+\emph{navigation stack} (see section \ref{sect:ipad_navigation}). The top item
+on this stack is the \texttt{PCMasterViewController}, which pushes a
+\texttt{PCPathwayTableController} onto the stack when a pathway category is
+selected. When one of the pathways in that list is selected, a ``show pathway''
+notification is posted, and a \texttt{PCNodeInfoViewController} is pushed onto
+the stack. This is the view controller that displays information for the current
+selection, so it responds to notifications sent by
+\texttt{PCGraphViewController} about changes in the user's selection.
 
 \subsection{Web Services}
 \label{sect:kegg_impl_web_services}
@@ -145,12 +209,6 @@ contains the fields shown in table \ref{fig:kegg_node_info_fields}.
     \caption{Fields of \texttt{PCNodeInfo}}
     \label{fig:kegg_node_info_fields}
 \end{table}
-
-\subsection{Top-Level User Interface}
-\label{sect:kegg_impl_ui}
-
-\emph{To be written. This will be very similar in style to section
-\ref{sect:maw_interface}.}
 
 \subsection{Reading the ENZYME Database}
 \label{sect:kegg_impl_enzyme}

@@ -153,22 +153,26 @@ database. The program is called
 \href{https://github.com/irskep/enzyme2sqlite}{enzyme2sqlite}
 \footnote{\href{https://github.com/irskep/enzyme2sqlite}{https:/\slash
 github.com\slash irskep\slash enzyme2sqlite}} and is implemented in the Python
-programming language.
+3 programming language.
 
 The program runs in two steps. The first step parses the text file format with a
 simple state machine. The second step inserts the parsed data row by row
 into a SQLite database. This database has fields that correspond directly to the
 fields in the text file.
 
+The program was invoked like this to generate the database used by \keggapp:
+
+\begin{verbatim}
+python3 enzyme2sqlite.py enzyme.dat -o enzyme.sqlite
+\end{verbatim}
+
 Access to the SQLite database in \keggapp is encapsulated in the
 \texttt{EKEnzyme} class, which can open connections to the SQLite database and
 query it for individual enzyme information. It can be used by calling
 \texttt{[EKEnzyme enzymeForID:(NSString *)ECNumber]}, which returns an
 \texttt{EKEnzyme} object with attributes for each field in its corresponding
-ENZYME database entry.
-
-For example, to get the list of alternate names for peptidylglycine
-monooxygenase, one would do this:
+ENZYME database entry. For example, to get the list of alternate names for
+peptidylglycine monooxygenase, one would do this:
 
 \begin{objc}
     // This class method will form the SQLite query

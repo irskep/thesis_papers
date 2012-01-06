@@ -56,10 +56,19 @@
 \input{conclusion}
 
 \appendix
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
 \chapter{\keggapp User Manual}
 \label{ch:kegg_manual}
 \input{kegg_manual/manual.tex}
+
+\singlespace
+
+\chapter{\keggapp Source Code Documentation}
+\label{ch:kegg_code_docs}
+\input{kegg_doc/all.tex}
+
+\doublespace
 
 % \nocite{*}
 

@@ -56,18 +56,39 @@
 \input{conclusion}
 
 \appendix
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\chapter{\boldpathcasemaw Web Services}
+\label{ch:maw_web_services}
+\input{maw/web_services}
+
+\chapter{\mawapp Source Code Documentation}
+\label{ch:maw_code_docs}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 \chapter{\keggapp User Manual}
 \label{ch:kegg_manual}
 \input{kegg_manual/manual.tex}
 
-\singlespace
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\chapter{\boldpathcasekegg Web Services}
+\label{ch:kegg_web_services}
+\input{kegg/web_services}
 
 \chapter{\keggapp Source Code Documentation}
 \label{ch:kegg_code_docs}
+\singlespace
 \input{kegg_doc/all.tex}
+\doublespace
 
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+\singlespace
+%\input{kegg_doc/all.tex}
 \doublespace
 
 % \nocite{*}

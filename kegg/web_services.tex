@@ -1,0 +1,135 @@
+Entries are listed with their name, a description of their functionality, and
+an example response in a shorthand XML notation These web services and more
+are listed at \\
+\href{http://nashua.case.edu/pathwaysservicekegg/PathwaysService.asmx}{http://nashua.case.edu/pathwaysservicekegg/PathwaysService.asmx}.
+
+\subsection{Listing Pathways}
+\begin{description}
+    \item[AllPathways] List all pathways in the \pathcasekegg database.
+
+    \begin{lstlisting}
+<ArrayOfSoapPathway>
+    <SoapPathway> (multiple)
+        <Status>NoChanges</Status>
+        <ID>cfb089ef-ea53-41fb-a521-e68e61de00f2</ID>
+        <Name>Acridone alkaloid biosynthesis</Name>
+        <Type>metabolic pathway</Type>
+    \end{lstlisting}
+
+    \item[AllPathwayGroups] List high-level groupings of pathways for user
+    interface navigation purposes.
+
+    \begin{lstlisting}
+<ArrayOfSoapPathwayGroup>
+    <SoapPathwayGroup> (multiple)
+        <Status>NoChanges</Status>
+        <Id>d5051cb1-fc0d-424b-a5a2-8b10ce7a0d78</Id>
+        <Name>Amino Acid Metabolism</Name>
+        <Notes>inserted on Friday, March 11, 2011</Notes>
+    \end{lstlisting}
+
+    \item[GetPathwaysByGroupId] Given a pathway grouping, list all pathways
+    that group contains.
+
+    \begin{lstlisting}
+<ArrayOfString>
+    <string>d92e9fb6-d2ec-4a3c-9518-12d6ef4d9fed</string> (multiple)
+    \end{lstlisting}
+
+\end{description}
+
+\subsection{Pathway Information}
+\begin{description}
+    \item[GetGraphData] Given a pathway, return all data about that pathway
+    necessary to render a graph except for the positions of the nodes.
+
+    \begin{lstlisting}
+<GraphData>
+  <GenericProcesses>
+    <GenericProcess (multiple)
+          GenericProcessID=(identifier) Reversible="True"
+          Name="alpha-D-Glucose 6-phosphate phosphohydrolase"
+          ID=(identifier)>
+      <Catalyzes>
+        <Catalyze (multiple)
+              OrganismGroupID=(identifier)
+              GeneProductMoleculeID=(identifier)
+              ECNumber="1.2.7.1" ProcessID=(identifier) />
+      <Molecules>
+        <Molecule (multiple)
+              ProcessID=(identifier)
+              Role="product" ID=(identifier) />
+  <Molecules>
+    <Molecule (multiple)
+          EntityID=(identifier)
+          IsCommon="False" Name="Thiamin diphosphate"
+          ID=(identifier) />
+  <Pathways>
+    <Pathway (multiple)
+          Name="Pyruvate metabolism" Expanded="True"
+          ID=(identifier) Linking="False">
+      <LinkingPathways>
+        <LinkingPathway (multiple)
+              ID=(identifier) Dir="out" />
+          <LinkingMolecule (multiple)
+            ID=(identifier) />
+      <OrganismGroups>
+        <OrganismGroup (multiple)
+              ID=(identifier) />
+      <GenericProcesses>
+        <GenericProcess (multiple)
+              ID=(identifier) />
+    \end{lstlisting}
+
+    \item[RetrieveLayout] Given a pathway, return the positions of its nodes
+    and edges. If non exists, return an error message.
+
+    \begin{lstlisting}
+<PathwayLayout>
+  <Nodes>
+    <NodeLayout (multiple)
+          X=(floating point number)
+          Y=(floating point number)
+          ID=(identifier)
+          NeighboringProcessId=(identifier)
+          cofactor="i" (can be 'i' for inhibitor or 'c' for cofactor) />
+  <Edges>
+    <EdgeLayout (multiple)
+          SourceID=(identifier)
+          TargetCofactor=" "
+          TargetID=(identifier)
+          SourceNeighboringProcessId=(identifier)
+          TargetNeighboringProcessId=(identifier)
+          SourceCofactor="i" (see NodeLayout[cofactor])>
+      <BendPoint
+        X=(floating point number)
+        Y=(floating point number) />
+    
+    \end{lstlisting}
+
+    \item[GetOrganismHierarchy] Return a hierarchy of all organisms in the
+    database.
+
+    \begin{lstlisting}
+<OrganismHierarchy>
+<OrganismGroup
+        id=(identifier) commonName=""
+        scientificName="Eukaryotes">
+    <OrganismGroup ...> (recursively nested)
+    \end{lstlisting}
+
+    \item[GetOrganismHierarchyForAPathway] Given a pathway, return a mapping of
+    reactions to the organisms they exist in.
+
+    \begin{lstlisting}
+<Pathway id=(identifier)>
+    <OrganismHierarchy>
+        <OrganismGroup
+                id=(identifier) commonName=""
+                scientificName="Eukaryotes">
+            <OrganismGroup ...> (recursively nested)
+                <Process (multiple)
+                        id=(identifier) />
+    \end{lstlisting}
+
+\end{description}

@@ -1,0 +1,112 @@
+\hypertarget{_p_c_graph_node_8m}{
+\section{PathCaseKEGG/Graph view/PCGraphNode.m File Reference}
+\label{_p_c_graph_node_8m}\index{PathCaseKEGG/Graph view/PCGraphNode.m@{PathCaseKEGG/Graph view/PCGraphNode.m}}
+}
+
+
+Type of shape to create (ellipse, rectangle, or none)  
+
+
+{\ttfamily \#import \char`\"{}PCGraphNode.h\char`\"{}}\par
+{\ttfamily \#import \char`\"{}PCGraphEdge.h\char`\"{}}\par
+{\ttfamily \#import \char`\"{}PCDrawUtils.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries PCGraphNode()}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_p_c_graph_node_8m_a9879db2f2eec7c95721163761c9c4309}{
+\#define {\bfseries N\_\-FONT\_\-SIZE}~12}
+\label{_p_c_graph_node_8m_a9879db2f2eec7c95721163761c9c4309}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a695c453fcd0a4e6a13ee8326d1d6c64a}{
+\#define {\bfseries N\_\-NODE\_\-WIDTH}~80}
+\label{_p_c_graph_node_8m_a695c453fcd0a4e6a13ee8326d1d6c64a}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a5e53926617fa43f1e4a695b462bdab3a}{
+\#define {\bfseries N\_\-CIRCLE\_\-GRADIENT\_\-TOP}~\mbox{[}UIColor colorWithRed:1.0f green:0.97f blue:0.75 alpha:1.0f\mbox{]}}
+\label{_p_c_graph_node_8m_a5e53926617fa43f1e4a695b462bdab3a}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a0a3f25a7e040f497e2ecb06662905868}{
+\#define {\bfseries N\_\-CIRCLE\_\-GRADIENT\_\-BOTTOM}~\mbox{[}UIColor colorWithRed:0.75f green:0.67f blue:0.19f alpha:1.0f\mbox{]}}
+\label{_p_c_graph_node_8m_a0a3f25a7e040f497e2ecb06662905868}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_aeba76c2d5b70d9fb4e3802adf76c3f44}{
+\#define {\bfseries N\_\-CIRCLE\_\-OUTLINE}~\mbox{[}UIColor colorWithRed:0.37f green:0.35f blue:0.15f alpha:1.0f\mbox{]}}
+\label{_p_c_graph_node_8m_aeba76c2d5b70d9fb4e3802adf76c3f44}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a94afb4490374d060039cca1a681ab619}{
+\#define {\bfseries N\_\-CIRCLE\_\-LABEL}~\mbox{[}UIColor blackColor\mbox{]}}
+\label{_p_c_graph_node_8m_a94afb4490374d060039cca1a681ab619}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_ad3adbcc2c823e26aff8593131746811f}{
+\#define {\bfseries N\_\-RECT\_\-GRADIENT\_\-TOP}~\mbox{[}UIColor colorWithRed:0.57f green:0.85f blue:0.97f alpha:1.0f\mbox{]}}
+\label{_p_c_graph_node_8m_ad3adbcc2c823e26aff8593131746811f}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a76372a9060a628673efa400c5b4443e4}{
+\#define {\bfseries N\_\-RECT\_\-GRADIENT\_\-BOTTOM}~\mbox{[}UIColor colorWithRed:0.17f green:0.24f blue:0.6f alpha:1.0f\mbox{]}}
+\label{_p_c_graph_node_8m_a76372a9060a628673efa400c5b4443e4}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_af627965973bcf6fc969121b4098ce283}{
+\#define {\bfseries N\_\-RECT\_\-OUTLINE}~\mbox{[}UIColor colorWithRed:0.32f green:0.29f blue:0.62 alpha:1.0f\mbox{]}}
+\label{_p_c_graph_node_8m_af627965973bcf6fc969121b4098ce283}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_ae74cb6c2ba21a84fa9ba00fe8d99e6a0}{
+\#define {\bfseries N\_\-RECT\_\-LABEL}~\mbox{[}UIColor whiteColor\mbox{]}}
+\label{_p_c_graph_node_8m_ae74cb6c2ba21a84fa9ba00fe8d99e6a0}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a962ef7fe2ace4f76dbfcde6b35a0b043}{
+\#define {\bfseries N\_\-UNKNOWN\_\-GRADIENT\_\-TOP}~\mbox{[}UIColor colorWithWhite:0.9f alpha:1.f\mbox{]}}
+\label{_p_c_graph_node_8m_a962ef7fe2ace4f76dbfcde6b35a0b043}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a73e6a94a7df9fd5ce7efc72d6e43ce71}{
+\#define {\bfseries N\_\-UNKNOWN\_\-GRADIENT\_\-BOTTOM}~\mbox{[}UIColor colorWithWhite:0.7f alpha:1.f\mbox{]}}
+\label{_p_c_graph_node_8m_a73e6a94a7df9fd5ce7efc72d6e43ce71}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a453382875c2fae0321703c2c6e134b8c}{
+\#define {\bfseries N\_\-UNKNOWN\_\-OUTLINE}~\mbox{[}UIColor redColor\mbox{]}}
+\label{_p_c_graph_node_8m_a453382875c2fae0321703c2c6e134b8c}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_aeba0929ae524c4c4b39561d2d0a09875}{
+\#define {\bfseries N\_\-UNKNOWN\_\-LABEL}~\mbox{[}UIColor redColor\mbox{]}}
+\label{_p_c_graph_node_8m_aeba0929ae524c4c4b39561d2d0a09875}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_ae94c374ece2fcb25b0879501bc652892}{
+\#define {\bfseries N\_\-DRAGGING\_\-SCALE}~1.25f}
+\label{_p_c_graph_node_8m_ae94c374ece2fcb25b0879501bc652892}
+
+\item 
+\hypertarget{_p_c_graph_node_8m_a825607a64270f7e0347ecd300deeac01}{
+\#define {\bfseries N\_\-DRAGGING\_\-ALPHA}~0.75f}
+\label{_p_c_graph_node_8m_a825607a64270f7e0347ecd300deeac01}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries PCNodeType} \{ {\bfseries PCEllipseNodeType} =  0, 
+{\bfseries PCRectNodeType}, 
+{\bfseries PCPlainNodeType}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Type of shape to create (ellipse, rectangle, or none) 

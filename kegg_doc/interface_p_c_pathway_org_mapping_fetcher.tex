@@ -1,0 +1,65 @@
+\hypertarget{interface_p_c_pathway_org_mapping_fetcher}{
+\section{PCPathwayOrgMappingFetcher Class Reference}
+\label{interface_p_c_pathway_org_mapping_fetcher}\index{PCPathwayOrgMappingFetcher@{PCPathwayOrgMappingFetcher}}
+}
+
+
+Fetch the mapping of an organism to the processes it contains.  
+
+
+
+
+{\ttfamily \#import $<$PCPathwayOrgMappingFetcher.h$>$}
+
+Inheritance diagram for PCPathwayOrgMappingFetcher:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{kegg_doc/interface_p_c_pathway_org_mapping_fetcher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_pathway_org_mapping_fetcher_ab9c980d49d0586de6c6113b247e11b4d}{
+(id) -\/ \hyperlink{interface_p_c_pathway_org_mapping_fetcher_ab9c980d49d0586de6c6113b247e11b4d}{initWithPathway:model:}}
+\label{interface_p_c_pathway_org_mapping_fetcher_ab9c980d49d0586de6c6113b247e11b4d}
+
+\begin{DoxyCompactList}\small\item\em Initialize this object with a pathway to fetch data for and model to store data in. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_pathway_org_mapping_fetcher_a8176ad4a9afe1fd520a5b4d7c5f886ba}{
+(void) -\/ \hyperlink{interface_p_c_pathway_org_mapping_fetcher_a8176ad4a9afe1fd520a5b4d7c5f886ba}{recurseGroupWithXmlElement:}}
+\label{interface_p_c_pathway_org_mapping_fetcher_a8176ad4a9afe1fd520a5b4d7c5f886ba}
+
+\begin{DoxyCompactList}\small\item\em Internal XML parsing helper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Private}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_pathway_org_mapping_fetcher_aa98bd4f1252c3923e8f7cfd2426a8b65}{
+NSManagedObject $\ast$ \hyperlink{interface_p_c_pathway_org_mapping_fetcher_aa98bd4f1252c3923e8f7cfd2426a8b65}{pathway}}
+\label{interface_p_c_pathway_org_mapping_fetcher_aa98bd4f1252c3923e8f7cfd2426a8b65}
+
+\begin{DoxyCompactList}\small\item\em Pathway to fetch data for. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_pathway_org_mapping_fetcher_a8e3ba255f13ba78fc7ec1ec3b5d53e84}{
+\hyperlink{interface_p_c_graph_model}{PCGraphModel} $\ast$ \hyperlink{interface_p_c_pathway_org_mapping_fetcher_a8e3ba255f13ba78fc7ec1ec3b5d53e84}{model}}
+\label{interface_p_c_pathway_org_mapping_fetcher_a8e3ba255f13ba78fc7ec1ec3b5d53e84}
+
+\begin{DoxyCompactList}\small\item\em Graph model to store fetched data in. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_pathway_org_mapping_fetcher_aae0ebc2d9b74b47213bed31ef7ce197d}{
+NSMutableDictionary $\ast$ \hyperlink{interface_p_c_pathway_org_mapping_fetcher_aae0ebc2d9b74b47213bed31ef7ce197d}{identifierToOrganismSet}}
+\label{interface_p_c_pathway_org_mapping_fetcher_aae0ebc2d9b74b47213bed31ef7ce197d}
+
+\begin{DoxyCompactList}\small\item\em Dictionary mapping node identifier to parent organisms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Fetch the mapping of an organism to the processes it contains. 
+
+Requires a pathway and model so that the organism IDs can be attached to node info objects and displayed in the UI. Post a {\ttfamily PCPathwayOrgMappingLoaded} notification when finished. (Web service: {\ttfamily GetOrganismHierarchyForAPathway}) 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Data fetching/PCPathwayOrgMappingFetcher.h\item 
+PathCaseKEGG/Data fetching/PCPathwayOrgMappingFetcher.m\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+\hypertarget{interface_p_c_simple_core_data_table_view_controller}{
+\section{PCSimpleCoreDataTableViewController Class Reference}
+\label{interface_p_c_simple_core_data_table_view_controller}\index{PCSimpleCoreDataTableViewController@{PCSimpleCoreDataTableViewController}}
+}
+
+
+Table view that tracks a Core Data result set.  
+
+
+
+
+{\ttfamily \#import $<$PCSimpleCoreDataTableViewController.h$>$}
+
+Inheritance diagram for PCSimpleCoreDataTableViewController:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.964912cm]{kegg_doc/interface_p_c_simple_core_data_table_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_simple_core_data_table_view_controller_a2f839995aff2bf95337371ae2e3ac8c7}{
+(void) -\/ \hyperlink{interface_p_c_simple_core_data_table_view_controller_a2f839995aff2bf95337371ae2e3ac8c7}{configureCell:atIndexPath:}}
+\label{interface_p_c_simple_core_data_table_view_controller_a2f839995aff2bf95337371ae2e3ac8c7}
+
+\begin{DoxyCompactList}\small\item\em Populate cell with data at indexPath. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_simple_core_data_table_view_controller_abf2ebedf85853d131885b6e17eeef468}{
+(NSFetchedResultsController $\ast$) -\/ \hyperlink{interface_p_c_simple_core_data_table_view_controller_abf2ebedf85853d131885b6e17eeef468}{makeFetchedResultsController}}
+\label{interface_p_c_simple_core_data_table_view_controller_abf2ebedf85853d131885b6e17eeef468}
+
+\begin{DoxyCompactList}\small\item\em Create an NSFetchedResultsController for the particular type of data we want. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_simple_core_data_table_view_controller_aecae1aeb2d9c2b4f7396b7094e806ed3}{
+NSFetchedResultsController $\ast$ \hyperlink{interface_p_c_simple_core_data_table_view_controller_aecae1aeb2d9c2b4f7396b7094e806ed3}{fetchedResultsController}}
+\label{interface_p_c_simple_core_data_table_view_controller_aecae1aeb2d9c2b4f7396b7094e806ed3}
+
+\begin{DoxyCompactList}\small\item\em Fetched results controller for managing a set of Core Data query results. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_simple_core_data_table_view_controller_a60a2acf690c457bca7fc522a49195303}{
+NSManagedObjectContext $\ast$ \hyperlink{interface_p_c_simple_core_data_table_view_controller_a60a2acf690c457bca7fc522a49195303}{managedObjectContext}}
+\label{interface_p_c_simple_core_data_table_view_controller_a60a2acf690c457bca7fc522a49195303}
+
+\begin{DoxyCompactList}\small\item\em Managed object context for accessing Core Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Table view that tracks a Core Data result set. 
+
+Customized by changing how data is fetched and how cells are created.
+
+Subclasses should override:
+\begin{DoxyItemize}
+\item {\ttfamily }(UITableViewCell $\ast$)tableView:cellForRowAtIndexPath:
+\item {\ttfamily }(void)configureCell:atIndexPath:
+\item {\ttfamily }(NSFetchedResultsController $\ast$)makeFetchedResultsController 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Navigation/PCSimpleCoreDataTableViewController.h\item 
+PathCaseKEGG/Navigation/PCSimpleCoreDataTableViewController.m\end{DoxyCompactItemize}

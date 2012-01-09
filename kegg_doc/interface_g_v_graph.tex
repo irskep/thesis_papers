@@ -1,0 +1,97 @@
+\hypertarget{interface_g_v_graph}{
+\section{GVGraph Class Reference}
+\label{interface_g_v_graph}\index{GVGraph@{GVGraph}}
+}
+
+
+Basic graph representation with the ability to compute graphical layouts.  
+
+
+
+
+{\ttfamily \#import $<$GVGraph.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_g_v_graph_a0b1eb84a6b2ceeb2a052d659ff260489}{addNodeWithID:label:}
+\begin{DoxyCompactList}\small\item\em Add a node to the graph. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_g_v_graph_a7ca357ae11b84c38d726feacc4ee0aae}{addEdgeWithHeadID:tailID:}
+\begin{DoxyCompactList}\small\item\em Add an edge to the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_af7dd4b94d29c2771e1003d4f8948249b}{
+(void) -\/ \hyperlink{interface_g_v_graph_af7dd4b94d29c2771e1003d4f8948249b}{computeLayoutWithEngine:}}
+\label{interface_g_v_graph_af7dd4b94d29c2771e1003d4f8948249b}
+
+\begin{DoxyCompactList}\small\item\em Compute a layout and store the results. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_a1646a5fd76cc914a66aea07c0cb871ea}{
+(CGPoint) -\/ \hyperlink{interface_g_v_graph_a1646a5fd76cc914a66aea07c0cb871ea}{positionForNodeID:}}
+\label{interface_g_v_graph_a1646a5fd76cc914a66aea07c0cb871ea}
+
+\begin{DoxyCompactList}\small\item\em Get the position of the node with the given identifier after a layout has been computed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_g_v_graph_a4e381fb8e21eb816a769d889dc9c2738}{
+NSMutableDictionary $\ast$ \hyperlink{interface_g_v_graph_a4e381fb8e21eb816a769d889dc9c2738}{nodes}}
+\label{interface_g_v_graph_a4e381fb8e21eb816a769d889dc9c2738}
+
+\begin{DoxyCompactList}\small\item\em Dictionary of \hyperlink{interface_g_v_graph_node}{GVGraphNode} objects keyed on identifier. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_a2f3245fb2ad878ee15e3e1ed66e97a93}{
+NSMutableDictionary $\ast$ \hyperlink{interface_g_v_graph_a2f3245fb2ad878ee15e3e1ed66e97a93}{edges}}
+\label{interface_g_v_graph_a2f3245fb2ad878ee15e3e1ed66e97a93}
+
+\begin{DoxyCompactList}\small\item\em Dictionary of \hyperlink{interface_g_v_graph_edge}{GVGraphEdge} objects keyed on identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic graph representation with the ability to compute graphical layouts. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_g_v_graph_a7ca357ae11b84c38d726feacc4ee0aae}{
+\index{GVGraph@{GVGraph}!addEdgeWithHeadID:tailID:@{addEdgeWithHeadID:tailID:}}
+\index{addEdgeWithHeadID:tailID:@{addEdgeWithHeadID:tailID:}!GVGraph@{GVGraph}}
+\subsubsection[{addEdgeWithHeadID:tailID:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) addEdgeWithHeadID: 
+\begin{DoxyParamCaption}
+\item[{dummy(NSString $\ast$)}]{headID}
+\item[{tailID:(NSString $\ast$)}]{tailID}
+\end{DoxyParamCaption}
+}}
+\label{interface_g_v_graph_a7ca357ae11b84c38d726feacc4ee0aae}
+
+
+Add an edge to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em headID} & Identifier of the head \\
+\hline
+{\em tailID} & Identifier of the tail \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_g_v_graph_a0b1eb84a6b2ceeb2a052d659ff260489}{
+\index{GVGraph@{GVGraph}!addNodeWithID:label:@{addNodeWithID:label:}}
+\index{addNodeWithID:label:@{addNodeWithID:label:}!GVGraph@{GVGraph}}
+\subsubsection[{addNodeWithID:label:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) addNodeWithID: 
+\begin{DoxyParamCaption}
+\item[{dummy(NSString $\ast$)}]{nodeID}
+\item[{label:(NSString $\ast$)}]{label}
+\end{DoxyParamCaption}
+}}
+\label{interface_g_v_graph_a0b1eb84a6b2ceeb2a052d659ff260489}
+
+
+Add a node to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodeID} & Internal identifier \\
+\hline
+{\em label} & Label to be displayed. Used in layout calculations. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/Layout/\hyperlink{_g_v_graph_8h}{GVGraph.h}\item 
+PathCaseKEGG/Graph view/Layout/GVGraph.m\end{DoxyCompactItemize}

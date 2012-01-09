@@ -1,0 +1,73 @@
+\hypertarget{interface_p_c_web_view_controller}{
+\section{PCWebViewController Class Reference}
+\label{interface_p_c_web_view_controller}\index{PCWebViewController@{PCWebViewController}}
+}
+
+
+View controller for displaying web pages with simple navigation controls.  
+
+
+
+
+{\ttfamily \#import $<$PCWebViewController.h$>$}
+
+Inheritance diagram for PCWebViewController:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{kegg_doc/interface_p_c_web_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_web_view_controller_a2650e78e4a28fa64494e10bb8e4663f0}{
+(id) -\/ \hyperlink{interface_p_c_web_view_controller_a2650e78e4a28fa64494e10bb8e4663f0}{initWithPage:}}
+\label{interface_p_c_web_view_controller_a2650e78e4a28fa64494e10bb8e4663f0}
+
+\begin{DoxyCompactList}\small\item\em Initialize the view with a specific page. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_web_view_controller_ade56812baf7b39fbce9828726762f72e}{
+(void) -\/ \hyperlink{interface_p_c_web_view_controller_ade56812baf7b39fbce9828726762f72e}{goToPage:}}
+\label{interface_p_c_web_view_controller_ade56812baf7b39fbce9828726762f72e}
+
+\begin{DoxyCompactList}\small\item\em Go to a specific page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Private}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_web_view_controller_adac96c9026f42daf02a3a3e568f2211c}{
+NSString $\ast$ \hyperlink{interface_p_c_web_view_controller_adac96c9026f42daf02a3a3e568f2211c}{startPage}}
+\label{interface_p_c_web_view_controller_adac96c9026f42daf02a3a3e568f2211c}
+
+\begin{DoxyCompactList}\small\item\em Page to display when all subviews are loaded. Populated by \hyperlink{interface_p_c_web_view_controller_a2650e78e4a28fa64494e10bb8e4663f0}{initWithPage:}. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_web_view_controller_a069fec1bd1a88702e1baeed1db0d61c5}{
+NSArray $\ast$ \hyperlink{interface_p_c_web_view_controller_a069fec1bd1a88702e1baeed1db0d61c5}{navButtons}}
+\label{interface_p_c_web_view_controller_a069fec1bd1a88702e1baeed1db0d61c5}
+
+\begin{DoxyCompactList}\small\item\em Forward and Back buttons. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_web_view_controller_addddb1fa3081c063e95d5eae3676bddc}{
+NSURL $\ast$ \hyperlink{interface_p_c_web_view_controller_addddb1fa3081c063e95d5eae3676bddc}{lastLoadedURL}}
+\label{interface_p_c_web_view_controller_addddb1fa3081c063e95d5eae3676bddc}
+
+\begin{DoxyCompactList}\small\item\em URL shown by the web view. Used to invoke Safari when requested. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_web_view_controller_ae1194ea1b9a2504c646c1bc8c965295f}{
+UIBarButtonItem $\ast$ \hyperlink{interface_p_c_web_view_controller_ae1194ea1b9a2504c646c1bc8c965295f}{titleToolbarLabel}}
+\label{interface_p_c_web_view_controller_ae1194ea1b9a2504c646c1bc8c965295f}
+
+\begin{DoxyCompactList}\small\item\em Label for display in a toolbar. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_web_view_controller_a0dd41a844fd61128a04a0ec44defb7f6}{
+UIBarButtonItem $\ast$ \hyperlink{interface_p_c_web_view_controller_a0dd41a844fd61128a04a0ec44defb7f6}{openInSafariButton}}
+\label{interface_p_c_web_view_controller_a0dd41a844fd61128a04a0ec44defb7f6}
+
+\begin{DoxyCompactList}\small\item\em Button to open the page in Safari. Only enabled if the current page is on the web and not (like the manual). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+View controller for displaying web pages with simple navigation controls. 
+
+Can function either as a standalone view controller in a UINavigationViewController, or as a detail view conforming to the \hyperlink{protocol_p_c_detail_view_sub_controller-p}{PCDetailViewSubController} protocol. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Navigation/PCWebViewController.h\item 
+PathCaseKEGG/Navigation/PCWebViewController.m\end{DoxyCompactItemize}

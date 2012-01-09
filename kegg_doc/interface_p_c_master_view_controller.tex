@@ -1,0 +1,75 @@
+\hypertarget{interface_p_c_master_view_controller}{
+\section{PCMasterViewController Class Reference}
+\label{interface_p_c_master_view_controller}\index{PCMasterViewController@{PCMasterViewController}}
+}
+
+
+Display a table view with pathway categories, documentation, and (maybe) built-\/in queries.  
+
+
+
+
+{\ttfamily \#import $<$PCMasterViewController.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Private Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_master_view_controller_a294917e6dfc5344a849d19634b87ba2e}{
+(void) -\/ \hyperlink{interface_p_c_master_view_controller_a294917e6dfc5344a849d19634b87ba2e}{configureCell:atIndexPath:}}
+\label{interface_p_c_master_view_controller_a294917e6dfc5344a849d19634b87ba2e}
+
+\begin{DoxyCompactList}\small\item\em Set up a UITableViewCell to display the contents of whatever item in the table view is represented by indexPath. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_master_view_controller_a6412085929551eade6df3985c48d44ce}{
+(NSString $\ast$) -\/ \hyperlink{interface_p_c_master_view_controller_a6412085929551eade6df3985c48d44ce}{textForCellAtIndexPath:}}
+\label{interface_p_c_master_view_controller_a6412085929551eade6df3985c48d44ce}
+
+\begin{DoxyCompactList}\small\item\em Returns text to be displayed in the cell at indexPath. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Public Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_master_view_controller_ae252aefdba7443b1ca105d8ee3b90e20}{
+NSFetchedResultsController $\ast$ \hyperlink{interface_p_c_master_view_controller_ae252aefdba7443b1ca105d8ee3b90e20}{fetchedResultsController}}
+\label{interface_p_c_master_view_controller_ae252aefdba7443b1ca105d8ee3b90e20}
+
+\begin{DoxyCompactList}\small\item\em Fetched results controller for managing a set of Core Data query results. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_master_view_controller_a6aca94a2f6cebc722d70b752e15f1ec6}{
+NSManagedObjectContext $\ast$ \hyperlink{interface_p_c_master_view_controller_a6aca94a2f6cebc722d70b752e15f1ec6}{managedObjectContext}}
+\label{interface_p_c_master_view_controller_a6aca94a2f6cebc722d70b752e15f1ec6}
+
+\begin{DoxyCompactList}\small\item\em Managed object context for accessing Core Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_master_view_controller_a17fdef41ec129c034e14e28b546e0e7d}{
+NSArray $\ast$ \hyperlink{interface_p_c_master_view_controller_a17fdef41ec129c034e14e28b546e0e7d}{queries}}
+\label{interface_p_c_master_view_controller_a17fdef41ec129c034e14e28b546e0e7d}
+
+\begin{DoxyCompactList}\small\item\em List of query objects. This feature is currently disabled. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_master_view_controller_a18879339e7bb750899ccf95809226353}{
+NSArray $\ast$ \hyperlink{interface_p_c_master_view_controller_a18879339e7bb750899ccf95809226353}{linkTitles}}
+\label{interface_p_c_master_view_controller_a18879339e7bb750899ccf95809226353}
+
+\begin{DoxyCompactList}\small\item\em List of documentation link titles. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_master_view_controller_ab264845a5a4ab5ccb3ba0cfde4aa1de7}{
+NSArray $\ast$ \hyperlink{interface_p_c_master_view_controller_ab264845a5a4ab5ccb3ba0cfde4aa1de7}{linkURLs}}
+\label{interface_p_c_master_view_controller_ab264845a5a4ab5ccb3ba0cfde4aa1de7}
+
+\begin{DoxyCompactList}\small\item\em List of documentation link URLs that correspond to linkTitles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Display a table view with pathway categories, documentation, and (maybe) built-\/in queries. 
+
+Involves fetching pathway categories from Core Data.
+
+Meant to live inside a navigation controller. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Navigation/PCMasterViewController.h\item 
+PathCaseKEGG/Navigation/PCMasterViewController.m\end{DoxyCompactItemize}

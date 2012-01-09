@@ -1,0 +1,84 @@
+\hypertarget{interface_p_c_organism_sub_hierarchy_table_view_controller}{
+\section{PCOrganismSubHierarchyTableViewController Class Reference}
+\label{interface_p_c_organism_sub_hierarchy_table_view_controller}\index{PCOrganismSubHierarchyTableViewController@{PCOrganismSubHierarchyTableViewController}}
+}
+
+
+Organism subgroup table.  
+
+
+
+
+{\ttfamily \#import $<$PCOrganismSubHierarchyTableViewController.h$>$}
+
+Inheritance diagram for PCOrganismSubHierarchyTableViewController:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{kegg_doc/interface_p_c_organism_sub_hierarchy_table_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_p_c_organism_sub_hierarchy_table_view_controller_ad9c5658bfca359751b3ea2752965e2d5}{initWithNavigationGroup:leafAction:deactivatedOrganismSet:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_organism_sub_hierarchy_table_view_controller_a8128f8748f52e6f9cecc0ffb1b878a64}{
+(BOOL) -\/ \hyperlink{interface_p_c_organism_sub_hierarchy_table_view_controller_a8128f8748f52e6f9cecc0ffb1b878a64}{allSelected}}
+\label{interface_p_c_organism_sub_hierarchy_table_view_controller_a8128f8748f52e6f9cecc0ffb1b878a64}
+
+\begin{DoxyCompactList}\small\item\em True if every organism group in the current display is activated. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_organism_sub_hierarchy_table_view_controller_ad49af3da4c716ad3982ffe6c6f4b43ea}{
+(void) -\/ \hyperlink{interface_p_c_organism_sub_hierarchy_table_view_controller_ad49af3da4c716ad3982ffe6c6f4b43ea}{updateButtonTitle}}
+\label{interface_p_c_organism_sub_hierarchy_table_view_controller_ad49af3da4c716ad3982ffe6c6f4b43ea}
+
+\begin{DoxyCompactList}\small\item\em Changes the button on the right side of the navigation bar to say \char`\"{}Select All\char`\"{} or \char`\"{}Deselect All\char`\"{} depending on whether all visible organism groups are selected already. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_organism_sub_hierarchy_table_view_controller_a1b6c53def2e82eefbc576f13d06ee889}{
+NSMutableSet $\ast$ \hyperlink{interface_p_c_organism_sub_hierarchy_table_view_controller_a1b6c53def2e82eefbc576f13d06ee889}{deactivatedOrganisms}}
+\label{interface_p_c_organism_sub_hierarchy_table_view_controller_a1b6c53def2e82eefbc576f13d06ee889}
+
+\begin{DoxyCompactList}\small\item\em Set of organisms that the user has deactivated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Organism subgroup table. 
+
+These can be turned on and off to activate and deactivate processes the visible pathway. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_p_c_organism_sub_hierarchy_table_view_controller_ad9c5658bfca359751b3ea2752965e2d5}{
+\index{PCOrganismSubHierarchyTableViewController@{PCOrganismSubHierarchyTableViewController}!initWithNavigationGroup:leafAction:deactivatedOrganismSet:@{initWithNavigationGroup:leafAction:deactivatedOrganismSet:}}
+\index{initWithNavigationGroup:leafAction:deactivatedOrganismSet:@{initWithNavigationGroup:leafAction:deactivatedOrganismSet:}!PCOrganismSubHierarchyTableViewController@{PCOrganismSubHierarchyTableViewController}}
+\subsubsection[{initWithNavigationGroup:leafAction:deactivatedOrganismSet:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) initWithNavigationGroup: 
+\begin{DoxyParamCaption}
+\item[{dummy(NSManagedObject $\ast$)}]{navigationGroup}
+\item[{leafAction:(NavGroupLeafAction)}]{action}
+\item[{deactivatedOrganismSet:(NSMutableSet $\ast$)}]{deactivatedOrganismSet}
+\end{DoxyParamCaption}
+}}
+\label{interface_p_c_organism_sub_hierarchy_table_view_controller_ad9c5658bfca359751b3ea2752965e2d5}
+
+\begin{DoxyParams}{Parameters}
+{\em navigationGroup} & Parent navigation group whose subgroups are to be the contents of this view controller \\
+\hline
+{\em action} & Block to run when an organism group no longer has subgroups (indicating that it cannot be drilled down into further) \\
+\hline
+{\em deactivatedOrganismSet} & Set of deactivated organisms to update \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/PCOrganismSubHierarchyTableViewController.h\item 
+PathCaseKEGG/Graph view/PCOrganismSubHierarchyTableViewController.m\end{DoxyCompactItemize}

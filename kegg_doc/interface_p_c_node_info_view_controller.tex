@@ -1,0 +1,97 @@
+\hypertarget{interface_p_c_node_info_view_controller}{
+\section{PCNodeInfoViewController Class Reference}
+\label{interface_p_c_node_info_view_controller}\index{PCNodeInfoViewController@{PCNodeInfoViewController}}
+}
+
+
+Master view to display information about a node.  
+
+
+
+
+{\ttfamily \#import $<$PCNodeInfoViewController.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_node_info_view_controller_ac15da8a7d16bd663a5b0751fad03aeca}{
+(id) -\/ \hyperlink{interface_p_c_node_info_view_controller_ac15da8a7d16bd663a5b0751fad03aeca}{initWithModel:}}
+\label{interface_p_c_node_info_view_controller_ac15da8a7d16bd663a5b0751fad03aeca}
+
+\begin{DoxyCompactList}\small\item\em Initialize this object with a \hyperlink{interface_p_c_graph_model}{PCGraphModel}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_node_info_view_controller_a2372d8511c7b06948d0387ddda1c4044}{
+(NSArray $\ast$) -\/ \hyperlink{interface_p_c_node_info_view_controller_a2372d8511c7b06948d0387ddda1c4044}{moleculesForProcess:withRole:}}
+\label{interface_p_c_node_info_view_controller_a2372d8511c7b06948d0387ddda1c4044}
+
+\begin{DoxyCompactList}\small\item\em Get molecules with a certain role in a process. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_view_controller_aaceef7c95fed7b385b6c1f02deb8deca}{
+(NSArray $\ast$) -\/ \hyperlink{interface_p_c_node_info_view_controller_aaceef7c95fed7b385b6c1f02deb8deca}{coInhibitorsForMolecule:}}
+\label{interface_p_c_node_info_view_controller_aaceef7c95fed7b385b6c1f02deb8deca}
+
+\begin{DoxyCompactList}\small\item\em Get all inhibitors for a process. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_view_controller_a18727e55e75b11ea27ff9975ca1d12e1}{
+(NSString $\ast$) -\/ \hyperlink{interface_p_c_node_info_view_controller_a18727e55e75b11ea27ff9975ca1d12e1}{mainString}}
+\label{interface_p_c_node_info_view_controller_a18727e55e75b11ea27ff9975ca1d12e1}
+
+\begin{DoxyCompactList}\small\item\em Build a string similar to the one in the PathCase KEGG web interface showing a node's information. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_view_controller_adbb43b74efe5b1f2cdaa47b0a841aedb}{
+(void) -\/ \hyperlink{interface_p_c_node_info_view_controller_adbb43b74efe5b1f2cdaa47b0a841aedb}{configureView}}
+\label{interface_p_c_node_info_view_controller_adbb43b74efe5b1f2cdaa47b0a841aedb}
+
+\begin{DoxyCompactList}\small\item\em Rebuild the view to show new data. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_view_controller_a9ccd476c8644ff1b8300d8b3e1409a77}{
+(CGFloat) -\/ \hyperlink{interface_p_c_node_info_view_controller_a9ccd476c8644ff1b8300d8b3e1409a77}{heightOfText:withWidth:fontSize:}}
+\label{interface_p_c_node_info_view_controller_a9ccd476c8644ff1b8300d8b3e1409a77}
+
+\begin{DoxyCompactList}\small\item\em Compute the height of a string rendered in a font size limited by a specific width. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\paragraph*{}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_node_info_view_controller_af93ce8d160f66e92ef852eb23d535c5d}{
+\hyperlink{interface_p_c_graph_node}{PCGraphNode} $\ast$ \hyperlink{interface_p_c_node_info_view_controller_af93ce8d160f66e92ef852eb23d535c5d}{node}}
+\label{interface_p_c_node_info_view_controller_af93ce8d160f66e92ef852eb23d535c5d}
+
+\begin{DoxyCompactList}\small\item\em Currently selected node to display information about. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_view_controller_aa16effad5ef43133b9d82207bba806d3}{
+\hyperlink{interface_p_c_graph_model}{PCGraphModel} $\ast$ \hyperlink{interface_p_c_node_info_view_controller_aa16effad5ef43133b9d82207bba806d3}{model}}
+\label{interface_p_c_node_info_view_controller_aa16effad5ef43133b9d82207bba806d3}
+
+\begin{DoxyCompactList}\small\item\em Model that is currently being displayed. Information about the model is shown when no node is selected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_node_info_view_controller_a1475446790ccfd7913ad4411b765fcea}{
+UIScrollView $\ast$ {\bfseries scrollView}}
+\label{interface_p_c_node_info_view_controller_a1475446790ccfd7913ad4411b765fcea}
+
+\item 
+\hypertarget{interface_p_c_node_info_view_controller_aa6e8acae9c46e40548b7b1c794b10455}{
+UIView $\ast$ {\bfseries contentView}}
+\label{interface_p_c_node_info_view_controller_aa6e8acae9c46e40548b7b1c794b10455}
+
+\item 
+\hypertarget{interface_p_c_node_info_view_controller_ad890e9dbf0b63c8cf8987116bd6c5a4e}{
+NSMutableArray $\ast$ {\bfseries labels}}
+\label{interface_p_c_node_info_view_controller_ad890e9dbf0b63c8cf8987116bd6c5a4e}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Master view to display information about a node. 
+
+Currently shown when a node is tapped in the graph view. Dynamically resizes vertically. Uses \hyperlink{interface_e_k_enzyme}{EKEnzyme} to get more info when possible. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/PCNodeInfoViewController.h\item 
+PathCaseKEGG/Graph view/PCNodeInfoViewController.m\end{DoxyCompactItemize}

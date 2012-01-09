@@ -1,0 +1,78 @@
+\hypertarget{interface_p_c_layout_fetcher}{
+\section{PCLayoutFetcher Class Reference}
+\label{interface_p_c_layout_fetcher}\index{PCLayoutFetcher@{PCLayoutFetcher}}
+}
+
+
+Fetch the layout for a pathway.  
+
+
+
+
+{\ttfamily \#import $<$PCLayoutFetcher.h$>$}
+
+Inheritance diagram for PCLayoutFetcher:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{kegg_doc/interface_p_c_layout_fetcher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_layout_fetcher_a4d488df636f17330cdd3894c47b9f88e}{
+(id) -\/ \hyperlink{interface_p_c_layout_fetcher_a4d488df636f17330cdd3894c47b9f88e}{initWithPathway:data:}}
+\label{interface_p_c_layout_fetcher_a4d488df636f17330cdd3894c47b9f88e}
+
+\begin{DoxyCompactList}\small\item\em Initialize this object with a pathway to fetch a layout for and existing \hyperlink{interface_p_c_node_info}{PCNodeInfo} objects built by \hyperlink{interface_p_c_graph_data_fetcher}{PCGraphDataFetcher} indexed by identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_layout_fetcher_a469cf4d7167466efe726aee0d305f7aa}{
+NSManagedObject $\ast$ \hyperlink{interface_p_c_layout_fetcher_a469cf4d7167466efe726aee0d305f7aa}{pathway}}
+\label{interface_p_c_layout_fetcher_a469cf4d7167466efe726aee0d305f7aa}
+
+\begin{DoxyCompactList}\small\item\em Pathway to fetch layout data for. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_layout_fetcher_ad4444ebf87163dcf3b6a0c58fd23e309}{
+\hyperlink{interface_p_c_graph_model}{PCGraphModel} $\ast$ \hyperlink{interface_p_c_layout_fetcher_ad4444ebf87163dcf3b6a0c58fd23e309}{model}}
+\label{interface_p_c_layout_fetcher_ad4444ebf87163dcf3b6a0c58fd23e309}
+
+\begin{DoxyCompactList}\small\item\em Model to store data in during processing and to send as part of the notification when complete. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_layout_fetcher_a4b905f642079d449aca0e0af52533fa0}{
+NSMutableDictionary $\ast$ \hyperlink{interface_p_c_layout_fetcher_a4b905f642079d449aca0e0af52533fa0}{data}}
+\label{interface_p_c_layout_fetcher_a4b905f642079d449aca0e0af52533fa0}
+
+\begin{DoxyCompactList}\small\item\em Dictionary mapping node identifier to \hyperlink{interface_p_c_node_info}{PCNodeInfo} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_layout_fetcher_a96b379f4d241126dddaf8b1b5be8b948}{
+(BOOL) -\/ \hyperlink{interface_p_c_layout_fetcher_a96b379f4d241126dddaf8b1b5be8b948}{makeNodesFromXML:}}
+\label{interface_p_c_layout_fetcher_a96b379f4d241126dddaf8b1b5be8b948}
+
+\begin{DoxyCompactList}\small\item\em Given an XML element, iterate over its children to build \hyperlink{interface_p_c_graph_node}{PCGraphNode} objects. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_layout_fetcher_af042ff1048b356d820e20330cbac861f}{
+(BOOL) -\/ \hyperlink{interface_p_c_layout_fetcher_af042ff1048b356d820e20330cbac861f}{makeEdgesFromXML:}}
+\label{interface_p_c_layout_fetcher_af042ff1048b356d820e20330cbac861f}
+
+\begin{DoxyCompactList}\small\item\em Given an XML element, iterate over its children to build \hyperlink{interface_p_c_graph_edge}{PCGraphEdge} objects. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_layout_fetcher_a759af44edd2f33f09d0c849204506557}{
+(NSString $\ast$) + \hyperlink{interface_p_c_layout_fetcher_a759af44edd2f33f09d0c849204506557}{mapIDForPathwayName:}}
+\label{interface_p_c_layout_fetcher_a759af44edd2f33f09d0c849204506557}
+
+\begin{DoxyCompactList}\small\item\em Get the KEGG identifier corresponding to a pathway name. The data for this is loaded from a text file included with the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fetch the layout for a pathway. 
+
+If one exists, use it to build a \hyperlink{interface_p_c_graph_model}{PCGraphModel}. If none is given, build a \hyperlink{interface_p_c_graph_model}{PCGraphModel} from the graph data. Post a {\ttfamily PCPathwayLayoutFetched} notification when finished. (Web service: {\ttfamily RetrieveLayout}) 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Data fetching/PCLayoutFetcher.h\item 
+PathCaseKEGG/Data fetching/PCLayoutFetcher.m\end{DoxyCompactItemize}

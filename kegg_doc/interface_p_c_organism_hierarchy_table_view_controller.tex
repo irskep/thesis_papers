@@ -1,0 +1,64 @@
+\hypertarget{interface_p_c_organism_hierarchy_table_view_controller}{
+\section{PCOrganismHierarchyTableViewController Class Reference}
+\label{interface_p_c_organism_hierarchy_table_view_controller}\index{PCOrganismHierarchyTableViewController@{PCOrganismHierarchyTableViewController}}
+}
+
+
+Top level table of organisms to be drilled down into.  
+
+
+
+
+{\ttfamily \#import $<$PCOrganismHierarchyTableViewController.h$>$}
+
+Inheritance diagram for PCOrganismHierarchyTableViewController:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{kegg_doc/interface_p_c_organism_hierarchy_table_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_organism_hierarchy_table_view_controller_adbda81ccd26873dcaa9ac945d1d6ead5}{
+(id) -\/ \hyperlink{interface_p_c_organism_hierarchy_table_view_controller_adbda81ccd26873dcaa9ac945d1d6ead5}{initWithDeactivatedOrganismSet:}}
+\label{interface_p_c_organism_hierarchy_table_view_controller_adbda81ccd26873dcaa9ac945d1d6ead5}
+
+\begin{DoxyCompactList}\small\item\em Initialize this object with a prepopulated set of deactivated organisms. (This view controller modifies this set.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_organism_hierarchy_table_view_controller_a8030d1024f7e84d55782aebc45af5879}{
+(BOOL) -\/ \hyperlink{interface_p_c_organism_hierarchy_table_view_controller_a8030d1024f7e84d55782aebc45af5879}{allSelected}}
+\label{interface_p_c_organism_hierarchy_table_view_controller_a8030d1024f7e84d55782aebc45af5879}
+
+\begin{DoxyCompactList}\small\item\em True if every organism group in the current display is activated. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_organism_hierarchy_table_view_controller_a97f8c85ecee33ddd52ec3e802361c5f9}{
+(void) -\/ \hyperlink{interface_p_c_organism_hierarchy_table_view_controller_a97f8c85ecee33ddd52ec3e802361c5f9}{updateButtonTitle}}
+\label{interface_p_c_organism_hierarchy_table_view_controller_a97f8c85ecee33ddd52ec3e802361c5f9}
+
+\begin{DoxyCompactList}\small\item\em Changes the button on the right side of the navigation bar to say \char`\"{}Select All\char`\"{} or \char`\"{}Deselect All\char`\"{} depending on whether all visible organism groups are selected already. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_organism_hierarchy_table_view_controller_af3855937b2f37eec77f9599a311d9612}{
+NSMutableSet $\ast$ \hyperlink{interface_p_c_organism_hierarchy_table_view_controller_af3855937b2f37eec77f9599a311d9612}{deactivatedOrganisms}}
+\label{interface_p_c_organism_hierarchy_table_view_controller_af3855937b2f37eec77f9599a311d9612}
+
+\begin{DoxyCompactList}\small\item\em Set of organisms that the user has deactivated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Top level table of organisms to be drilled down into. 
+
+These can be turned on and off to activate and deactivate processes the visible pathway. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/PCOrganismHierarchyTableViewController.h\item 
+PathCaseKEGG/Graph view/PCOrganismHierarchyTableViewController.m\end{DoxyCompactItemize}

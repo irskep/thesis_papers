@@ -1,0 +1,177 @@
+\hypertarget{interface_p_c_graph_edge}{
+\section{PCGraphEdge Class Reference}
+\label{interface_p_c_graph_edge}\index{PCGraphEdge@{PCGraphEdge}}
+}
+
+
+All graphical information and routines for an edge.  
+
+
+
+
+{\ttfamily \#import $<$PCGraphEdge.h$>$}
+
+\subsection*{Public Member Functions}
+\paragraph*{}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_p_c_graph_edge_adcf3d51c1dcf9fb8f46e92ef420202eb}{initDrawingWithMidpoints:}
+\begin{DoxyCompactList}\small\item\em Create internal graphics objects (path, etc.) from prepopulated data (source, target) using midpoints. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a83dcb2873c1daaee1b9c4aaa4c8eab0d}{
+(void) -\/ \hyperlink{interface_p_c_graph_edge_a83dcb2873c1daaee1b9c4aaa4c8eab0d}{translateMidpoints:}}
+\label{interface_p_c_graph_edge_a83dcb2873c1daaee1b9c4aaa4c8eab0d}
+
+\begin{DoxyCompactList}\small\item\em Add d to all midpoints. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_af49420f398efd28250a2f49a9edc0a04}{
+(void) -\/ \hyperlink{interface_p_c_graph_edge_af49420f398efd28250a2f49a9edc0a04}{updatePath}}
+\label{interface_p_c_graph_edge_af49420f398efd28250a2f49a9edc0a04}
+
+\begin{DoxyCompactList}\small\item\em Regenerate internal graphics objects. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a82847cafaf703e80dc4194bdbf2e9834}{
+(void) -\/ \hyperlink{interface_p_c_graph_edge_a82847cafaf703e80dc4194bdbf2e9834}{drawInContext:}}
+\label{interface_p_c_graph_edge_a82847cafaf703e80dc4194bdbf2e9834}
+
+\begin{DoxyCompactList}\small\item\em Render in a graphics context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\begin{Indent}\paragraph*{Internal Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_edge_ac43eb18dd7c76162ffe545e0b053f16e}{
+(CGPoint) -\/ \hyperlink{interface_p_c_graph_edge_ac43eb18dd7c76162ffe545e0b053f16e}{sourceAnchorWithOffset}}
+\label{interface_p_c_graph_edge_ac43eb18dd7c76162ffe545e0b053f16e}
+
+\begin{DoxyCompactList}\small\item\em Point where the source should terminate (based on node shape, midpoints, etc) \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a495510c66fb87486eddbc7c110d57257}{
+(CGPoint) -\/ \hyperlink{interface_p_c_graph_edge_a495510c66fb87486eddbc7c110d57257}{targetAnchorWithOffset}}
+\label{interface_p_c_graph_edge_a495510c66fb87486eddbc7c110d57257}
+
+\begin{DoxyCompactList}\small\item\em Point where the target should terminate (based on node shape, midpoints, etc) \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a4035a9053d4ff8e7f62099f17260ab08}{
+(CGMutablePathRef) -\/ \hyperlink{interface_p_c_graph_edge_a4035a9053d4ff8e7f62099f17260ab08}{newArrowWithSource:target:}}
+\label{interface_p_c_graph_edge_a4035a9053d4ff8e7f62099f17260ab08}
+
+\begin{DoxyCompactList}\small\item\em Create a path object for a regular arrow. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a2011cf73099c62c4f38753593f2557bb}{
+(CGMutablePathRef) -\/ \hyperlink{interface_p_c_graph_edge_a2011cf73099c62c4f38753593f2557bb}{newDiamondWithSource:target:}}
+\label{interface_p_c_graph_edge_a2011cf73099c62c4f38753593f2557bb}
+
+\begin{DoxyCompactList}\small\item\em Create a path object for a diamond arrow. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a7cea6a929b7eb54e0bbacd8f22e8f566}{
+(CGMutablePathRef) -\/ \hyperlink{interface_p_c_graph_edge_a7cea6a929b7eb54e0bbacd8f22e8f566}{newBoxWithSource:target:}}
+\label{interface_p_c_graph_edge_a7cea6a929b7eb54e0bbacd8f22e8f566}
+
+\begin{DoxyCompactList}\small\item\em Create a path object for a box arrow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Basic Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_edge_a05f794363d0bfbfcc0fcf9e99b60717c}{
+NSString $\ast$ \hyperlink{interface_p_c_graph_edge_a05f794363d0bfbfcc0fcf9e99b60717c}{identifier}}
+\label{interface_p_c_graph_edge_a05f794363d0bfbfcc0fcf9e99b60717c}
+
+\begin{DoxyCompactList}\small\item\em Identifier that is unique to the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a676ea0ceffbf93db7f4828ce1102e2eb}{
+\hyperlink{interface_p_c_graph_node}{PCGraphNode} $\ast$ \hyperlink{interface_p_c_graph_edge_a676ea0ceffbf93db7f4828ce1102e2eb}{source}}
+\label{interface_p_c_graph_edge_a676ea0ceffbf93db7f4828ce1102e2eb}
+
+\begin{DoxyCompactList}\small\item\em Edge goes \char`\"{}from\char`\"{} this node; also called the tail. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a5e13b913c5a6d1fea62eac2d099af6fb}{
+\hyperlink{interface_p_c_graph_node}{PCGraphNode} $\ast$ \hyperlink{interface_p_c_graph_edge_a5e13b913c5a6d1fea62eac2d099af6fb}{target}}
+\label{interface_p_c_graph_edge_a5e13b913c5a6d1fea62eac2d099af6fb}
+
+\begin{DoxyCompactList}\small\item\em Edge goes \char`\"{}to\char`\"{} this node; also called the head. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Style Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_edge_af9882aec8c266109fe693f3df5ffdc69}{
+CGFloat \hyperlink{interface_p_c_graph_edge_af9882aec8c266109fe693f3df5ffdc69}{width}}
+\label{interface_p_c_graph_edge_af9882aec8c266109fe693f3df5ffdc69}
+
+\begin{DoxyCompactList}\small\item\em Width of the line. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a6812393a9ec39ce7cac9d15d5e3ece4d}{
+UIColor $\ast$ \hyperlink{interface_p_c_graph_edge_a6812393a9ec39ce7cac9d15d5e3ece4d}{fill}}
+\label{interface_p_c_graph_edge_a6812393a9ec39ce7cac9d15d5e3ece4d}
+
+\begin{DoxyCompactList}\small\item\em Line color. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a7204fe5008684a4ec90e4dbef5d664de}{
+UIColor $\ast$ \hyperlink{interface_p_c_graph_edge_a7204fe5008684a4ec90e4dbef5d664de}{sourceFill}}
+\label{interface_p_c_graph_edge_a7204fe5008684a4ec90e4dbef5d664de}
+
+\begin{DoxyCompactList}\small\item\em Fill color of the source arrow. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a196c11f887c21db03a3549f51eba4390}{
+UIColor $\ast$ \hyperlink{interface_p_c_graph_edge_a196c11f887c21db03a3549f51eba4390}{targetFill}}
+\label{interface_p_c_graph_edge_a196c11f887c21db03a3549f51eba4390}
+
+\begin{DoxyCompactList}\small\item\em Fill color of the target arrow. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_aa246d453f9feca27db490c17b50d197e}{
+PCArrowType \hyperlink{interface_p_c_graph_edge_aa246d453f9feca27db490c17b50d197e}{sourceArrow}}
+\label{interface_p_c_graph_edge_aa246d453f9feca27db490c17b50d197e}
+
+\begin{DoxyCompactList}\small\item\em Arrow type at the source. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_ac8a65e2a47eca59b7b57a4c698af36d6}{
+PCArrowType \hyperlink{interface_p_c_graph_edge_ac8a65e2a47eca59b7b57a4c698af36d6}{targetArrow}}
+\label{interface_p_c_graph_edge_ac8a65e2a47eca59b7b57a4c698af36d6}
+
+\begin{DoxyCompactList}\small\item\em Arrow type at the target. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a1d5a19c04ce09dc08aafb7db950d4297}{
+BOOL \hyperlink{interface_p_c_graph_edge_a1d5a19c04ce09dc08aafb7db950d4297}{dashed}}
+\label{interface_p_c_graph_edge_a1d5a19c04ce09dc08aafb7db950d4297}
+
+\begin{DoxyCompactList}\small\item\em If true, draw the line dashed rather than solid. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_ac1f5a81bc719b021f7b20dd4e3d21c0e}{
+NSArray $\ast$ \hyperlink{interface_p_c_graph_edge_ac1f5a81bc719b021f7b20dd4e3d21c0e}{midpoints}}
+\label{interface_p_c_graph_edge_ac1f5a81bc719b021f7b20dd4e3d21c0e}
+
+\begin{DoxyCompactList}\small\item\em List of CGPoints wrapped in NSValue representing where the edge \char`\"{}bends\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Internal Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_edge_aa154330493a791e0d7a7b3a4d694f1f9}{
+CGMutablePathRef \hyperlink{interface_p_c_graph_edge_aa154330493a791e0d7a7b3a4d694f1f9}{linePath}}
+\label{interface_p_c_graph_edge_aa154330493a791e0d7a7b3a4d694f1f9}
+
+\begin{DoxyCompactList}\small\item\em Path object for the line. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_a30411c3933066eb32a4ec845240f81b1}{
+CGMutablePathRef \hyperlink{interface_p_c_graph_edge_a30411c3933066eb32a4ec845240f81b1}{sourceArrowPath}}
+\label{interface_p_c_graph_edge_a30411c3933066eb32a4ec845240f81b1}
+
+\begin{DoxyCompactList}\small\item\em Path object for the source arrow. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_edge_ade6876427887f909994e4620d5136dee}{
+CGMutablePathRef \hyperlink{interface_p_c_graph_edge_ade6876427887f909994e4620d5136dee}{targetArrowPath}}
+\label{interface_p_c_graph_edge_ade6876427887f909994e4620d5136dee}
+
+\begin{DoxyCompactList}\small\item\em Path object for the target arrow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+All graphical information and routines for an edge. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_p_c_graph_edge_adcf3d51c1dcf9fb8f46e92ef420202eb}{
+\index{PCGraphEdge@{PCGraphEdge}!initDrawingWithMidpoints:@{initDrawingWithMidpoints:}}
+\index{initDrawingWithMidpoints:@{initDrawingWithMidpoints:}!PCGraphEdge@{PCGraphEdge}}
+\subsubsection[{initDrawingWithMidpoints:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) initDrawingWithMidpoints: 
+\begin{DoxyParamCaption}
+\item[{dummy(NSArray $\ast$)}]{midpoints}
+\end{DoxyParamCaption}
+}}
+\label{interface_p_c_graph_edge_adcf3d51c1dcf9fb8f46e92ef420202eb}
+
+
+Create internal graphics objects (path, etc.) from prepopulated data (source, target) using midpoints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em midpoints} & An array of points to bend the edge, or nil \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/\hyperlink{_p_c_graph_edge_8h}{PCGraphEdge.h}\item 
+PathCaseKEGG/Graph view/PCGraphEdge.m\end{DoxyCompactItemize}

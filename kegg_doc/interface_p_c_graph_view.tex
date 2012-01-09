@@ -1,0 +1,120 @@
+\hypertarget{interface_p_c_graph_view}{
+\section{PCGraphView Class Reference}
+\label{interface_p_c_graph_view}\index{PCGraphView@{PCGraphView}}
+}
+
+
+Render a \hyperlink{interface_p_c_graph_model}{PCGraphModel} into a view containing its nodes and edges.  
+
+
+
+
+{\ttfamily \#import $<$PCGraphView.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_view_a0d83b963c6f2bc4639002f7eaecc6435}{
+(id) -\/ \hyperlink{interface_p_c_graph_view_a0d83b963c6f2bc4639002f7eaecc6435}{initWithModel:}}
+\label{interface_p_c_graph_view_a0d83b963c6f2bc4639002f7eaecc6435}
+
+\begin{DoxyCompactList}\small\item\em Initialize the view with a model. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_ab943d38e1a4e53a4734f57acfe273bba}{
+(\hyperlink{interface_p_c_graph_node}{PCGraphNode} $\ast$) -\/ \hyperlink{interface_p_c_graph_view_ab943d38e1a4e53a4734f57acfe273bba}{nodeAtPoint:}}
+\label{interface_p_c_graph_view_ab943d38e1a4e53a4734f57acfe273bba}
+
+\begin{DoxyCompactList}\small\item\em Get the node covering a given point in the view. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_a75b31f06f65b6059371224ea398dd62f}{
+(void) -\/ \hyperlink{interface_p_c_graph_view_a75b31f06f65b6059371224ea398dd62f}{redrawNodes}}
+\label{interface_p_c_graph_view_a75b31f06f65b6059371224ea398dd62f}
+
+\begin{DoxyCompactList}\small\item\em Redraw all nodes. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_ae993edc2f08ea39d3e4d19cca31bca61}{
+(void) -\/ \hyperlink{interface_p_c_graph_view_ae993edc2f08ea39d3e4d19cca31bca61}{redrawNodesInRect:}}
+\label{interface_p_c_graph_view_ae993edc2f08ea39d3e4d19cca31bca61}
+
+\begin{DoxyCompactList}\small\item\em Redraw all nodes in a specific area. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_a16c9a39fa72ab568207df1a6857c7a48}{
+(void) -\/ \hyperlink{interface_p_c_graph_view_a16c9a39fa72ab568207df1a6857c7a48}{redrawEdges}}
+\label{interface_p_c_graph_view_a16c9a39fa72ab568207df1a6857c7a48}
+
+\begin{DoxyCompactList}\small\item\em Redraw all edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_view_aadfbbac0b660ebb3a7f242563b0a4d78}{
+(void) -\/ \hyperlink{interface_p_c_graph_view_aadfbbac0b660ebb3a7f242563b0a4d78}{updateSublayers}}
+\label{interface_p_c_graph_view_aadfbbac0b660ebb3a7f242563b0a4d78}
+
+\begin{DoxyCompactList}\small\item\em Update the sizes of the various sublayers so they match the size of the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_a4765f0dc9d723bd69b9467f44574722b}{
+(void) -\/ \hyperlink{interface_p_c_graph_view_a4765f0dc9d723bd69b9467f44574722b}{setGraphSize:}}
+\label{interface_p_c_graph_view_a4765f0dc9d723bd69b9467f44574722b}
+
+\begin{DoxyCompactList}\small\item\em Change the size of the graph view area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Public Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_view_ac07154e9fd0c99a34419cd5d462c1370}{
+\hyperlink{interface_p_c_graph_model}{PCGraphModel} $\ast$ \hyperlink{interface_p_c_graph_view_ac07154e9fd0c99a34419cd5d462c1370}{model}}
+\label{interface_p_c_graph_view_ac07154e9fd0c99a34419cd5d462c1370}
+
+\begin{DoxyCompactList}\small\item\em Change the model displayed by this view. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_a90df2651ac9edb7c291abfbebb2d14d5}{
+CGSize \hyperlink{interface_p_c_graph_view_a90df2651ac9edb7c291abfbebb2d14d5}{graphSize}}
+\label{interface_p_c_graph_view_a90df2651ac9edb7c291abfbebb2d14d5}
+
+\begin{DoxyCompactList}\small\item\em Change the size of the graph display. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_a98a8317522d01143c612fa47243ef6b4}{
+\hyperlink{interface_p_c_graph_node}{PCGraphNode} $\ast$ \hyperlink{interface_p_c_graph_view_a98a8317522d01143c612fa47243ef6b4}{selectedNode}}
+\label{interface_p_c_graph_view_a98a8317522d01143c612fa47243ef6b4}
+
+\begin{DoxyCompactList}\small\item\em Change the currently selected node. May be nil. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_view_a3dc66ce30aed4b5373a8f09aa1d4aa55}{
+\hyperlink{interface_p_c_edge_layer_controller}{PCEdgeLayerController} $\ast$ \hyperlink{interface_p_c_graph_view_a3dc66ce30aed4b5373a8f09aa1d4aa55}{edgeLayerController}}
+\label{interface_p_c_graph_view_a3dc66ce30aed4b5373a8f09aa1d4aa55}
+
+\begin{DoxyCompactList}\small\item\em Controller that renders the graph's edges. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_a338da6d10b34c053975329dca45af12b}{
+\hyperlink{interface_p_c_node_layer_controller}{PCNodeLayerController} $\ast$ \hyperlink{interface_p_c_graph_view_a338da6d10b34c053975329dca45af12b}{nodeLayerController}}
+\label{interface_p_c_graph_view_a338da6d10b34c053975329dca45af12b}
+
+\begin{DoxyCompactList}\small\item\em Controller that renders the graph's nodes. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_a07060811419422debf57d1ca7333a92e}{
+CALayer $\ast$ \hyperlink{interface_p_c_graph_view_a07060811419422debf57d1ca7333a92e}{textLayer}}
+\label{interface_p_c_graph_view_a07060811419422debf57d1ca7333a92e}
+
+\begin{DoxyCompactList}\small\item\em CALayer of which every label-\/rendering CALayer is a sublayer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Render a \hyperlink{interface_p_c_graph_model}{PCGraphModel} into a view containing its nodes and edges. 
+
+Responds to notifications:
+
+
+\begin{DoxyItemize}
+\item PCGraphNodeSelected (Sent by \hyperlink{interface_p_c_graph_view_controller}{PCGraphViewController})
+\begin{DoxyItemize}
+\item node: node that was selected (\hyperlink{interface_p_c_graph_node}{PCGraphNode})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item PCGraphNodeSelectionCleared (Sent by \hyperlink{interface_p_c_graph_view_controller}{PCGraphViewController}) 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/PCGraphView.h\item 
+PathCaseKEGG/Graph view/PCGraphView.m\end{DoxyCompactItemize}

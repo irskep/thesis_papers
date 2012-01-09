@@ -1,0 +1,114 @@
+\hypertarget{interface_p_c_node_info}{
+\section{PCNodeInfo Class Reference}
+\label{interface_p_c_node_info}\index{PCNodeInfo@{PCNodeInfo}}
+}
+
+
+Application-\/specific information about a node that is not directly related to rendering it in a graph.  
+
+
+
+
+{\ttfamily \#import $<$PCNodeInfo.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_node_info_a396840e27371ac75e1e5210358baa02a}{
+(void) -\/ \hyperlink{interface_p_c_node_info_a396840e27371ac75e1e5210358baa02a}{addECNumber:}}
+\label{interface_p_c_node_info_a396840e27371ac75e1e5210358baa02a}
+
+\begin{DoxyCompactList}\small\item\em Add an EC number to the list of EC numbers for this node. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_a648ddf9fddb48a0639aeaed4ee7c4283}{
+(BOOL) -\/ \hyperlink{interface_p_c_node_info_a648ddf9fddb48a0639aeaed4ee7c4283}{isInhibitor}}
+\label{interface_p_c_node_info_a648ddf9fddb48a0639aeaed4ee7c4283}
+
+\begin{DoxyCompactList}\small\item\em True if this node is a molecule and is an inhibitor in some neighboring reaction. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_ada15c8e425d0e6244975625589dd7cce}{
+(BOOL) -\/ \hyperlink{interface_p_c_node_info_ada15c8e425d0e6244975625589dd7cce}{isCofactor}}
+\label{interface_p_c_node_info_ada15c8e425d0e6244975625589dd7cce}
+
+\begin{DoxyCompactList}\small\item\em True if this node is a molecule and is a cofactor in some neighboring reaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_node_info_ad7f954ff41288b0a406763ffa3d5d4df}{
+NSString $\ast$ \hyperlink{interface_p_c_node_info_ad7f954ff41288b0a406763ffa3d5d4df}{identifier}}
+\label{interface_p_c_node_info_ad7f954ff41288b0a406763ffa3d5d4df}
+
+\begin{DoxyCompactList}\small\item\em Unique identifier within the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_a4f4c0d31e99c4b2e29a28b556df3e4f6}{
+BOOL \hyperlink{interface_p_c_node_info_a4f4c0d31e99c4b2e29a28b556df3e4f6}{isProcess}}
+\label{interface_p_c_node_info_a4f4c0d31e99c4b2e29a28b556df3e4f6}
+
+\begin{DoxyCompactList}\small\item\em True if the node represents a process/reaction. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_ad73ca192b659ac9d859581ded337bdbc}{
+BOOL \hyperlink{interface_p_c_node_info_ad73ca192b659ac9d859581ded337bdbc}{isMolecule}}
+\label{interface_p_c_node_info_ad73ca192b659ac9d859581ded337bdbc}
+
+\begin{DoxyCompactList}\small\item\em True of this node represents a molecule. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_aaf99591cc05a3ac8d5e8aa38f7ba1f75}{
+BOOL \hyperlink{interface_p_c_node_info_aaf99591cc05a3ac8d5e8aa38f7ba1f75}{reversible}}
+\label{interface_p_c_node_info_aaf99591cc05a3ac8d5e8aa38f7ba1f75}
+
+\begin{DoxyCompactList}\small\item\em True if this node is a reaction and can be reversed. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_a24078dc5600262e224e5b9bd6d6e3c7e}{
+NSString $\ast$ \hyperlink{interface_p_c_node_info_a24078dc5600262e224e5b9bd6d6e3c7e}{label}}
+\label{interface_p_c_node_info_a24078dc5600262e224e5b9bd6d6e3c7e}
+
+\begin{DoxyCompactList}\small\item\em Text of this node's visible label. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_adf0f47d07246a08774d048e91b437c1a}{
+NSMutableSet $\ast$ \hyperlink{interface_p_c_node_info_adf0f47d07246a08774d048e91b437c1a}{ECNumbers}}
+\label{interface_p_c_node_info_adf0f47d07246a08774d048e91b437c1a}
+
+\begin{DoxyCompactList}\small\item\em All EC numbers associated with this node if it is a reaction. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_a5c552237386a73eb818c61a15a09204a}{
+NSMutableDictionary $\ast$ \hyperlink{interface_p_c_node_info_a5c552237386a73eb818c61a15a09204a}{moleculeRoles}}
+\label{interface_p_c_node_info_a5c552237386a73eb818c61a15a09204a}
+
+\begin{DoxyCompactList}\small\item\em Dictionary mapping a process ID representing a neighboring process node to this node's role in that process represented as a string (used only for molecules) \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_a260be1282a2ffc89518aa23275a46f15}{
+NSMutableDictionary $\ast$ \hyperlink{interface_p_c_node_info_a260be1282a2ffc89518aa23275a46f15}{processRoles}}
+\label{interface_p_c_node_info_a260be1282a2ffc89518aa23275a46f15}
+
+\begin{DoxyCompactList}\small\item\em Dictionary mapping a reaction ID representing a neighboring molecule node to this node's role in that reaction represented as a string (used only for reactions) \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_a27b4e76d752731c7cf93ddee4698f740}{
+NSMutableSet $\ast$ \hyperlink{interface_p_c_node_info_a27b4e76d752731c7cf93ddee4698f740}{neighborProcesses}}
+\label{interface_p_c_node_info_a27b4e76d752731c7cf93ddee4698f740}
+
+\begin{DoxyCompactList}\small\item\em List of process adjacent to this node if node is a molecule. \end{DoxyCompactList}\item 
+NSString $\ast$ \hyperlink{interface_p_c_node_info_a9d90a9d722f2621c15858b10115e99a3}{neighboringProcessID}
+\begin{DoxyCompactList}\small\item\em Differentiates between multiple of instances of a single molecule that has been repeated in the same visualization for cleaner layouts. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_ac670aa13f2ea99c63ca59b52a3b81148}{
+NSMutableSet $\ast$ \hyperlink{interface_p_c_node_info_ac670aa13f2ea99c63ca59b52a3b81148}{parentOrganisms}}
+\label{interface_p_c_node_info_ac670aa13f2ea99c63ca59b52a3b81148}
+
+\begin{DoxyCompactList}\small\item\em List of identifiers of organisms that contain this process. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_node_info_aa178311f14043d00b5ea922f937ef9c2}{
+NSMutableSet $\ast$ \hyperlink{interface_p_c_node_info_aa178311f14043d00b5ea922f937ef9c2}{allIdentifiers}}
+\label{interface_p_c_node_info_aa178311f14043d00b5ea922f937ef9c2}
+
+\begin{DoxyCompactList}\small\item\em All identifiers associated with this node. Used as a fallback if a node lookup fails. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Application-\/specific information about a node that is not directly related to rendering it in a graph. 
+
+In the case of iPathCase-\/KEGG, it is all information about the node from PathCase KEGG. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_p_c_node_info_a9d90a9d722f2621c15858b10115e99a3}{
+\index{PCNodeInfo@{PCNodeInfo}!neighboringProcessID@{neighboringProcessID}}
+\index{neighboringProcessID@{neighboringProcessID}!PCNodeInfo@{PCNodeInfo}}
+\subsubsection[{neighboringProcessID}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString$\ast$) neighboringProcessID\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_p_c_node_info_a9d90a9d722f2621c15858b10115e99a3}
+
+
+Differentiates between multiple of instances of a single molecule that has been repeated in the same visualization for cleaner layouts. 
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Data fetching/PCNodeInfo.h\item 
+PathCaseKEGG/Data fetching/PCNodeInfo.m\end{DoxyCompactItemize}

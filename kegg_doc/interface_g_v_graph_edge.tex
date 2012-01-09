@@ -1,0 +1,55 @@
+\hypertarget{interface_g_v_graph_edge}{
+\section{GVGraphEdge Class Reference}
+\label{interface_g_v_graph_edge}\index{GVGraphEdge@{GVGraphEdge}}
+}
+
+
+Simple representation of an edge.  
+
+
+
+
+{\ttfamily \#import $<$GVGraphEdge.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_g_v_graph_edge_a1badc7ce1edd0cf9333f5d17291ae13f}{
+(id) -\/ \hyperlink{interface_g_v_graph_edge_a1badc7ce1edd0cf9333f5d17291ae13f}{initWithHead:tail:}}
+\label{interface_g_v_graph_edge_a1badc7ce1edd0cf9333f5d17291ae13f}
+
+\begin{DoxyCompactList}\small\item\em Initialize this object with a head and tail node. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_edge_ad41f84a2d0000bb0a80fdb21f5e426bb}{
+(NSString $\ast$) -\/ \hyperlink{interface_g_v_graph_edge_ad41f84a2d0000bb0a80fdb21f5e426bb}{identifier}}
+\label{interface_g_v_graph_edge_ad41f84a2d0000bb0a80fdb21f5e426bb}
+
+\begin{DoxyCompactList}\small\item\em Identifier for this edge unique to the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_edge_a4d10c8d6f7c49f3dfa0b54347f9c5427}{
+(Agedge\_\-t $\ast$) -\/ \hyperlink{interface_g_v_graph_edge_a4d10c8d6f7c49f3dfa0b54347f9c5427}{edgeForGraph:}}
+\label{interface_g_v_graph_edge_a4d10c8d6f7c49f3dfa0b54347f9c5427}
+
+\begin{DoxyCompactList}\small\item\em Add the graphviz object representing this edge to the graphviz graph G. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_g_v_graph_edge_a6949a87dc9c433e3ff70880b16ff9251}{
+\hyperlink{interface_g_v_graph_node}{GVGraphNode} $\ast$ \hyperlink{interface_g_v_graph_edge_a6949a87dc9c433e3ff70880b16ff9251}{head}}
+\label{interface_g_v_graph_edge_a6949a87dc9c433e3ff70880b16ff9251}
+
+\begin{DoxyCompactList}\small\item\em Node at the head of this edge. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_edge_ab74983e48a1e21fbdc4f847fbac81770}{
+\hyperlink{interface_g_v_graph_node}{GVGraphNode} $\ast$ \hyperlink{interface_g_v_graph_edge_ab74983e48a1e21fbdc4f847fbac81770}{tail}}
+\label{interface_g_v_graph_edge_ab74983e48a1e21fbdc4f847fbac81770}
+
+\begin{DoxyCompactList}\small\item\em Node at the tail of this edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple representation of an edge. 
+
+For internal use by \hyperlink{interface_g_v_graph}{GVGraph}. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/Layout/GVGraphEdge.h\item 
+PathCaseKEGG/Graph view/Layout/GVGraphEdge.m\end{DoxyCompactItemize}

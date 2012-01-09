@@ -1,0 +1,74 @@
+\hypertarget{interface_p_c_graph_data_fetcher}{
+\section{PCGraphDataFetcher Class Reference}
+\label{interface_p_c_graph_data_fetcher}\index{PCGraphDataFetcher@{PCGraphDataFetcher}}
+}
+
+
+Get the graph data for the specified pathway.  
+
+
+
+
+{\ttfamily \#import $<$PCGraphDataFetcher.h$>$}
+
+Inheritance diagram for PCGraphDataFetcher:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{kegg_doc/interface_p_c_graph_data_fetcher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_data_fetcher_a60649e6d969732778b504f4405152b06}{
+(id) -\/ \hyperlink{interface_p_c_graph_data_fetcher_a60649e6d969732778b504f4405152b06}{initWithPathway:}}
+\label{interface_p_c_graph_data_fetcher_a60649e6d969732778b504f4405152b06}
+
+\begin{DoxyCompactList}\small\item\em Initialize this object with the pathway to fetch data for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_data_fetcher_ab9c266c65739de014829fe2c5f6a2032}{
+(void) -\/ \hyperlink{interface_p_c_graph_data_fetcher_ab9c266c65739de014829fe2c5f6a2032}{makeMoleculesFromXML:}}
+\label{interface_p_c_graph_data_fetcher_ab9c266c65739de014829fe2c5f6a2032}
+
+\begin{DoxyCompactList}\small\item\em Given an XML element representing a molecule, populate data with corresponding \hyperlink{interface_p_c_node_info}{PCNodeInfo} objects. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_data_fetcher_a8fd355b35b31eb3032c4478600689baa}{
+(void) -\/ \hyperlink{interface_p_c_graph_data_fetcher_a8fd355b35b31eb3032c4478600689baa}{makeGenericProcessesFromXML:}}
+\label{interface_p_c_graph_data_fetcher_a8fd355b35b31eb3032c4478600689baa}
+
+\begin{DoxyCompactList}\small\item\em Given an XML element representing a process, iterate over it to generate new \hyperlink{interface_p_c_node_info}{PCNodeInfo} objects and update existing ones with new information. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_data_fetcher_a810d0475df30f88ceeee4fc762a6ff5c}{
+(void) -\/ \hyperlink{interface_p_c_graph_data_fetcher_a810d0475df30f88ceeee4fc762a6ff5c}{makePathwaysFromXML:}}
+\label{interface_p_c_graph_data_fetcher_a810d0475df30f88ceeee4fc762a6ff5c}
+
+\begin{DoxyCompactList}\small\item\em Given an XML element representing a pathway, do nothing. (This method may create some sort of pathway object in the future.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_data_fetcher_a11e587159c08621ff285a864251921aa}{
+NSManagedObject $\ast$ \hyperlink{interface_p_c_graph_data_fetcher_a11e587159c08621ff285a864251921aa}{pathway}}
+\label{interface_p_c_graph_data_fetcher_a11e587159c08621ff285a864251921aa}
+
+\begin{DoxyCompactList}\small\item\em Pathway to fetch graph data for. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_data_fetcher_a09a4c8890192102366e5570b9dd89da2}{
+NSMutableDictionary $\ast$ \hyperlink{interface_p_c_graph_data_fetcher_a09a4c8890192102366e5570b9dd89da2}{data}}
+\label{interface_p_c_graph_data_fetcher_a09a4c8890192102366e5570b9dd89da2}
+
+\begin{DoxyCompactList}\small\item\em Dictionary mapping node identifier to \hyperlink{interface_p_c_node_info}{PCNodeInfo} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Get the graph data for the specified pathway. 
+
+This graph data contains all information necessary to render the graph except for the layout. When the data is loaded, start a \hyperlink{interface_p_c_layout_fetcher}{PCLayoutFetcher} to convert the graph data into a \hyperlink{interface_p_c_graph_model}{PCGraphModel}. (Web service: {\ttfamily GetGraphData}) 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Data fetching/PCGraphDataFetcher.h\item 
+PathCaseKEGG/Data fetching/PCGraphDataFetcher.m\end{DoxyCompactItemize}

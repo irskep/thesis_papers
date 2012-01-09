@@ -1,0 +1,112 @@
+\hypertarget{interface_p_c_graph_view_controller}{
+\section{PCGraphViewController Class Reference}
+\label{interface_p_c_graph_view_controller}\index{PCGraphViewController@{PCGraphViewController}}
+}
+
+
+View controller for the main graph view.  
+
+
+
+
+{\ttfamily \#import $<$PCGraphViewController.h$>$}
+
+Inheritance diagram for PCGraphViewController:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{kegg_doc/interface_p_c_graph_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_view_controller_a67d9121c3648d9ce9e6269fd981174c5}{
+(void) -\/ \hyperlink{interface_p_c_graph_view_controller_a67d9121c3648d9ce9e6269fd981174c5}{showPathway:withModel:}}
+\label{interface_p_c_graph_view_controller_a67d9121c3648d9ce9e6269fd981174c5}
+
+\begin{DoxyCompactList}\small\item\em Display a different pathway and graph model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Public Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_view_controller_aad1a13780ea4ee75c445b05a5cdf887a}{
+NSManagedObject $\ast$ \hyperlink{interface_p_c_graph_view_controller_aad1a13780ea4ee75c445b05a5cdf887a}{pathway}}
+\label{interface_p_c_graph_view_controller_aad1a13780ea4ee75c445b05a5cdf887a}
+
+\begin{DoxyCompactList}\small\item\em Pathway currently being displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_view_controller_a9a2c85b5e19e3be537ad3590086c2e13}{
+\hyperlink{interface_p_c_graph_view}{PCGraphView} $\ast$ \hyperlink{interface_p_c_graph_view_controller_a9a2c85b5e19e3be537ad3590086c2e13}{graphView}}
+\label{interface_p_c_graph_view_controller_a9a2c85b5e19e3be537ad3590086c2e13}
+
+\begin{DoxyCompactList}\small\item\em Graph view that renders the pathway. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_controller_acf6e0d6a8542937442e462cf813e67a8}{
+UIScrollView $\ast$ \hyperlink{interface_p_c_graph_view_controller_acf6e0d6a8542937442e462cf813e67a8}{scrollView}}
+\label{interface_p_c_graph_view_controller_acf6e0d6a8542937442e462cf813e67a8}
+
+\begin{DoxyCompactList}\small\item\em Scroll view containing the graph view. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_controller_a16552e14fdbedbe4b1b156b834a13e0c}{
+\hyperlink{interface_p_c_node_info_view_controller}{PCNodeInfoViewController} $\ast$ \hyperlink{interface_p_c_graph_view_controller_a16552e14fdbedbe4b1b156b834a13e0c}{infoVC}}
+\label{interface_p_c_graph_view_controller_a16552e14fdbedbe4b1b156b834a13e0c}
+
+\begin{DoxyCompactList}\small\item\em Node info view controller that displays information about the current selection. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_controller_ae5df141b7138e1aa06f5900e0199d99b}{
+UIPopoverController $\ast$ \hyperlink{interface_p_c_graph_view_controller_ae5df141b7138e1aa06f5900e0199d99b}{orgHierarchyPopoverController}}
+\label{interface_p_c_graph_view_controller_ae5df141b7138e1aa06f5900e0199d99b}
+
+\begin{DoxyCompactList}\small\item\em Popover controller to manage the organism hierarchy view. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_controller_a6cbd0d2a822ad40a8bcfcb8644f1f5bc}{
+UINavigationController $\ast$ \hyperlink{interface_p_c_graph_view_controller_a6cbd0d2a822ad40a8bcfcb8644f1f5bc}{orgHierarchyNavController}}
+\label{interface_p_c_graph_view_controller_a6cbd0d2a822ad40a8bcfcb8644f1f5bc}
+
+\begin{DoxyCompactList}\small\item\em Navigation controller within the popover controller. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_controller_afd4c123f8eafecd662d017d053867cee}{
+\hyperlink{interface_p_c_organism_hierarchy_table_view_controller}{PCOrganismHierarchyTableViewController} $\ast$ \hyperlink{interface_p_c_graph_view_controller_afd4c123f8eafecd662d017d053867cee}{orgVC}}
+\label{interface_p_c_graph_view_controller_afd4c123f8eafecd662d017d053867cee}
+
+\begin{DoxyCompactList}\small\item\em Organism hierarchy view controller that displays the organism groups, interacting with the navigation controller (orgHierarchyNavigationController) to push subgroups onto the navigation stack. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_controller_ab5087bbafd9e6483d6d7a62ff02d649f}{
+UIBarButtonItem $\ast$ \hyperlink{interface_p_c_graph_view_controller_ab5087bbafd9e6483d6d7a62ff02d649f}{orgButton}}
+\label{interface_p_c_graph_view_controller_ab5087bbafd9e6483d6d7a62ff02d649f}
+
+\begin{DoxyCompactList}\small\item\em Button to display the organism hierarchy popover. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_controller_a1d59a5a52716071700e57d860b893d74}{
+\hyperlink{interface_p_c_graph_node}{PCGraphNode} $\ast$ \hyperlink{interface_p_c_graph_view_controller_a1d59a5a52716071700e57d860b893d74}{draggingNode}}
+\label{interface_p_c_graph_view_controller_a1d59a5a52716071700e57d860b893d74}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{interface_p_c_graph_node}{PCGraphNode} that is currently being dragged, if any. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_view_controller_aa60b5cebc7963e66f0d4f8ac8b8716bc}{
+CGPoint \hyperlink{interface_p_c_graph_view_controller_aa60b5cebc7963e66f0d4f8ac8b8716bc}{dragOffset}}
+\label{interface_p_c_graph_view_controller_aa60b5cebc7963e66f0d4f8ac8b8716bc}
+
+\begin{DoxyCompactList}\small\item\em Offset from the draggingNode's current position relative to its original, pre-\/dragging position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+View controller for the main graph view. 
+
+Requires a complete \hyperlink{interface_p_c_graph_model}{PCGraphModel} and pathway. Implements the protocol for detail views so it can have toolbar items.
+
+Responds to notifications:
+
+
+\begin{DoxyItemize}
+\item PCOrganismSelected (Sent by \hyperlink{interface_p_c_organism_hierarchy_table_view_controller}{PCOrganismHierarchyTableViewController} or \hyperlink{interface_p_c_organism_sub_hierarchy_table_view_controller}{PCOrganismSubHierarchyTableViewController})
+\begin{DoxyItemize}
+\item organism: NavigationItem (NSManagedObject) representing the organism that has been selected
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item PCPathwayOrgMappingLoaded (Sent by \hyperlink{interface_p_c_pathway_org_mapping_fetcher}{PCPathwayOrgMappingFetcher}) 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/PCGraphViewController.h\item 
+PathCaseKEGG/Graph view/PCGraphViewController.m\end{DoxyCompactItemize}

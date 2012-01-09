@@ -1,0 +1,137 @@
+\hypertarget{interface_p_c_soap_fetcher}{
+\section{PCSoapFetcher Class Reference}
+\label{interface_p_c_soap_fetcher}\index{PCSoapFetcher@{PCSoapFetcher}}
+}
+
+
+Base class for objects that interact with PathCase KEGG web services.  
+
+
+
+
+{\ttfamily \#import $<$PCSoapFetcher.h$>$}
+
+Inheritance diagram for PCSoapFetcher:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{kegg_doc/interface_p_c_soap_fetcher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_soap_fetcher_a0470e1598d9889537a3f89c96a6c4d45}{
+(BOOL) -\/ \hyperlink{interface_p_c_soap_fetcher_a0470e1598d9889537a3f89c96a6c4d45}{startFetch}}
+\label{interface_p_c_soap_fetcher_a0470e1598d9889537a3f89c96a6c4d45}
+
+\begin{DoxyCompactList}\small\item\em Start the asynchronous request. Return YES if request was cached and immediately loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Semi-\/Private (Subclass Use Only) Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_soap_fetcher_afe80446bbea7157ffe85b089927f9dee}{
+(void) -\/ \hyperlink{interface_p_c_soap_fetcher_afe80446bbea7157ffe85b089927f9dee}{showSimpleAlertWithTitle:message:}}
+\label{interface_p_c_soap_fetcher_afe80446bbea7157ffe85b089927f9dee}
+
+\begin{DoxyCompactList}\small\item\em Convenience method to show error box. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_soap_fetcher_a4e27193d32c4db97e2d19d17e3b091bf}{
+(void) -\/ \hyperlink{interface_p_c_soap_fetcher_a4e27193d32c4db97e2d19d17e3b091bf}{handleXMLError:withText:}}
+\label{interface_p_c_soap_fetcher_a4e27193d32c4db97e2d19d17e3b091bf}
+
+\begin{DoxyCompactList}\small\item\em Convenience method to deal with XML errors. \end{DoxyCompactList}\item 
+(SMXMLDocument $\ast$) -\/ \hyperlink{interface_p_c_soap_fetcher_a9ca44436c71d3702719bb13bdf163d83}{unwrapXmlString:}
+\begin{DoxyCompactList}\small\item\em Turn an XML string into an SMXMLDocument, recursively unboxing nested XML documents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Methods to be Overridden by Subclasses}
+\begin{DoxyCompactItemize}
+\item 
+(NSString $\ast$) -\/ \hyperlink{interface_p_c_soap_fetcher_aeee2fb86d6545b680ba1640b06f90666}{buildURLString}
+\begin{DoxyCompactList}\small\item\em Return the URL to be requested. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_soap_fetcher_a7a77dc500460d5cfd72d7c00a2341edb}{
+(void) -\/ \hyperlink{interface_p_c_soap_fetcher_a7a77dc500460d5cfd72d7c00a2341edb}{handleXML:}}
+\label{interface_p_c_soap_fetcher_a7a77dc500460d5cfd72d7c00a2341edb}
+
+\begin{DoxyCompactList}\small\item\em Interpret the resulting XML document. This is where most processing happens. \end{DoxyCompactList}\item 
+(NSString $\ast$) -\/ \hyperlink{interface_p_c_soap_fetcher_a0a361f130f7e6ea4d69fbadd29b67314}{filterResponse:}
+\begin{DoxyCompactList}\small\item\em Do an arbitrary transformation on the response text before it is parsed as XML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Member Functions}
+\begin{Indent}\paragraph*{Private}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_soap_fetcher_aa83fb0bd22fb51a8a3b5762a0abec8fc}{
+(NSURL $\ast$) + \hyperlink{interface_p_c_soap_fetcher_aa83fb0bd22fb51a8a3b5762a0abec8fc}{cacheURL}}
+\label{interface_p_c_soap_fetcher_aa83fb0bd22fb51a8a3b5762a0abec8fc}
+
+\begin{DoxyCompactList}\small\item\em Base URL under which all cache files are stored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Public}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_soap_fetcher_a5c12c96a0a8b99edaed3ee0747b69ae8}{
+NSManagedObjectContext $\ast$ \hyperlink{interface_p_c_soap_fetcher_a5c12c96a0a8b99edaed3ee0747b69ae8}{managedObjectContext}}
+\label{interface_p_c_soap_fetcher_a5c12c96a0a8b99edaed3ee0747b69ae8}
+
+\begin{DoxyCompactList}\small\item\em Managed object context for accessing Core Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Base class for objects that interact with PathCase KEGG web services. 
+
+The PathCase KEGG uses SOAP for its web services. Each request involves an asynchronous GET with the request parameters, interpretation of the response as XML with error handling, transformation of the XML into some other data structure, and an update to the rest of the application (usually by posting an NSNotification).
+
+This base class handles making the asynchronous requests and parsing the XML into a simple data structure. It also provides a managed object context for working with Core Data. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_p_c_soap_fetcher_aeee2fb86d6545b680ba1640b06f90666}{
+\index{PCSoapFetcher@{PCSoapFetcher}!buildURLString@{buildURLString}}
+\index{buildURLString@{buildURLString}!PCSoapFetcher@{PCSoapFetcher}}
+\subsubsection[{buildURLString}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) buildURLString 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}
+\label{interface_p_c_soap_fetcher_aeee2fb86d6545b680ba1640b06f90666}
+
+
+Return the URL to be requested. 
+
+If it requires dynamic parameters (most do), fill them in with values passed to a custom initializer. \hypertarget{interface_p_c_soap_fetcher_a0a361f130f7e6ea4d69fbadd29b67314}{
+\index{PCSoapFetcher@{PCSoapFetcher}!filterResponse:@{filterResponse:}}
+\index{filterResponse:@{filterResponse:}!PCSoapFetcher@{PCSoapFetcher}}
+\subsubsection[{filterResponse:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) filterResponse: 
+\begin{DoxyParamCaption}
+\item[{dummy(NSString $\ast$)}]{originalString}
+\end{DoxyParamCaption}
+}}
+\label{interface_p_c_soap_fetcher_a0a361f130f7e6ea4d69fbadd29b67314}
+
+
+Do an arbitrary transformation on the response text before it is parsed as XML. 
+
+This method exists because at one point, the web services replaced all the '/'s with '$\backslash$'s. We have to be prepared for these sorts of things. \hypertarget{interface_p_c_soap_fetcher_a9ca44436c71d3702719bb13bdf163d83}{
+\index{PCSoapFetcher@{PCSoapFetcher}!unwrapXmlString:@{unwrapXmlString:}}
+\index{unwrapXmlString:@{unwrapXmlString:}!PCSoapFetcher@{PCSoapFetcher}}
+\subsubsection[{unwrapXmlString:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (SMXMLDocument $\ast$) unwrapXmlString: 
+\begin{DoxyParamCaption}
+\item[{dummy(NSString $\ast$)}]{xmlString}
+\end{DoxyParamCaption}
+}}
+\label{interface_p_c_soap_fetcher_a9ca44436c71d3702719bb13bdf163d83}
+
+
+Turn an XML string into an SMXMLDocument, recursively unboxing nested XML documents. 
+
+The PathCase KEGG web service sometimes returns responses that look like this:
+
+{\ttfamily $<$?xml version=\char`\"{}1.0\char`\"{}?$>$$<$string$>$... real XML document ...$<$/string$>$}
+
+This method parses an XML string, and recursively calls itself if the resulting document's contents match this pattern. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Data fetching/PCSoapFetcher.h\item 
+PathCaseKEGG/Data fetching/PCSoapFetcher.m\end{DoxyCompactItemize}

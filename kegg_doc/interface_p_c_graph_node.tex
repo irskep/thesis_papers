@@ -1,0 +1,188 @@
+\hypertarget{interface_p_c_graph_node}{
+\section{PCGraphNode Class Reference}
+\label{interface_p_c_graph_node}\index{PCGraphNode@{PCGraphNode}}
+}
+
+
+All graphical information and routines for a node.  
+
+
+
+
+{\ttfamily \#import $<$PCGraphNode.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_node_a26945b7c2faba79bfacbd9fc73d79768}{
+(id) -\/ \hyperlink{interface_p_c_graph_node_a26945b7c2faba79bfacbd9fc73d79768}{initCircleMoleculeWithLabel:identifier:position:}}
+\label{interface_p_c_graph_node_a26945b7c2faba79bfacbd9fc73d79768}
+
+\begin{DoxyCompactList}\small\item\em Initialize a node with a circle shape and the label in the upper right. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a012e646ff8ebc8ee4de1c6d5c36118dc}{
+(id) -\/ \hyperlink{interface_p_c_graph_node_a012e646ff8ebc8ee4de1c6d5c36118dc}{initRedMoleculeWithLabel:identifier:position:}}
+\label{interface_p_c_graph_node_a012e646ff8ebc8ee4de1c6d5c36118dc}
+
+\begin{DoxyCompactList}\small\item\em Initialize a node with no shape and the label in the center. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a9e5dc574282c70393b29ea5addb0b482}{
+(id) -\/ \hyperlink{interface_p_c_graph_node_a9e5dc574282c70393b29ea5addb0b482}{initProcessWithLabel:identifier:position:}}
+\label{interface_p_c_graph_node_a9e5dc574282c70393b29ea5addb0b482}
+
+\begin{DoxyCompactList}\small\item\em Initialize a node with a rectangle shape and the label in the center. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a7211068cd92f75dadab3e1fa6799d556}{
+(id) -\/ \hyperlink{interface_p_c_graph_node_a7211068cd92f75dadab3e1fa6799d556}{initUnknownWithLabel:identifier:position:}}
+\label{interface_p_c_graph_node_a7211068cd92f75dadab3e1fa6799d556}
+
+\begin{DoxyCompactList}\small\item\em Initialize a node with a rectangle shape and the label in the center, colored to stand out for debugging purposes. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_ad1d5969374d1d0e7a1cf04a6eadc520b}{
+(void) -\/ \hyperlink{interface_p_c_graph_node_ad1d5969374d1d0e7a1cf04a6eadc520b}{makeLabel}}
+\label{interface_p_c_graph_node_ad1d5969374d1d0e7a1cf04a6eadc520b}
+
+\begin{DoxyCompactList}\small\item\em Create the text layer. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a5c3cade16265de1201a5bf0613435e25}{
+(CGPoint) -\/ \hyperlink{interface_p_c_graph_node_a5c3cade16265de1201a5bf0613435e25}{anchorFrom:}}
+\label{interface_p_c_graph_node_a5c3cade16265de1201a5bf0613435e25}
+
+\begin{DoxyCompactList}\small\item\em Compute the point at which an incoming edge should terminate based on the shape of the node. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_abcb7c3c6fb32b200c69c1ffe721f25b9}{
+(CGRect) -\/ \hyperlink{interface_p_c_graph_node_abcb7c3c6fb32b200c69c1ffe721f25b9}{frame}}
+\label{interface_p_c_graph_node_abcb7c3c6fb32b200c69c1ffe721f25b9}
+
+\begin{DoxyCompactList}\small\item\em Location and size of the node in the larger graph view. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_af2b65d32aceb059455f80f4a4146406c}{
+(void) -\/ \hyperlink{interface_p_c_graph_node_af2b65d32aceb059455f80f4a4146406c}{drawInContext:}}
+\label{interface_p_c_graph_node_af2b65d32aceb059455f80f4a4146406c}
+
+\begin{DoxyCompactList}\small\item\em Render the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Public Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_node_affbd786aa24e6e474f206de54d866dcd}{
+NSString $\ast$ \hyperlink{interface_p_c_graph_node_affbd786aa24e6e474f206de54d866dcd}{identifier}}
+\label{interface_p_c_graph_node_affbd786aa24e6e474f206de54d866dcd}
+
+\begin{DoxyCompactList}\small\item\em Unique identifier within a graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a3c788254d0a60c4c0d409c3bbe779821}{
+BOOL \hyperlink{interface_p_c_graph_node_a3c788254d0a60c4c0d409c3bbe779821}{active}}
+\label{interface_p_c_graph_node_a3c788254d0a60c4c0d409c3bbe779821}
+
+\begin{DoxyCompactList}\small\item\em Node is being highlighted, e.g. as part of a selection or set of active organisms. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a2e4ab22a0d926eb5c92badcf28c9515e}{
+BOOL \hyperlink{interface_p_c_graph_node_a2e4ab22a0d926eb5c92badcf28c9515e}{isDragging}}
+\label{interface_p_c_graph_node_a2e4ab22a0d926eb5c92badcf28c9515e}
+
+\begin{DoxyCompactList}\small\item\em Node is being dragged. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a18054c9c25b29e105ba2df320400f5ef}{
+CATextLayer $\ast$ \hyperlink{interface_p_c_graph_node_a18054c9c25b29e105ba2df320400f5ef}{labelLayer}}
+\label{interface_p_c_graph_node_a18054c9c25b29e105ba2df320400f5ef}
+
+\begin{DoxyCompactList}\small\item\em CALayer that renders this node's label. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a3607c7d7cb645a7efbd131683e33140e}{
+NSString $\ast$ \hyperlink{interface_p_c_graph_node_a3607c7d7cb645a7efbd131683e33140e}{label}}
+\label{interface_p_c_graph_node_a3607c7d7cb645a7efbd131683e33140e}
+
+\begin{DoxyCompactList}\small\item\em Text of the label. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a956a5ef79e59483fc31e436afa9b8b0d}{
+CGSize \hyperlink{interface_p_c_graph_node_a956a5ef79e59483fc31e436afa9b8b0d}{size}}
+\label{interface_p_c_graph_node_a956a5ef79e59483fc31e436afa9b8b0d}
+
+\begin{DoxyCompactList}\small\item\em Size of the node. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a774043cd22ebf70904f768cfa977111a}{
+CGFloat \hyperlink{interface_p_c_graph_node_a774043cd22ebf70904f768cfa977111a}{margin}}
+\label{interface_p_c_graph_node_a774043cd22ebf70904f768cfa977111a}
+
+\begin{DoxyCompactList}\small\item\em Margin on each side of the node in case rendering needs extra space outside of the normal shape bounds. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a8010545fe3bb1a430b93c50d2854c5ce}{
+CGPoint \hyperlink{interface_p_c_graph_node_a8010545fe3bb1a430b93c50d2854c5ce}{position}}
+\label{interface_p_c_graph_node_a8010545fe3bb1a430b93c50d2854c5ce}
+
+\begin{DoxyCompactList}\small\item\em Position of the node in the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a7d597e17be54de67b712dfb4a86ca130}{
+UIColor $\ast$ \hyperlink{interface_p_c_graph_node_a7d597e17be54de67b712dfb4a86ca130}{fillLight}}
+\label{interface_p_c_graph_node_a7d597e17be54de67b712dfb4a86ca130}
+
+\begin{DoxyCompactList}\small\item\em Fill color of the top of the gradient. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_af106cfbfffc4e36054a5932e9f495dbb}{
+UIColor $\ast$ \hyperlink{interface_p_c_graph_node_af106cfbfffc4e36054a5932e9f495dbb}{fillDark}}
+\label{interface_p_c_graph_node_af106cfbfffc4e36054a5932e9f495dbb}
+
+\begin{DoxyCompactList}\small\item\em Fill color of the bottom of the gradient. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_ac8c42c6a8d46f97470f45682e99817e3}{
+UIColor $\ast$ \hyperlink{interface_p_c_graph_node_ac8c42c6a8d46f97470f45682e99817e3}{outline}}
+\label{interface_p_c_graph_node_ac8c42c6a8d46f97470f45682e99817e3}
+
+\begin{DoxyCompactList}\small\item\em Color of the shape outline. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_af7555d26523b2170395595a0d97d8af8}{
+UIColor $\ast$ \hyperlink{interface_p_c_graph_node_af7555d26523b2170395595a0d97d8af8}{labelColor}}
+\label{interface_p_c_graph_node_af7555d26523b2170395595a0d97d8af8}
+
+\begin{DoxyCompactList}\small\item\em Color of the label. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a299e0c3624dc809e5fc218a4756a3bcf}{
+NSString $\ast$ \hyperlink{interface_p_c_graph_node_a299e0c3624dc809e5fc218a4756a3bcf}{labelAnchor}}
+\label{interface_p_c_graph_node_a299e0c3624dc809e5fc218a4756a3bcf}
+
+\begin{DoxyCompactList}\small\item\em Where to anchor the layer. One of \{c, b, t, ne, se, tl, tr\}. \end{DoxyCompactList}\item 
+BOOL \hyperlink{interface_p_c_graph_node_a76c958b98811dfd4e49955d253859f10}{clipLabel}
+\begin{DoxyCompactList}\small\item\em True if the label should be clipped to the bounds of the shape. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_aa1afa765662959eb26096bf730a86c58}{
+\hyperlink{interface_p_c_node_info}{PCNodeInfo} $\ast$ \hyperlink{interface_p_c_graph_node_aa1afa765662959eb26096bf730a86c58}{info}}
+\label{interface_p_c_graph_node_aa1afa765662959eb26096bf730a86c58}
+
+\begin{DoxyCompactList}\small\item\em Application-\/specific information not directly related to rendering. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_aae73a008e2419a34d5b380941f307a53}{
+NSMutableSet $\ast$ \hyperlink{interface_p_c_graph_node_aae73a008e2419a34d5b380941f307a53}{affectedEdges}}
+\label{interface_p_c_graph_node_aae73a008e2419a34d5b380941f307a53}
+
+\begin{DoxyCompactList}\small\item\em Edges that would be affected if this node's properties changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_node_a4f7e73e94abb71c1cb2f960230b1dba3}{
+PCNodeType \hyperlink{interface_p_c_graph_node_a4f7e73e94abb71c1cb2f960230b1dba3}{shape}}
+\label{interface_p_c_graph_node_a4f7e73e94abb71c1cb2f960230b1dba3}
+
+\begin{DoxyCompactList}\small\item\em Shape of this node (ellipse, rectangle, or none) \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a755cfc30c164139d3dce1d1f7fd3d3e7}{
+CGMutablePathRef \hyperlink{interface_p_c_graph_node_a755cfc30c164139d3dce1d1f7fd3d3e7}{path}}
+\label{interface_p_c_graph_node_a755cfc30c164139d3dce1d1f7fd3d3e7}
+
+\begin{DoxyCompactList}\small\item\em Path object used to draw the shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_node_ac084cb72ffc17d9deae4299c8902d7a2}{
+(void) -\/ \hyperlink{interface_p_c_graph_node_ac084cb72ffc17d9deae4299c8902d7a2}{updateLabelPosition}}
+\label{interface_p_c_graph_node_ac084cb72ffc17d9deae4299c8902d7a2}
+
+\begin{DoxyCompactList}\small\item\em Update the label based on any related changes in the node object. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_node_a5dbf84395dac44e8d2bbc8d2b0acb800}{
+(CGFloat) + \hyperlink{interface_p_c_graph_node_a5dbf84395dac44e8d2bbc8d2b0acb800}{heightOfText:}}
+\label{interface_p_c_graph_node_a5dbf84395dac44e8d2bbc8d2b0acb800}
+
+\begin{DoxyCompactList}\small\item\em Compute the graphical height of a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+All graphical information and routines for a node. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_p_c_graph_node_a76c958b98811dfd4e49955d253859f10}{
+\index{PCGraphNode@{PCGraphNode}!clipLabel@{clipLabel}}
+\index{clipLabel@{clipLabel}!PCGraphNode@{PCGraphNode}}
+\subsubsection[{clipLabel}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (BOOL) clipLabel\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}}
+\label{interface_p_c_graph_node_a76c958b98811dfd4e49955d253859f10}
+
+
+True if the label should be clipped to the bounds of the shape. 
+
+Usually True if the shape contains the label (like a reaction), False if not (like a molecule). 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/PCGraphNode.h\item 
+PathCaseKEGG/Graph view/\hyperlink{_p_c_graph_node_8m}{PCGraphNode.m}\end{DoxyCompactItemize}

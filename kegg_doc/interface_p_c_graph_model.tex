@@ -1,0 +1,108 @@
+\hypertarget{interface_p_c_graph_model}{
+\section{PCGraphModel Class Reference}
+\label{interface_p_c_graph_model}\index{PCGraphModel@{PCGraphModel}}
+}
+
+
+Contains all information about a graph, including node information and position.  
+
+
+
+
+{\ttfamily \#import $<$PCGraphModel.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_model_a6d3375b10362e838b2cfd276c860fc54}{
+(void) -\/ \hyperlink{interface_p_c_graph_model_a6d3375b10362e838b2cfd276c860fc54}{addNode:}}
+\label{interface_p_c_graph_model_a6d3375b10362e838b2cfd276c860fc54}
+
+\begin{DoxyCompactList}\small\item\em Add a node to the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_ab224de9125f85bc52fe761d2e0622c6b}{
+(void) -\/ \hyperlink{interface_p_c_graph_model_ab224de9125f85bc52fe761d2e0622c6b}{addEdge:}}
+\label{interface_p_c_graph_model_ab224de9125f85bc52fe761d2e0622c6b}
+
+\begin{DoxyCompactList}\small\item\em Add an edge to the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a351485af7d493e481c47a24b0bcecfdb}{
+(\hyperlink{interface_p_c_graph_node}{PCGraphNode} $\ast$) -\/ \hyperlink{interface_p_c_graph_model_a351485af7d493e481c47a24b0bcecfdb}{nodeForID:neighboringProcessID:}}
+\label{interface_p_c_graph_model_a351485af7d493e481c47a24b0bcecfdb}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the node with the given identifier and neighboring process ID. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_af5460fb1fbd90b7a2c515ec64c7ec61b}{
+(void) -\/ \hyperlink{interface_p_c_graph_model_af5460fb1fbd90b7a2c515ec64c7ec61b}{setBounds}}
+\label{interface_p_c_graph_model_af5460fb1fbd90b7a2c515ec64c7ec61b}
+
+\begin{DoxyCompactList}\small\item\em Change the size of the bounding box. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a36b1a11bb18098dbe42a727eaf2a7140}{
+(void) -\/ \hyperlink{interface_p_c_graph_model_a36b1a11bb18098dbe42a727eaf2a7140}{refreshActiveProcesses}}
+\label{interface_p_c_graph_model_a36b1a11bb18098dbe42a727eaf2a7140}
+
+\begin{DoxyCompactList}\small\item\em Refresh active/inactive state of all nodes, assuming no selection. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a870f26b78ccab50cb3d3f364aeb32e1f}{
+(void) -\/ \hyperlink{interface_p_c_graph_model_a870f26b78ccab50cb3d3f364aeb32e1f}{refreshActiveProcessesWithSelectedNode:}}
+\label{interface_p_c_graph_model_a870f26b78ccab50cb3d3f364aeb32e1f}
+
+\begin{DoxyCompactList}\small\item\em Refresh active/inactive state of all nodes, with a selection. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_afd4697a9ab2d3f99c2548c6b2a8fa0db}{
+(NSSet $\ast$) -\/ \hyperlink{interface_p_c_graph_model_afd4697a9ab2d3f99c2548c6b2a8fa0db}{nodeWithNeighbors:}}
+\label{interface_p_c_graph_model_afd4697a9ab2d3f99c2548c6b2a8fa0db}
+
+\begin{DoxyCompactList}\small\item\em Given a node, return a set of all nodes adjacent to it. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a41718be28b9fae9f714474f2927c5295}{
+(CGRect) -\/ \hyperlink{interface_p_c_graph_model_a41718be28b9fae9f714474f2927c5295}{boundingBoxForNodes:}}
+\label{interface_p_c_graph_model_a41718be28b9fae9f714474f2927c5295}
+
+\begin{DoxyCompactList}\small\item\em Given a set of nodes, return the bounding box containing them all. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a3d85d374548f95f6417135d9710946ef}{
+(void) -\/ \hyperlink{interface_p_c_graph_model_a3d85d374548f95f6417135d9710946ef}{computeDynamicLayout}}
+\label{interface_p_c_graph_model_a3d85d374548f95f6417135d9710946ef}
+
+\begin{DoxyCompactList}\small\item\em Compute and apply a dynamic layout to this graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_graph_model_a4b70f8cd855b30fc26a9706796f5b6da}{
+NSMutableDictionary $\ast$ \hyperlink{interface_p_c_graph_model_a4b70f8cd855b30fc26a9706796f5b6da}{nodeInfos}}
+\label{interface_p_c_graph_model_a4b70f8cd855b30fc26a9706796f5b6da}
+
+\begin{DoxyCompactList}\small\item\em Dictionary mapping node identifier to \hyperlink{interface_p_c_node_info}{PCNodeInfo} object. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a555c0cccf5fb4396269b94500ea27426}{
+NSMutableDictionary $\ast$ \hyperlink{interface_p_c_graph_model_a555c0cccf5fb4396269b94500ea27426}{nodes}}
+\label{interface_p_c_graph_model_a555c0cccf5fb4396269b94500ea27426}
+
+\begin{DoxyCompactList}\small\item\em Dictionary mapping node identifier to \hyperlink{interface_p_c_graph_node}{PCGraphNode} object. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_aaa7ff1c7de5b8515125ac5f9457db889}{
+NSMutableDictionary $\ast$ \hyperlink{interface_p_c_graph_model_aaa7ff1c7de5b8515125ac5f9457db889}{edges}}
+\label{interface_p_c_graph_model_aaa7ff1c7de5b8515125ac5f9457db889}
+
+\begin{DoxyCompactList}\small\item\em Dictionary mapping node identifier to \hyperlink{interface_p_c_graph_edge}{PCGraphEdge} object. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a9b9c51275edf855f0915b0a71fd826f5}{
+CGSize \hyperlink{interface_p_c_graph_model_a9b9c51275edf855f0915b0a71fd826f5}{size}}
+\label{interface_p_c_graph_model_a9b9c51275edf855f0915b0a71fd826f5}
+
+\begin{DoxyCompactList}\small\item\em Size of the bounding box of the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a1918ad14652a1ea5508da442e5e9c500}{
+CGRect \hyperlink{interface_p_c_graph_model_a1918ad14652a1ea5508da442e5e9c500}{bounds}}
+\label{interface_p_c_graph_model_a1918ad14652a1ea5508da442e5e9c500}
+
+\begin{DoxyCompactList}\small\item\em Bounding box of the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_af59058256d30a2678ddaa2051f7c1b09}{
+NSString $\ast$ \hyperlink{interface_p_c_graph_model_af59058256d30a2678ddaa2051f7c1b09}{keggMapID}}
+\label{interface_p_c_graph_model_af59058256d30a2678ddaa2051f7c1b09}
+
+\begin{DoxyCompactList}\small\item\em KEGG identifier of this model. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_graph_model_a696ba0f8bafe61b7dad69a42cfa73579}{
+NSMutableSet $\ast$ \hyperlink{interface_p_c_graph_model_a696ba0f8bafe61b7dad69a42cfa73579}{deactivatedOrganisms}}
+\label{interface_p_c_graph_model_a696ba0f8bafe61b7dad69a42cfa73579}
+
+\begin{DoxyCompactList}\small\item\em Set of organism identifiers that have been deactivated in the organism hierarchy popover, to be dimmed in the view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains all information about a graph, including node information and position. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/PCGraphModel.h\item 
+PathCaseKEGG/Graph view/PCGraphModel.m\end{DoxyCompactItemize}

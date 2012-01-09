@@ -1,0 +1,65 @@
+\hypertarget{interface_g_v_graph_node}{
+\section{GVGraphNode Class Reference}
+\label{interface_g_v_graph_node}\index{GVGraphNode@{GVGraphNode}}
+}
+
+
+Simple representation of a node.  
+
+
+
+
+{\ttfamily \#import $<$GVGraphNode.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_g_v_graph_node_ae920a973a03ea00bbbb6d72049c3c6b1}{
+(id) -\/ \hyperlink{interface_g_v_graph_node_ae920a973a03ea00bbbb6d72049c3c6b1}{initWithIdentifier:label:}}
+\label{interface_g_v_graph_node_ae920a973a03ea00bbbb6d72049c3c6b1}
+
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{interface_g_v_graph_node}{GVGraphNode} with the given identifier and label. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_node_a2f4362dc38096a436ff63b65f678846b}{
+(void) -\/ \hyperlink{interface_g_v_graph_node_a2f4362dc38096a436ff63b65f678846b}{addEdge:}}
+\label{interface_g_v_graph_node_a2f4362dc38096a436ff63b65f678846b}
+
+\begin{DoxyCompactList}\small\item\em Register an edge as touching this node. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_node_ab0d43117931f33e0ad72c059b1587a32}{
+(Agnode\_\-t $\ast$) -\/ \hyperlink{interface_g_v_graph_node_ab0d43117931f33e0ad72c059b1587a32}{nodeForGraph:}}
+\label{interface_g_v_graph_node_ab0d43117931f33e0ad72c059b1587a32}
+
+\begin{DoxyCompactList}\small\item\em Add the graphviz object representing this node to the graphviz graph G. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_g_v_graph_node_a8b991fdddf28de3457b6c5a557a7a1b9}{
+NSString $\ast$ \hyperlink{interface_g_v_graph_node_a8b991fdddf28de3457b6c5a557a7a1b9}{identifier}}
+\label{interface_g_v_graph_node_a8b991fdddf28de3457b6c5a557a7a1b9}
+
+\begin{DoxyCompactList}\small\item\em Unique identifier in the graph. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_node_ae45c10d8bdf2c1a8c3de3973d22ac2b2}{
+NSString $\ast$ \hyperlink{interface_g_v_graph_node_ae45c10d8bdf2c1a8c3de3973d22ac2b2}{label}}
+\label{interface_g_v_graph_node_ae45c10d8bdf2c1a8c3de3973d22ac2b2}
+
+\begin{DoxyCompactList}\small\item\em Visible label. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_node_ae74e85ecac00d6fb500cf2ba17aea66a}{
+NSMutableSet $\ast$ \hyperlink{interface_g_v_graph_node_ae74e85ecac00d6fb500cf2ba17aea66a}{edges}}
+\label{interface_g_v_graph_node_ae74e85ecac00d6fb500cf2ba17aea66a}
+
+\begin{DoxyCompactList}\small\item\em Edges with head or tail at this node. \end{DoxyCompactList}\item 
+\hypertarget{interface_g_v_graph_node_a7d9a4b61c37b2b85fb0581753ca90e13}{
+CGPoint \hyperlink{interface_g_v_graph_node_a7d9a4b61c37b2b85fb0581753ca90e13}{position}}
+\label{interface_g_v_graph_node_a7d9a4b61c37b2b85fb0581753ca90e13}
+
+\begin{DoxyCompactList}\small\item\em Position in a visible graph, if computed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple representation of a node. 
+
+For internal use by \hyperlink{interface_g_v_graph}{GVGraph}. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Graph view/Layout/GVGraphNode.h\item 
+PathCaseKEGG/Graph view/Layout/GVGraphNode.m\end{DoxyCompactItemize}

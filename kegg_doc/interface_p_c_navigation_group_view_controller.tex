@@ -1,0 +1,62 @@
+\hypertarget{interface_p_c_navigation_group_view_controller}{
+\section{PCNavigationGroupViewController Class Reference}
+\label{interface_p_c_navigation_group_view_controller}\index{PCNavigationGroupViewController@{PCNavigationGroupViewController}}
+}
+
+
+Show navigation groups in a table view.  
+
+
+
+
+{\ttfamily \#import $<$PCNavigationGroupViewController.h$>$}
+
+Inheritance diagram for PCNavigationGroupViewController:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{kegg_doc/interface_p_c_navigation_group_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_navigation_group_view_controller_aedd9a0a04eda1bf7c09f460c2810cd45}{
+(id) -\/ \hyperlink{interface_p_c_navigation_group_view_controller_aedd9a0a04eda1bf7c09f460c2810cd45}{initWithNavigationGroup:leafAction:}}
+\label{interface_p_c_navigation_group_view_controller_aedd9a0a04eda1bf7c09f460c2810cd45}
+
+\begin{DoxyCompactList}\small\item\em Initialize a \hyperlink{interface_p_c_navigation_group_view_controller}{PCNavigationGroupViewController} with a navigation group and leaf action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_navigation_group_view_controller_ac114c93e6534eb806b1a334d319f0018}{
+(NSString $\ast$) -\/ \hyperlink{interface_p_c_navigation_group_view_controller_ac114c93e6534eb806b1a334d319f0018}{textForCellAtIndexPath:}}
+\label{interface_p_c_navigation_group_view_controller_ac114c93e6534eb806b1a334d319f0018}
+
+\begin{DoxyCompactList}\small\item\em Text to be displayed on the cell at indexPath. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_navigation_group_view_controller_af95f6ff2762ecf5c62096c9305ca9e67}{
+NSManagedObject $\ast$ \hyperlink{interface_p_c_navigation_group_view_controller_af95f6ff2762ecf5c62096c9305ca9e67}{navigationGroup}}
+\label{interface_p_c_navigation_group_view_controller_af95f6ff2762ecf5c62096c9305ca9e67}
+
+\begin{DoxyCompactList}\small\item\em Navigation group to display. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_navigation_group_view_controller_ae84204510227c16cad6b9cda00e3ff1f}{
+NavGroupLeafAction \hyperlink{interface_p_c_navigation_group_view_controller_ae84204510227c16cad6b9cda00e3ff1f}{leafAction}}
+\label{interface_p_c_navigation_group_view_controller_ae84204510227c16cad6b9cda00e3ff1f}
+
+\begin{DoxyCompactList}\small\item\em Block to run when a navigation group is tapped and it has no subgroups (meaning it has pathways) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Show navigation groups in a table view. 
+
+Tapping a row either goes to a subgroup or executes a block. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Navigation/PCNavigationGroupViewController.h\item 
+PathCaseKEGG/Navigation/PCNavigationGroupViewController.m\end{DoxyCompactItemize}

@@ -1,0 +1,87 @@
+\hypertarget{interface_p_c_app_delegate}{
+\section{PCAppDelegate Class Reference}
+\label{interface_p_c_app_delegate}\index{PCAppDelegate@{PCAppDelegate}}
+}
+
+
+Top level object that handles basic application events and initializes Core Data.  
+
+
+
+
+{\ttfamily \#import $<$PCAppDelegate.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_app_delegate_a4d53f2b2282faab7f1abe0da589eeb31}{
+(void) -\/ {\bfseries saveContext}}
+\label{interface_p_c_app_delegate_a4d53f2b2282faab7f1abe0da589eeb31}
+
+\item 
+\hypertarget{interface_p_c_app_delegate_a459fff92b0247c4c8be9270049866489}{
+(NSURL $\ast$) -\/ \hyperlink{interface_p_c_app_delegate_a459fff92b0247c4c8be9270049866489}{applicationDocumentsDirectory}}
+\label{interface_p_c_app_delegate_a459fff92b0247c4c8be9270049866489}
+
+\begin{DoxyCompactList}\small\item\em Returns the URL to the application's Documents directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_app_delegate_a92e958d020e612899454ed0a062ebe73}{
+UIWindow $\ast$ {\bfseries window}}
+\label{interface_p_c_app_delegate_a92e958d020e612899454ed0a062ebe73}
+
+\item 
+NSManagedObjectContext $\ast$ \hyperlink{interface_p_c_app_delegate_a980f45923c9d2eb3fa671e92dd204e3f}{managedObjectContext}
+\begin{DoxyCompactList}\small\item\em Managed object context for accessing Core Data. \end{DoxyCompactList}\item 
+NSManagedObjectModel $\ast$ \hyperlink{interface_p_c_app_delegate_acf3035b95e2a03cabab1d92ff2831b7c}{managedObjectModel}
+\begin{DoxyCompactList}\small\item\em Managed object model representing the application's schema. \end{DoxyCompactList}\item 
+NSPersistentStoreCoordinator $\ast$ \hyperlink{interface_p_c_app_delegate_aef8aefeba1dc9c793c031314d2cec738}{persistentStoreCoordinator}
+\begin{DoxyCompactList}\small\item\em Persistent store coordinator to manage communication with the storage medium (in this case SQLite) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Top level object that handles basic application events and initializes Core Data. 
+
+Not really changed from the default template. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_p_c_app_delegate_a980f45923c9d2eb3fa671e92dd204e3f}{
+\index{PCAppDelegate@{PCAppDelegate}!managedObjectContext@{managedObjectContext}}
+\index{managedObjectContext@{managedObjectContext}!PCAppDelegate@{PCAppDelegate}}
+\subsubsection[{managedObjectContext}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSManagedObjectContext $\ast$) managedObjectContext\hspace{0.3cm}{\ttfamily  \mbox{[}read, assign\mbox{]}}}}
+\label{interface_p_c_app_delegate_a980f45923c9d2eb3fa671e92dd204e3f}
+
+
+Managed object context for accessing Core Data. 
+
+Returns the managed object context for the application.
+
+If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application. \hypertarget{interface_p_c_app_delegate_acf3035b95e2a03cabab1d92ff2831b7c}{
+\index{PCAppDelegate@{PCAppDelegate}!managedObjectModel@{managedObjectModel}}
+\index{managedObjectModel@{managedObjectModel}!PCAppDelegate@{PCAppDelegate}}
+\subsubsection[{managedObjectModel}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSManagedObjectModel $\ast$) managedObjectModel\hspace{0.3cm}{\ttfamily  \mbox{[}read, assign\mbox{]}}}}
+\label{interface_p_c_app_delegate_acf3035b95e2a03cabab1d92ff2831b7c}
+
+
+Managed object model representing the application's schema. 
+
+Returns the managed object model for the application.
+
+If the model doesn't already exist, it is created from the application's model. \hypertarget{interface_p_c_app_delegate_aef8aefeba1dc9c793c031314d2cec738}{
+\index{PCAppDelegate@{PCAppDelegate}!persistentStoreCoordinator@{persistentStoreCoordinator}}
+\index{persistentStoreCoordinator@{persistentStoreCoordinator}!PCAppDelegate@{PCAppDelegate}}
+\subsubsection[{persistentStoreCoordinator}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSPersistentStoreCoordinator $\ast$) persistentStoreCoordinator\hspace{0.3cm}{\ttfamily  \mbox{[}read, assign\mbox{]}}}}
+\label{interface_p_c_app_delegate_aef8aefeba1dc9c793c031314d2cec738}
+
+
+Persistent store coordinator to manage communication with the storage medium (in this case SQLite) 
+
+Returns the persistent store coordinator for the application.
+
+If the coordinator doesn't already exist, it is created and the application's store added to it. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/PCAppDelegate.h\item 
+PathCaseKEGG/PCAppDelegate.m\end{DoxyCompactItemize}

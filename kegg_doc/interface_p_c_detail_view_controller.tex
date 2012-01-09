@@ -1,0 +1,186 @@
+\hypertarget{interface_p_c_detail_view_controller}{
+\section{PCDetailViewController Class Reference}
+\label{interface_p_c_detail_view_controller}\index{PCDetailViewController@{PCDetailViewController}}
+}
+
+
+Multiplex various detail views by listening to notifications.  
+
+
+
+
+{\ttfamily \#import $<$PCDetailViewController.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}\paragraph*{Public Methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_detail_view_controller_abf7a198bd52befdf94b69403a5de28f9}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_abf7a198bd52befdf94b69403a5de28f9}{showHomePage}}
+\label{interface_p_c_detail_view_controller_abf7a198bd52befdf94b69403a5de28f9}
+
+\begin{DoxyCompactList}\small\item\em Switch to the web view and show the main documentation page. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a4614f1f9df6b10ae830608d686176a23}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_a4614f1f9df6b10ae830608d686176a23}{startShowingPathway:}}
+\label{interface_p_c_detail_view_controller_a4614f1f9df6b10ae830608d686176a23}
+
+\begin{DoxyCompactList}\small\item\em Switch to the pathway view and show the given pathway. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private methods}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_detail_view_controller_a3347f6171a46ca16109e6460571ab110}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_a3347f6171a46ca16109e6460571ab110}{reloadToolbar}}
+\label{interface_p_c_detail_view_controller_a3347f6171a46ca16109e6460571ab110}
+
+\begin{DoxyCompactList}\small\item\em Fetch toolbar items from the currently visible view controller and put them in the toolbar. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a4442568531c5e24e42498d4aeb8d683b}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_a4442568531c5e24e42498d4aeb8d683b}{switchToViewController:}}
+\label{interface_p_c_detail_view_controller_a4442568531c5e24e42498d4aeb8d683b}
+
+\begin{DoxyCompactList}\small\item\em Display another view controller in the content area. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_ad1c9890056434693924b8af3afee001e}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_ad1c9890056434693924b8af3afee001e}{showNodeInfo}}
+\label{interface_p_c_detail_view_controller_ad1c9890056434693924b8af3afee001e}
+
+\begin{DoxyCompactList}\small\item\em Show the node info view controller in the master area. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_aa9bdcbe71c58b1d2fe3583b1138f20ab}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_aa9bdcbe71c58b1d2fe3583b1138f20ab}{finishShowingPathway:withModel:}}
+\label{interface_p_c_detail_view_controller_aa9bdcbe71c58b1d2fe3583b1138f20ab}
+
+\begin{DoxyCompactList}\small\item\em Render a loaded pathway and show the pathway visualization. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_ac217bec905169863d26aca38b8a2c3e7}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_ac217bec905169863d26aca38b8a2c3e7}{pathwaySelected:}}
+\label{interface_p_c_detail_view_controller_ac217bec905169863d26aca38b8a2c3e7}
+
+\begin{DoxyCompactList}\small\item\em Notification: a pathway was selected (PCPathwaySelected) \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a98cd3b43ed9edadc9d65c4d8ff540c64}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_a98cd3b43ed9edadc9d65c4d8ff540c64}{pathwayLoaded:}}
+\label{interface_p_c_detail_view_controller_a98cd3b43ed9edadc9d65c4d8ff540c64}
+
+\begin{DoxyCompactList}\small\item\em Notification: a pathway has finished loading (PCPathwayLayoutFetched) \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a8671ae06441374d937fbef7f43ec6723}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_a8671ae06441374d937fbef7f43ec6723}{pageViewRequested:}}
+\label{interface_p_c_detail_view_controller_a8671ae06441374d937fbef7f43ec6723}
+
+\begin{DoxyCompactList}\small\item\em Notification: some object would like a web page to be displayed. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a137da72dd223ec5deec90d3705f3e9f1}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_a137da72dd223ec5deec90d3705f3e9f1}{nodeSelected:}}
+\label{interface_p_c_detail_view_controller_a137da72dd223ec5deec90d3705f3e9f1}
+
+\begin{DoxyCompactList}\small\item\em Notification: some node has been selected. Ensures the node info view controller is shown. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a10e84e12b6660fa18abed4a2e3a0ace6}{
+(void) -\/ \hyperlink{interface_p_c_detail_view_controller_a10e84e12b6660fa18abed4a2e3a0ace6}{nodeDeselected:}}
+\label{interface_p_c_detail_view_controller_a10e84e12b6660fa18abed4a2e3a0ace6}
+
+\begin{DoxyCompactList}\small\item\em Notification: selection has been cleared. Ensures the node info view controller is shown. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Public Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_detail_view_controller_a420c181efab7c836db9199ead913a55e}{
+IBOutlet UIToolbar $\ast$ \hyperlink{interface_p_c_detail_view_controller_a420c181efab7c836db9199ead913a55e}{toolbar}}
+\label{interface_p_c_detail_view_controller_a420c181efab7c836db9199ead913a55e}
+
+\begin{DoxyCompactList}\small\item\em Toolbar at the top of the view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{Private Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_detail_view_controller_a90aed002ae5c4854c1620d6661e4faaf}{
+UIPopoverController $\ast$ \hyperlink{interface_p_c_detail_view_controller_a90aed002ae5c4854c1620d6661e4faaf}{popoverController}}
+\label{interface_p_c_detail_view_controller_a90aed002ae5c4854c1620d6661e4faaf}
+
+\begin{DoxyCompactList}\small\item\em Popover controller to display the master view if in portrait mode. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_ad69f4b49436866489d4e48ccc19edc9a}{
+\hyperlink{interface_p_c_web_view_controller}{PCWebViewController} $\ast$ \hyperlink{interface_p_c_detail_view_controller_ad69f4b49436866489d4e48ccc19edc9a}{webViewController}}
+\label{interface_p_c_detail_view_controller_ad69f4b49436866489d4e48ccc19edc9a}
+
+\begin{DoxyCompactList}\small\item\em Web view to show documentation and web sites. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a28bceae38b69ad407f1e9326d60cf3ed}{
+\hyperlink{interface_p_c_graph_view_controller}{PCGraphViewController} $\ast$ \hyperlink{interface_p_c_detail_view_controller_a28bceae38b69ad407f1e9326d60cf3ed}{graphViewController}}
+\label{interface_p_c_detail_view_controller_a28bceae38b69ad407f1e9326d60cf3ed}
+
+\begin{DoxyCompactList}\small\item\em Pathway graph view to show pathways. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a02d89cef625e06ee6a2bdb35a76196b6}{
+\hyperlink{interface_p_c_waiting_view_controller}{PCWaitingViewController} $\ast$ \hyperlink{interface_p_c_detail_view_controller_a02d89cef625e06ee6a2bdb35a76196b6}{waitingViewController}}
+\label{interface_p_c_detail_view_controller_a02d89cef625e06ee6a2bdb35a76196b6}
+
+\begin{DoxyCompactList}\small\item\em View to show an activity indicator. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_ac7de0fe4e8cf25429ad5d314017ccae1}{
+\hyperlink{interface_p_c_node_info_view_controller}{PCNodeInfoViewController} $\ast$ \hyperlink{interface_p_c_detail_view_controller_ac7de0fe4e8cf25429ad5d314017ccae1}{nodeInfoViewController}}
+\label{interface_p_c_detail_view_controller_ac7de0fe4e8cf25429ad5d314017ccae1}
+
+\begin{DoxyCompactList}\small\item\em View to show information about a single node. This view is actually shown in the master view area. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a12a2d8234e55179122c04cc06f01c19a}{
+UIViewController$<$ \hyperlink{protocol_p_c_detail_view_sub_controller-p}{PCDetailViewSubController} $>$ $\ast$ \hyperlink{interface_p_c_detail_view_controller_a12a2d8234e55179122c04cc06f01c19a}{currentlyVisibleViewController}}
+\label{interface_p_c_detail_view_controller_a12a2d8234e55179122c04cc06f01c19a}
+
+\begin{DoxyCompactList}\small\item\em Pointer to whichever of the view controllers is currently being displayed. \end{DoxyCompactList}\item 
+BOOL \hyperlink{interface_p_c_detail_view_controller_ae889b05b8bc880ad0b5f4bb393bececc}{firstToolbarItemIsPopoverButton}
+\begin{DoxyCompactList}\small\item\em True if in portrait mode and the first item in the toolbar is the popover button. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a60fd13b3f9020ec86a54d56ee555c5e9}{
+NSManagedObject $\ast$ \hyperlink{interface_p_c_detail_view_controller_a60fd13b3f9020ec86a54d56ee555c5e9}{loadingPathway}}
+\label{interface_p_c_detail_view_controller_a60fd13b3f9020ec86a54d56ee555c5e9}
+
+\begin{DoxyCompactList}\small\item\em Pathway that is in the process of being loaded. \end{DoxyCompactList}\item 
+\hypertarget{interface_p_c_detail_view_controller_a4e64f01485c2fb2f9668a39fb3aefa85}{
+BOOL \hyperlink{interface_p_c_detail_view_controller_a4e64f01485c2fb2f9668a39fb3aefa85}{transitioning}}
+\label{interface_p_c_detail_view_controller_a4e64f01485c2fb2f9668a39fb3aefa85}
+
+\begin{DoxyCompactList}\small\item\em An animation is in progress between two views. Used to prevent race conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Multiplex various detail views by listening to notifications. 
+
+Listens to:
+
+
+\begin{DoxyItemize}
+\item PCPathwaySelected (usually sent by \hyperlink{interface_p_c_master_view_controller}{PCMasterViewController})
+\begin{DoxyItemize}
+\item pathway: pathway object (NSManagedObject)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item PCPageViewRequested (usually sent by \hyperlink{interface_p_c_master_view_controller}{PCMasterViewController})
+\begin{DoxyItemize}
+\item url: URL to load (NSString)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item PCPathwayLayoutFetched (usually sent by \hyperlink{interface_p_c_layout_fetcher}{PCLayoutFetcher}, spawned by \hyperlink{interface_p_c_graph_data_fetcher}{PCGraphDataFetcher}, spawned by this class)
+\begin{DoxyItemize}
+\item pathway: pathway object (NSManagedObject)
+\item model: \hyperlink{interface_p_c_graph_model}{PCGraphModel}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item PCGraphNodeSelected, PCGraphNodeSelectionCleared (usually sent by \hyperlink{interface_p_c_graph_view_controller}{PCGraphViewController}) 
+\end{DoxyItemize}
+
+\subsection{Property Documentation}
+\hypertarget{interface_p_c_detail_view_controller_ae889b05b8bc880ad0b5f4bb393bececc}{
+\index{PCDetailViewController@{PCDetailViewController}!firstToolbarItemIsPopoverButton@{firstToolbarItemIsPopoverButton}}
+\index{firstToolbarItemIsPopoverButton@{firstToolbarItemIsPopoverButton}!PCDetailViewController@{PCDetailViewController}}
+\subsubsection[{firstToolbarItemIsPopoverButton}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (BOOL) firstToolbarItemIsPopoverButton\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}}
+\label{interface_p_c_detail_view_controller_ae889b05b8bc880ad0b5f4bb393bececc}
+
+
+True if in portrait mode and the first item in the toolbar is the popover button. 
+
+This is used to make sure that the toolbar is updated correctly when the content view is changed. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Navigation/PCDetailViewController.h\item 
+PathCaseKEGG/Navigation/PCDetailViewController.m\end{DoxyCompactItemize}

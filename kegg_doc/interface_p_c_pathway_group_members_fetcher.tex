@@ -1,0 +1,48 @@
+\hypertarget{interface_p_c_pathway_group_members_fetcher}{
+\section{PCPathwayGroupMembersFetcher Class Reference}
+\label{interface_p_c_pathway_group_members_fetcher}\index{PCPathwayGroupMembersFetcher@{PCPathwayGroupMembersFetcher}}
+}
+
+
+Get the pathways in a pathway group.  
+
+
+
+
+{\ttfamily \#import $<$PCPathwayGroupMembersFetcher.h$>$}
+
+Inheritance diagram for PCPathwayGroupMembersFetcher:\begin{figure}[h!]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{kegg_doc/interface_p_c_pathway_group_members_fetcher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_pathway_group_members_fetcher_a9b3d6f7fa5a41c6df607fbc525f79154}{
+(id) -\/ \hyperlink{interface_p_c_pathway_group_members_fetcher_a9b3d6f7fa5a41c6df607fbc525f79154}{initWithGroup:}}
+\label{interface_p_c_pathway_group_members_fetcher_a9b3d6f7fa5a41c6df607fbc525f79154}
+
+\begin{DoxyCompactList}\small\item\em Initialize this object with a specific navigation group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{Indent}\paragraph*{Private}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_p_c_pathway_group_members_fetcher_a1f5d9472c1fe83374f0f6b2ba30ee233}{
+NSManagedObject $\ast$ \hyperlink{interface_p_c_pathway_group_members_fetcher_a1f5d9472c1fe83374f0f6b2ba30ee233}{group}}
+\label{interface_p_c_pathway_group_members_fetcher_a1f5d9472c1fe83374f0f6b2ba30ee233}
+
+\begin{DoxyCompactList}\small\item\em Navigation group to fetch group members for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Get the pathways in a pathway group. 
+
+One of these is spawned for each pathway group found by \hyperlink{interface_p_c_pathway_groups_fetcher}{PCPathwayGroupsFetcher}. (Web service: {\ttfamily GetPathwaysByGroupId}) 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PathCaseKEGG/Data fetching/PCPathwayGroupMembersFetcher.h\item 
+PathCaseKEGG/Data fetching/PCPathwayGroupMembersFetcher.m\end{DoxyCompactItemize}

@@ -2,7 +2,7 @@
 \label{sect:smda_implementation}
 
 The input interface for SMDA requires full knowledge of the SMDA database, so
-\mawapp must store that database internally in some form.  It must store
+\mawapp must store that database internally in some form. It must store
 information about pathways, metabolites, tissues, reactions, and more.
 
 Section \ref{sect:smda_data_model} describes the subset of the SMDA data
@@ -120,6 +120,36 @@ run, the application binary contains a snapshot of these objects taken from the
 web services at the time the application was released. This way, the application
 does not require internet access until the actual SMDA algorithm is run.
 
+\subsection{Measurement Input User Interface}
+\label{sect:smda_results_ui}
+
+Saved measurements (observations) are encapsulated in the
+\texttt{SMDASavedMeasurement} object. These are listed in a table view by
+\texttt{SMDASavedMeasurementSetListController}. From this view, observations may
+be added, removed, and renamed.
+
+Selecting an observation from this view pushes a new view onto the navigation
+stack. The new view, controlled by \texttt{SMDAMeasurementSetEditorVC}, shows
+the pathways, transport processes, reactions, pathways as reactions, and
+metabolite measurements contained within the observation. (See figure
+\ref{fig:screenshot_smda_list}.) These data types are divided into sections of
+the table. Each section has a row for each entry for the corresponding data
+type, plus an ``Add'' row which can be selected to add a new item.
+
+Selecting any row brings up a view to edit the new or existing measurement. This
+view is some subclass of \texttt{SMDABasicRowEntryVC} depending on which data
+type is being added/edited. It contains a list of data items such as pathways,
+metabolites, or reactions, as well as additional fields such as a text box for
+entering numerical values or a button for selecting the units of measurement.
+
+When the selection has been made, the row entry view controller inserts the new
+value into the observation object and returns the user to the
+\texttt{SMDAMeasurementSetEditorVC}.
+
+Tapping the ``Run SMDA'' button sends the measurements to the \pathcasemaw
+server to be run through the \textbf{RunSMDA} web service discussed in section
+\ref{sect:smda_results_request}.
+
 \subsection{Getting SMDA Algorithm Results}
 \label{sect:smda_results_request}
 
@@ -128,8 +158,72 @@ submitted, read, parsed, and made into graphs. It will also explain \mawappp
 inability to display results from multiple pathways due to the lack of dynamic
 layouts.}
 
-\subsection{User Interface}
-\label{sect:smda_results_ui}
+To run the SMDA algorithm, the observation is converted from Objective-C objects
+to XML, sent to the \textbf{RunSMDA} web service, and the results are converted
+into new Objective-C objects.
 
-\emph{I did not have time to go over the SMDA input and output interface
-implementations.}
+The conversion from Objective-C objects to XML is straightforward. For each data
+type (pathway, transport process, reaction, pathway as reaction, metabolite
+pool measurement), XML representations are concatenated. Here is Sample
+Measurement 1, the example used in section \ref{sect:smda_interface_input}:
+
+\begin{lstlisting}
+<?xml version="1.0" standalone="no"?>
+<SMDAipadInput>
+	<Pathways>
+		<Pathway ID="6"  CompartmentID="2"/>		
+	</Pathways>  
+	<TransportProcesses>		
+	</TransportProcesses>  
+	<Reactions>		
+	</Reactions>  	
+	<PathwayAsReactions>
+	</PathwayAsReactions>  	
+	<Measurements>
+		<MetabolitePoolValue ID="12" Value="180"  unit="uM/ml" />
+		<MetabolitePoolValue ID="31" Value="60"  unit="uM/ml" />
+		<MetabolitePoolValue ID="394" Value="80"  unit="uM/ml" />
+	</Measurements>
+</SMDAipadInput>
+\end{lstlisting}
+
+This XML representation is passed to the \textbf{RunSMDA} web service as a
+parameter to an HTTP POST request. The server processes the request and returns
+an XML string representing the result graphs. A result graph consists of a base
+graph consisting of reactions and metabolite pools, perhaps subdivided into
+pathways and compartments, and a set of possible reaction states. Each reaction
+may be active or inactive, and reversed or not.
+
+The output of \textbf{RunSMDA} is in three parts. The first is a hierarchical
+definition of the objects in the base graph, including pathways, compartments,
+reactions, and metabolite pools. The second is a graphical definition of the
+base graph in GML (see \ref{sect:parsing_gml}). The third is a list of lists of
+reaction states. Each list of reaction states represents a possible state of the
+graph, one page which the user can view.
+
+\mawapp first builds the base graph (\texttt{PCGraphModel}) out of the GML
+definition. It then annotates this graph with information from the hierarchical
+data definition. Finally, it builds an \texttt{SMDAResultGraphModel} object from
+this base model and the remaining information about the reaction states.
+
+\subsubsection{Results Browsing User Interface}
+\label{sect:smda_results_browsing}
+
+The \texttt{SMDAResultGraphModel} and \texttt{PCGraphModel} produced by the
+\textbf{RunSMDA} web service processing code are displayed in an
+\texttt{SMDANavController} which presents the interface described in section
+\ref{sect:smda_interface_output}.
+
+The result browsing interface is a graph view with several permutations of
+specific properties. A \textbf{result graph} (\texttt{SMDAResultGraphModel})
+consists of a base \texttt{PCGraphModel} with the static data, plus the status
+of each reaction: active or inactive, reversed or not. The result browsing
+interface allows the user to page through different resuls graphs that share the
+same base graph mode.
+
+When the user taps the Forward or Back button in the \texttt{SMDANavController},
+it sends a message to the \texttt{SMDAResultGraphModel} to display the result at
+a given index. The \texttt{SMDAResultGraphModel} constructs a new set of node
+attributes based on reaction states, applies them to the currently visible
+graph, and adds highlights where attributes have changed (for example, if a node
+has gone from active to inactive).

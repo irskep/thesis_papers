@@ -1,6 +1,3 @@
-Example for SMDA data entry
-Document web services in appendices (MAW and KEGG)
-SMDA input and output interface code explanations
 SMDA algorithm results getting explanations
 Elaborate on iPad vs web (MAW and KEGG)
 

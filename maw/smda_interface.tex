@@ -41,10 +41,27 @@ sections. Figure \ref{fig:smda_add_reaction} shows the screen for adding a new
 reaction. Tapping an existing row brings up the same screen, allowing the user
 to change their selection.
 
-\emph{TODO: Walk through example}
-
 Figure \ref{fig:smda_edit_measurement} shows a similar screen for editing
 measurements.
+
+To better explain this interface, here is a simple example. The application
+includes two sample measurements. \textbf{Sample Measurement 1} measures
+metabolites in the pathway \textbf{Glycolysis} in the \textbf{Cytosol\_Liver}
+compartment. These metabolites are \textbf{Pyruvate} ($60 \mu M/ml$),
+\textbf{Glycerol} ($80 \mu M/ml$), and \textbf{D-Glucose} ($180 \mu M/ml$).
+
+To select a pathway, the user taps the ``Add'' row of the ``Pathways'' section
+of the table. A view appears with a list of pathways. The user taps ``Glycolysis
+(Cytosol_Liver)'' to select it and it appears in the ``Pathways'' section.
+
+To add measurements, the user taps the ``Add'' row of the ``Metabolite
+Measuremnents'' section and the view in figure \ref{fig:smda_edit_measurement}
+appears so the user can select Pyruvate and enter $60 \mu M/ml$. This process is
+repeated for Glycerol and D-Glucose.
+
+It is necessary to input the pathways before any metabolite measurements because
+the metabolite list contains only metabolites that are members of the given
+pathways.
 
 \subsection{Output}
 \label{sect:smda_interface_output}

@@ -1,3 +1,2 @@
-SMDA algorithm results getting explanations
 Elaborate on iPad vs web (MAW and KEGG)
 

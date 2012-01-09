@@ -8,9 +8,6 @@ Table \ref{fig:kegg_comparison_table} shows a comparison of relevant features
 from the online and iPad versions of the \pathcasekegg analysis tools. The
 similarities and differences are elaborated here.
 
-\emph{TODO: Elaborate on similarities and differences, and their reasons for
-being that way}
-
 \begin{table}[ht!]
 \centering
 \begin{tabular}{ | p{2.75in} | p{1.25in} | p{1.25in} | }
@@ -57,3 +54,19 @@ being that way}
     and the iPad KEGG visualizer}
     \label{fig:kegg_comparison_table}
 \end{table}
+
+Functional differences between \keggapp and the online \pathcasekegg tools exist
+for reasons similar to the differences between \mawapp and the \pathcasemaw
+online tools. In addition to the same changes made by \mawapp, \keggapp allows
+the user to rearrange nodes in the visualization, has the ability to generate
+dynamic layouts, and adds additional pertinent information from new data
+sources.
+
+Some functionality is missing due to development time limitations. Selection of
+reactions by where they are located in the genome was not implemented for this
+reason, as well as the ability to save a manually arranged layout for future
+recall.
+
+Other functionality is missing because web services have not been implemented
+for them. Database queryies are missing for this reason, though web services to
+support them are being developed.

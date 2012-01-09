@@ -1,80 +1,216 @@
 Entries are listed with their name, a description of their functionality, and
 an example response in a shorthand XML notation.
 
-\subsection{MAW Pathways}
-
-These web services and more are listed at \\
-\href{http://nashua.case.edu/PathwaysMAWService/PathwaysService.asmx}{http://nashua.case.edu/PathwaysMAWService/PathwaysService.asmx}.
-
-\begin{description}
-
-    \item[GetPathwayData] Hello
-
-    \begin{lstlisting}
-    \end{lstlisting}
-
-\end{description}
-
-\subsection{SMDA}
-
 These web services and more are listed at \\
 \href{http://nashua.case.edu/PathwaysServiceSMDA/PathwaysService.asmx}{http://nashua.case.edu/PathwaysServiceSMDA/PathwaysService.asmx}.
 
 \begin{description}
 
-    \item[GetAllUnits] Hello
+    \item[GetAllCompartments] List compartments in the database.
 
     \begin{lstlisting}
+<ArrayOfServerCompartment>
+    <ServerCompartment> (multiple)
+        <ID>1</ID>
+        <Name>Organs</Name>
+        <Size>3</Size>
+        <ParentId>1</ParentId>
+        <CompartmentTypeId>1</CompartmentTypeId>
     \end{lstlisting}
 
-    \item[GetAllTransportProcesses] Hello
+    \item[GetAllMetabolites] List all metabolites in the database.
 
     \begin{lstlisting}
+<ArrayOfServerMetabolite>
+    <ServerMetabolite> (multiple)
+        <ID>1</ID>
+        <Name>ADP</Name>
+        <MetaboliteTypeId>1</MetaboliteTypeId>
+        <Available>1</Available>
+        <Accumulated>100</Accumulated>
+        <SeverelyAccumulated>1000</SeverelyAccumulated>
     \end{lstlisting}
 
-    \item[GetAllReactions] Hello
+    \item[GetAllMetabolitePools] List all metabolite pools in the database.
 
     \begin{lstlisting}
+<ArrayOfServerMetabolitePool>
+    <ServerMetabolitePool> (multiple)
+        <ID>2</ID>
+        <Name>AMP_Cytosol_Liver_pool1</Name>
+        <MetaboliteId>2</MetaboliteId>
+        <CompartmentId>2</CompartmentId>
+        <Size>10</Size>
     \end{lstlisting}
 
-    \item[GetAllCompartments] Hello
+    \item[GetAllReactions] List all reactions in the database.
 
     \begin{lstlisting}
+<ArrayOfServerReaction>
+    <ServerReaction> (multiple)
+        <ID>4</ID>
+        <Name>Hexokinase</Name>
+        <IsTransportProcess>false</IsTransportProcess>
+        <IsReversible>false</IsReversible>
     \end{lstlisting}
 
-    \item[GetAllMetabolites] Hello
+    \item[GetAllTransportProcesses] List all transport processes in the
+    database.
 
     \begin{lstlisting}
+<ArrayOfServerReaction>
+    <ServerReaction> (multiple)
+        <ID>180</ID>
+        <Name>Alanine Transport (Blood-To-Cytosol_Liver)</Name>
+        <IsTransportProcess>true</IsTransportProcess>
+        <IsReversible>false</IsReversible>
     \end{lstlisting}
 
-    \item[GetAllMetabolitePools] Hello
+    \item[GetAllUnits] List possible units of measurement for metabolite pools.
 
     \begin{lstlisting}
+<ArrayOfServerUnit>
+    <ServerUnit> (multiple)
+        <ID>1</ID>
+        <Name>mM/ml</Name>
     \end{lstlisting}
 
-    \item[GetTissueOfPathway] Hello
+    \item[GetPathwayMetabolite] List metabolites in a specific pathway with
+    information relevant to that pathway such as role in a reaction.
 
     \begin{lstlisting}
+<ArrayOfServerPathwayMetabolite>
+    <ServerPathwayMetabolite> (multiple)
+        <PathwayId>6</PathwayId>
+        <MetabolitePoolId>12</MetabolitePoolId>
+        <MetaboliteRoleId>1</MetaboliteRoleId>
+        <Rate>0</Rate>
+        <TriggerConditionId>1</TriggerConditionId>
+        <Stoichiometry>0</Stoichiometry>
     \end{lstlisting}
 
-    \item[GetPathwayMetabolite] Hello
+    \item[GetAllMetabolitePoolsForPathway] List metabolite pools in a specific
+    pathway and compartment.
 
     \begin{lstlisting}
+<ArrayOfServerMetabolitePool>
+    <ServerMetabolitePool> (multiple)
+        <ID>3</ID>
+        <Name>ATP_Cytosol_Liver_pool1</Name>
+        <MetaboliteId>3</MetaboliteId>
+        <CompartmentId>2</CompartmentId>
+        <Size>0</Size>
     \end{lstlisting}
 
-    \item[GetAllMetabolitePoolsForPathway] Hello
+    \item[GetReactionMetabolite] List all metabolites including information
+    about what reactions they are associated with.
 
     \begin{lstlisting}
+<ArrayOfServerReactionMetabolite>
+    <ServerReactionMetabolite> (multiple)
+        <ReactionId>4</ReactionId>
+        <MetabolitePoolId>3</MetabolitePoolId>
+        <MetaboliteRoleId>3</MetaboliteRoleId>
+        <Rate>1</Rate>
+        <TriggerConditionId>1</TriggerConditionId>
+        <TriggerConditionIdBackward>8</TriggerConditionIdBackward>
+        <Stoichiometry>1</Stoichiometry>
     \end{lstlisting}
 
-    \item[GetReactionMetabolite] Hello
+    \item[GetTissueOfPathway] List tissues (compartments) in a specific pathway.
 
     \begin{lstlisting}
+<ArrayOfServerCompartment>
+    <ServerCompartment> (multiple)
+        <ID>2</ID>
+        <Name>Cytosol_Liver</Name>
+        <Size>0</Size>
+        <ParentId>15</ParentId>
+        <CompartmentTypeId>3</CompartmentTypeId>
     \end{lstlisting}
 
-    \item[RunSMDA] Hello
+    \item[RunSMDA] Given an SMDA measurement set in the XML format specified
+    below, return the SMDA result graph. For more information about this web
+    service, see section \ref{sect:smda_results_request}.
+
+    Input:
 
     \begin{lstlisting}
+<SMDAipadInput>
+  <Pathways>
+    <Pathway (multiple)
+        ID=(pathway identifier)
+        CompartmentID=(compartment identifier) />
+  <TransportProcesses>
+    <TransportProcess (multiple)
+        ID=(transport process identifier) />
+  <Reactions>
+    <Reaction (multiple)
+        ID=(reaction identifier)
+        CompartmentID=(compartment identifier) />
+  <PathwayAsReactions>
+    <PathwayAsReaction (multiple)
+        ID=(pathway identifier)
+        CompartmentID=(tissue identifier)>
+      <MetabolitePool (multiple)
+          ID=(metabolite pool identifier)
+          Role="Input" or "Output" />
+  <Measurements>
+    <MetabolitePoolValue (multiple)
+        ID=(metabolite pool identifier)
+        Value=(floating point number)
+        unit=(units that Value expresses) />
+    \end{lstlisting}
+
+    Output:
+
+    \begin{lstlisting}
+<GraphData>
+  <ipadResults result="status string" />
+  <Pathways>
+    <Pathway (multiple)
+          ID="p40" (40 is a pathway identifier)
+          Name="Beta-oxidation"
+          TissueID="c2" (2 is a compartment identifier)
+          TissueName="Cytosol_Liver"
+          visualize="full">
+      <Compartments>
+        <Compartment (multiple)
+            ID="c5" (5 is a compartment identifier)
+            ParentID="c2">
+          <Reactions>
+            <Reaction (multiple)
+                ID="r129" (129 is a
+                  reaction identifier)
+                state="Active" or "Inactive" />
+              <MetabolitePools>
+                <MetabolitePool (multiple)
+                    ID="m220" (220 is a
+                      metabolite pool identifier)
+                    MetaboliteID="meta157" (157 is a
+                      metabolite identifier)
+                    Name="palmitoyl ..."
+                    IsCommon="False"
+                    Color="[255,246,143]" />
+  <FrozenLayout>
+    <layouts>
+      <layout
+        id="p33c2" (33 is a pathway identifier,
+            2 is a compartment identifier)
+        value=(GML string with graph layout) />
+  <SMDAResults>
+    <AIG (multiple)
+        ID="aig1" (each AIG node has a unique identifier)
+      <Reactions>
+        <Reaction (multiple)
+            ID="r129" (129 is a reaction identifier)
+            Compartment="c5" (5 is a compartment identifier)
+            Direction="Forward" or "Backward"
+            Status="Active" or "Inactive" />
+      <MetabolitePools>
+        <MetabolitePool (multiple)
+            ID="m349" (349 is a metabolite pool identifier)
+            Status="Unknown" />
     \end{lstlisting}
 
 \end{description}

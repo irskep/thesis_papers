@@ -36,4 +36,4 @@ mac: build
 all: build
 
 clean:
-	rm -f *.aux *.bbl *.blg *.log *.pdf
+	rm -f *.aux *.bbl *.blg *.log *.pdf *.lof *.lot *.out *.toc

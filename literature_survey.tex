@@ -1,33 +1,67 @@
-\emph{I did not edit this section at all since last time. It needs significant
-editing and more information.}
+PathCase and its related tools exist in a rich ecosystem of databases, display
+methods, graph algorithms, and input methods. The iPathCase tools are intended
+to unify this ecosystem as much as possible.
 
-Most literature related to these interfaces falls into two categories. The first
-is general multitouch research, and the second is research on browsing and
-querying graphs.
+\section{Databases}
 
-Most general multitouch research is not applicable to this specific area.
-Conventions for basic tasks such as navigating between screens, browsing lists,
-and scrolling content are well-defined by the interface guidelines of existing
-touch-based operating systems. Any deviations from the beaten path are confined
-to the graph view.
+Existing pathway data sources include KEGG, BioCyc, and Reactome. The Kyoto
+Encyclopedia of Genes and Genomes (KEGG) is the primary database resource of the
+Japanese GenomeNet service for understanding higher order functional meanings
+and utilities of the cell or the organism from its genome information
+\cite{kegg-basic}. This database was discussed in section
+\ref{sect:background_kegg}.
 
-A few multitouch papers present taxonomies of gestures. Frisch et al provide one
-example \cite{multitouch:gestures}. (I am looking for more.)
+The KEGG web site visualizes pathways using static images like the one shown in
+figure \ref{fig:kegg_site_viz}.
 
-Others offer new interfaces to help bridge the divide between multitouch input
-devices and the pre-iPad desktop interfaces. In this vein, Benko et al describe
-a new interface to help a user select very small pointing targets
-\cite{multitouch:tiny-select}. However, modern touch interfaces circumvent this
-issue by not requiring users to select unreasonably tiny targets in the first
-place.
+\begin{figure}[hbtp]
+    \center{
+        \includegraphics[width=4in]{fig/kegg_d-alanine_metabolism}}
+    \caption{\label{fig:kegg_site_viz} KEGG visualization of D-Alanine
+    metabolism}
+\end{figure}
 
-Turning to graph interface research, Kobourov et al have a multi-touch interface
-for making pairs of graphs with similarly placed nodes
-\cite{graph-interaction:simultaneousgraphdrawing}, which will likely be
-useful in the SMDA application. I have found one paper in which the
-researchers use bubbles along the edges of the screen to represent offscreen
-nodes (but I am so far unable to download it).
+The BioCyc collection of Pathway/Genome Databases (PGDBs) provides an electronic
+reference source on the genomes and metabolic pathways of sequenced organisms
+\cite{biocyc}. The level of curation of the PGDBs ranges from intensive to
+nonexistent, and they are categorized as such.
 
-There is a lot of talk about UML, but it is not relevant to this application.
-Another paper uses a hybrid graphical and text interface to explore graphs, but
-text interfaces do not work well on touch-based devices.
+The BioCyc web site visualizes pathways using static images like the one shown
+in figure \ref{fig:biocyc_site_viz}.
+
+\begin{figure}[hbtp]
+    \center{
+        \includegraphics[width=4in]{fig/biocyc_phospholipases}}
+    \caption{\label{fig:biocyc_site_viz} BioCyc visualization of phospholipases}
+\end{figure}
+
+Reactome is an open-source, open access, manually curated and peer-reviewed
+pathway database \cite{reactome}. Pathway annotations are authored by expert
+biologists, in collaboration with Reactome editorial staff and cross-referenced
+to many bioinformatics databases.
+
+The iPathCase tools do not use any of these databases directly, but may access
+them through PathCase in the future. \keggapp does provide links to these
+databases for pathways and enzymes where appropriate, but does not otherwise
+make use of them.
+
+\section{Input Methods}
+
+The iPathCase tools combine the simplicity of the online PathCase tools with the
+tactile input methods of the iPad.
+
+\begin{figure}[hbtp]
+    \center{
+        \includegraphics[width=4in]{fig/pathcase_kegg_online_viz}}
+    \caption{\label{fig:pathcase_kegg_online_viz} PathCase KEGG online
+    visualization of glycolysis}
+\end{figure}
+
+The online PathCase KEGG visualizer, shown in figure
+\ref{fig:pathcase_kegg_onine_viz}, presents a graph of the pathway which can be
+panned and zoomed using modal mouse-based tools. Nodes can be moved by clicking
+and dragging. The iPathCase visualizers are based on the same principles but
+make use of modeless multitouch gestures instead of modal tools selected on a
+toolbar. Many of these gestures are identified by Frisch et al
+\cite{multitouch:gestures} and the iOS Application Programming Guide
+\cite{ios:application-programming-guide}.

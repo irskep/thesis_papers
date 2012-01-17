@@ -4,7 +4,7 @@ Steve Johnson's Amazing Thesis Report
 Requirements
 ------------
 
-* XeTeX
+* XeTeX (pretty version only, otherwise use `make simple`)
 * `listings`
 * `xspace`
 * `hyperref`, `color`, `xcolor`, `xltxtra`, `xunicode`, `graphicx`, `fixltx2e`
@@ -20,6 +20,10 @@ Just one iteration of `xelatex`:
 
     > make once
 
+Use vanilla LaTeX and Computer Modern instead of Garamond/Gill Sans/Inconsolata:
+
+    > make simple
+
 Structure
 ---------
 
@@ -29,8 +33,8 @@ TeX basics:
 * `formatting/`
     * `doxygen.sty`: Required for producing the iPathCase-KEGG source code
       documenation appendix
-    * `setup.tex`: Import packages, configure formatting, define commands,
-      configure `listings` package
+    * `setup.tex`: Import packages, configure formatting
+    * `commands_and_style.tex`: define commands, configure `listings` package
 * `bibliography.bib`: Information for citations and bibliography section
 
 Content:

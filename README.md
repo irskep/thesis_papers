@@ -41,6 +41,7 @@ TeX basics:
 
 Content:
 
+* `fig/`: All figures
 * `background/`: Background chapter sections (`main.tex` combines them into a
   chapter)
 * `basic/`
@@ -64,10 +65,3 @@ Content:
     * Various images
 * `smda/`: iPathCase-SMDA chapter sections (`main.tex` combines them into a
   chapter)
-
-Figures:
-
-* `fig/`
-* `background/figures/`
-* `kegg/figures/`
-* `smda/figures/`

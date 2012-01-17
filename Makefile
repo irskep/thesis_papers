@@ -15,15 +15,6 @@ endif
 once: $(FIGS)
 	xelatex -halt-on-error $(DOC)
 
-kde: build
-	kpdf $(DOC).pdf
-
-kde4: build
-	okular $(DOC).pdf
-
-mac: build
-	open $(DOC).pdf
-
 all: build
 
 clean:

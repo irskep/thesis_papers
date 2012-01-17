@@ -20,12 +20,6 @@ Just one iteration of `xelatex`:
 
     > make once
 
-Build and automatically open in your platform's PDF viewer:
-
-    > make mac  # Mac OS X
-    > make kde  # kpdf
-    > make kde4 # okular
-
 Structure
 ---------
 

@@ -4,7 +4,7 @@ Steve Johnson's Amazing Thesis Report
 Requirements
 ------------
 
-* XeTeX (I used the MacTex 2011 distribution)
+* XeTeX
 * `listings` (included in MacTeX 2011)
 * `xspace`
 * `hyperref`, `color`, `xcolor`, `xltxtra`, `xunicode`, `graphicx`, `fixltx2e`

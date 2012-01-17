@@ -5,13 +5,12 @@ The input interface for SMDA requires full knowledge of the SMDA database, so
 \mawapp must store that database internally in some form. It must store
 information about pathways, metabolites, tissues, reactions, and more.
 
-Section \ref{sect:smda_data_model} describes the subset of the SMDA data
-model that is used by \mawapp to provide the SMDA tool. Section
-\ref{sect:smda_web_services_server} enumerates the web services that
-SMDA provides to download these model objects into \mawapp. Section
-\ref{sect:smda_web_services_client} explains how \mawapp accesses these web
-services and converts their results into model objects to be used by the
-application. Finally, section \ref{sect:smda_results_ui} describes the user
+Section \ref{sect:smda_data_model} describes the subset of the SMDA data model
+that is used by \mawapp to provide the SMDA tool. Section
+\ref{sect:smda_web_services} enumerates the web services that SMDA provides to
+download these model objects into \mawapp and explains how \mawapp accesses
+these web services and converts their results into model objects to be used by
+the application. Finally, section \ref{sect:smda_results_ui} describes the user
 interface classes.
 
 \subsection{Data Model}
@@ -107,10 +106,10 @@ Due to the hierarchical and interconnected nature of the data model, it is not
 practical to dynamically invoke the web services at the time their data is
 needed. Instead, an internal representation is updated in bulk at the user's
 request. When they tap an ``Update Local Data'' button in the SMDA input view, a
-series of asynchronously executed Objective-C blocks (\ref{sect:objc_bocks}) are
-invoked. These blocks make the web requests, convert their results to the model
-objects described in section \ref{sect:smda_data_model}, and serialize them to
-the iPad's internal storage.
+series of asynchronously executed Objective-C blocks (\ref{sect:objc_blocks})
+are invoked. These blocks make the web requests, convert their results to the
+model objects described in section \ref{sect:smda_data_model}, and serialize
+them to the iPad's internal storage.
 
 Each block represents one or more web requests, and a block may rely on the
 completion of another block for the existence of data.

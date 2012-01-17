@@ -28,7 +28,7 @@ those boundaries.
 \subsection{Model Objects Encapsulate Data and Basic Behaviors}
 
 Model objects represent special knowledge and expertise. They hold an
-application’s data and define the logic that manipulates that data. A
+application's data and define the logic that manipulates that data. A
 well-designed MVC application has all its important data encapsulated in model
 objects. Any data that is part of the persistent state of the application
 (whether that persistent state is stored in files or databases) should reside in
@@ -39,7 +39,7 @@ tend to be reusable.
 Ideally, a model object has no explicit connection to the user interface used to
 present and edit it. For example, if you have a model object that represents a
 person (say you are writing an address book), you might want to store a
-birthdate. That’s a good thing to store in your Person model object. However,
+birthdate. That's a good thing to store in your Person model object. However,
 storing a date format string or other information on how that date is to be
 presented is probably better off somewhere else.
 
@@ -57,8 +57,8 @@ object that wants to present them.
 \subsection{View Objects Present Information to the User}
 
 A view object knows how to display, and might allow users to edit, the data from
-the application’s model. The view should not be responsible for storing the data
-it is displaying. (This does not mean the view never actually stores data it’s
+the application's model. The view should not be responsible for storing the data
+it is displaying. (This does not mean the view never actually stores data it's
 displaying, of course. A view can cache data or do similar tricks for
 performance reasons). A view object can be in charge of displaying just one part
 of a model object, or a whole model object, or even many different model
@@ -67,7 +67,7 @@ objects. Views come in many different varieties.
 View objects tend to be reusable and configurable, and they provide consistency
 between applications. In Cocoa, the AppKit framework defines a large number of
 view objects and provides many of them in the Interface Builder library. By
-reusing the AppKit’s view objects, such as \texttt{NSButton} objects, you
+reusing the AppKit's view objects, such as \texttt{NSButton} objects, you
 guarantee that buttons in your application behave just like buttons in any other
 Cocoa application, assuring a high level of consistency in appearance and
 behavior across applications.
@@ -90,12 +90,12 @@ In a typical Cocoa MVC design, when users enter a value or indicate a choice
 through a view object, that value or choice is communicated to a controller
 object. The controller object might interpret the user input in some
 application-specific way and then either may tell a model object what to do with
-this input—for example, "add a new value" or "delete the current record"—or it
+this input - for example, ``add a new value'' or ``delete the current record''-- or it
 may have the model object reflect a changed value in one of its properties.
 Based on this same user input, some controller objects might also tell a view
 object to change an aspect of its appearance or behavior, such as telling a
-button to disable itself. Conversely, when a model object changes—say, a new
-data source is accessed—the model object usually communicates that change to a
+button to disable itself. Conversely, when a model object changes--say, a new
+data source is accessed--the model object usually communicates that change to a
 controller object, which then requests one or more view objects to update
 themselves accordingly.
 
@@ -105,17 +105,17 @@ general type.
 \subsection{Combining Roles}
 
 One can merge the MVC roles played by an object, making an object, for example,
-fulfill both the controller and view roles—in which case, it would be called a
+fulfill both the controller and view roles--in which case, it would be called a
 view controller. In the same way, you can also have model-controller objects.
 For some applications, combining roles like this is an acceptable design.
 
 A model controller is a controller that concerns itself mostly with the model
-layer. It “owns” the model; its primary responsibilities are to manage the model
+layer. It ``owns'' the model; its primary responsibilities are to manage the model
 and communicate with view objects. Action methods that apply to the model as a
 whole are typically implemented in a model controller.
 
 A view controller is a controller that concerns itself mostly with the view
-layer. It “owns” the interface (the views); its primary responsibilities are to
+layer. It ``owns'' the interface (the views); its primary responsibilities are to
 manage the interface and communicate with the model. Action methods concerned
 with data displayed in a view are typically implemented in a view controller. A
 \texttt{UITableViewController} object (also part of the document architecture)

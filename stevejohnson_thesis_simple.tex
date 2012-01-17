@@ -1,0 +1,96 @@
+\input{formatting/setup_simple}
+\input{basic/title}
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+% Committee Signature sheet (typed version)-originals turned in with Final Materials Copyright page (only if copyrighting)
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\pagebreak
+
+\phantomsection
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+
+\pagebreak
+
+\phantomsection
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+
+\doublespace
+
+\pagebreak
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\input{basic/abstract}
+\pagebreak
+
+\chapter{Introduction}
+\label{ch:introduction}
+\input{basic/introduction}
+
+\chapter{Background}
+\label{ch:background}
+\input{background/main}
+
+\chapter{\mawapp}
+\label{ch:maw_smda}
+\input{smda/main}
+
+\chapter{\keggapp}
+\label{ch:kegg}
+\input{kegg/main}
+
+\chapter{Related Work}
+\label{ch:related_work}
+\input{basic/literature_survey}
+
+\chapter{Conclusions and Future Work}
+\label{ch:conclusion}
+\input{basic/conclusion}
+
+\appendix
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\chapter{SMDA Web Services}
+\label{ch:maw_web_services}
+\input{smda/web_services}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+\chapter{\keggapp User Manual}
+\label{ch:kegg_manual}
+\input{kegg_manual/manual.tex}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\chapter{\boldpathcasekegg Web Services}
+\label{ch:kegg_web_services}
+\input{kegg/web_services}
+
+\chapter{\keggapp Source Code Documentation}
+\label{ch:kegg_code_docs}
+\singlespace
+\input{kegg_doc/all.tex}
+\doublespace
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+\singlespace
+%\input{kegg_doc/all.tex}
+\doublespace
+
+% \nocite{*}
+
+\bibliographystyle{acm}
+\bibliography{bibliography}
+
+\end{document}

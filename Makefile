@@ -1,4 +1,5 @@
 DOC = stevejohnson_thesis
+DOC_SIMPLE = stevejohnson_thesis_simple
 INCLUDE_BIB = yes
 
 build: $(FIGS)
@@ -14,6 +15,17 @@ endif
 
 once: $(FIGS)
 	xelatex -halt-on-error $(DOC)
+
+simple: $(FIGS)
+ifeq ($(INCLUDE_BIB),yes)
+	pdflatex -halt-on-error $(DOC_SIMPLE) && \
+	bibtex $(DOC_SIMPLE) && \
+	pdflatex -halt-on-error $(DOC_SIMPLE) > /dev/null && \
+	pdflatex -halt-on-error $(DOC_SIMPLE) > /dev/null
+else
+	pdflatex -halt-on-error $(DOC_SIMPLE) && \
+	pdflatex -halt-on-error $(DOC_SIMPLE) > /dev/null
+endif
 
 all: build
 

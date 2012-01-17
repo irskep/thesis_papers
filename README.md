@@ -5,7 +5,7 @@ Requirements
 ------------
 
 * XeTeX
-* `listings` (included in MacTeX 2011)
+* `listings`
 * `xspace`
 * `hyperref`, `color`, `xcolor`, `xltxtra`, `xunicode`, `graphicx`, `fixltx2e`
 

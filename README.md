@@ -62,7 +62,7 @@ Content:
     * `template_index.html`: HTML template with manual contents inheriting from
       `template.html`
     * Various images
-* `maw/`: iPathCase-SMDA chapter sections (`main.tex` combines them into a
+* `smda/`: iPathCase-SMDA chapter sections (`main.tex` combines them into a
   chapter)
 
 Figures:

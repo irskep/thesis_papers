@@ -70,4 +70,4 @@ Figures:
 * `fig/`
 * `background/figures/`
 * `kegg/figures/`
-* `maw/figures/`
+* `smda/figures/`

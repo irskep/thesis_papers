@@ -15,15 +15,6 @@ endif
 once: $(FIGS)
 	xelatex -halt-on-error $(DOC)
 
-bg: $(FIGS)
-	xelatex -halt-on-error background_only && \
-	bibtex background_only && \
-	xelatex -halt-on-error background_only > /dev/null && \
-	xelatex -halt-on-error background_only > /dev/null
-
-title: $(FIGS)
-	xelatex -halt-on-error title_dummy && open title_dummy.pdf
-
 kde: build
 	kpdf $(DOC).pdf
 
